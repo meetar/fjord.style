@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+I was raised to believe that the earth was not my home, but it's growing on me.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I grew up in a tiny town in Alaska famous for disasters, where extremities of scale, weather, and character felt not so much normal as inscrutable, as though there was no angle from which they would ever make any sense.
+So: I've been interested in describing hard-to-describe things for a long time.
+
+I've worked as animator, designer, and technical director on a wide variety of commercial, industrial, and artistic projects, mostly involving 3D graphics. My most strongly-held opinions concern the timing of very brief events. I believe there are few irreducibly complex ideas, but many inadequate explanations.
+
+"Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accent colors, and lists of things which start out one way and turn out to be metaphors.
+Currently, I make unusual maps at [Mapzen](mapzen.com) in New York. I like getting email and meeting people, so please do drop me a note and say hello.
+
+twitter {% include icon-twitter.html username="meetar" %} / github {% include icon-github.html username="meetar" %} / gmail m33tar@
