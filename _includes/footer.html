@@ -2,36 +2,13 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+    <h2 class="footer-heading"><a href="/">{{ site.title }}</a></h2>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
+        <p>Peter Richardson grew up in Alaska, huddled around computers for warmth. A freelance animator for 15 years, he now makes unusual maps at <a href="http://mapzen.com">Mapzen</a>.</p>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
+<div style="text-align:center"><p>{% include icon-twitter.html username="meetar" %} / {% include icon-github.html username="meetar" %} / gmail m33tar@</p>        <p style="font-size:.9em">Copyright 2013-2016 Peter Richardson</p>
+</div>
 
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
-    </div>
 
   </div>
 
