@@ -5,6 +5,11 @@
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    width: 100%;
+    margin: auto;
+    // max-width: 900px;
+    display: block;
+    float: none;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -12,15 +17,20 @@
 
 .site-title {
     font-family: 'Montserrat', Helvetica, sans-serif;
-    font-size: 100px;
+    font-size: 9vw;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 1.25em;
     word-spacing: .1em;
     letter-spacing: .1em;
-    margin-bottom: 0;
+    text-align: center;
+    // margin-bottom: 0;
     float: left;
     color: black;
+    width: 100%;
+    margin: auto;
+    // border: 2px solid gold;
 
+    
     &,
     &:visited {
         color: $grey-color-dark;
@@ -45,54 +55,6 @@
         }
     }
 
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-
-            &:not(:last-child) {
-                margin-right: 0;
-            }
-            margin-left: 20px;
-        }
-    }
 }
 
 
@@ -255,7 +217,7 @@
 div#globecontainer {
     width: 100%;
     height: 100%;
-    margin: 0px;
+    // margin: 0px;
     padding: 0px;
     z-index: 1;
     overflow: hidden;
