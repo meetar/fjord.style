@@ -13,7 +13,8 @@ description: > # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://meetar.github.io/fjord.style" # the base hostname & protocol for your site
+# url: "http://meetar.github.io/fjord.style" # the base hostname & protocol for your site
+url: ""
 permalink: /:title
 twitter_username: meetar
 github_username:  meetar
