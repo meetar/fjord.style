@@ -4,7 +4,15 @@
 
     <h2 class="footer-heading"><a href="/">{{ site.title }}</a></h2>
 
-        <p>Peter Richardson grew up in Alaska, huddled around computers for warmth. A freelance animator for 15 years, he now makes unusual maps at <a href="http://mapzen.com">Mapzen</a>.</p>
+    <nav class="footer-site-nav">
+        {% for my_page in site.pages %}
+          {% if my_page.title %}
+          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% endif %}
+        {% endfor %}
+    </nav>
+
+        <p>Peter Richardson grew up in Alaska, huddled around computers for warmth. A freelance animator for many years, he now makes unusual maps at <a href="http://mapzen.com">Mapzen</a>.</p>
 
 <div style="text-align:center"><p>{% include icon-twitter.html username="meetar" %} / {% include icon-github.html username="meetar" %} / gmail m33tar@</p>        <p style="font-size:.9em">Copyright 2013-2016 Peter Richardson</p>
 </div>
