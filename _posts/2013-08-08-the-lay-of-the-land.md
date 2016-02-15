@@ -142,15 +142,15 @@ So it seems that when appraising mountains, to some extent steepness and relativ
 
 What do we want from this kind of view, anyhow? What questions are we asking when we look at it? I have two to suggest:
 
-How does the information relate to its local context?
+- How does the information relate to its local context?
 
-How does it relate to the whole?
+- How does it relate to the whole?
 
 In the case of our elevation data, this translates to:
 
-How does a given feature relate to neighboring prominent or important features? and
+- How does a given feature relate to neighboring prominent or important features? and
 
-How does it relate on the grand scale? Is it higher, lower, smoother, or peakier than average? How does it relate to the topographical extremes? Is it the most anything?
+- How does it relate on the grand scale? Is it higher, lower, smoother, or peakier than average? How does it relate to the topographical extremes? Is it the most anything?
 
 What kind of information would give us this knowledge? How could that information be represented? What are the constraints?
 
