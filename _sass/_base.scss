@@ -44,7 +44,8 @@ ul, ol, dl, figure,
  * Images
  */
 img {
-    max-width: 100%;
+    // max-width: 100%;
+    left: -12.5%;
     vertical-align: middle;
 }
 
@@ -60,7 +61,6 @@ figure > img {
 figcaption {
     font-size: $small-font-size;
 }
-
 
 
 /**
