@@ -3,16 +3,10 @@
  */
 .site-header {
     border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    // min-height: 56px;
     width: 100%;
     margin: auto;
     // max-width: 900px;
     display: block;
-    float: none;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
 }
 
 .site-title {
@@ -28,8 +22,8 @@
     width: 100%;
     margin: auto;
     border-bottom: 1px solid $grey-color-light;
+    margin-bottom: 1em;
 
-    
     &,
     &:visited {
         color: black;
@@ -44,7 +38,7 @@
     width: 100%;
     float: right;
     display: block;
-    padding-bottom: 1em;
+    padding-bottom: 3em;
     margin: 0;
     a:hover {
         text-decoration: underline;
@@ -68,6 +62,7 @@
 .footer-site-nav {
     margin: 0;
     padding: 0;
+    padding-bottom: 1.5em;
     .page-link {
         color: $text-color;
         line-height: $base-line-height;
@@ -82,6 +77,8 @@
  * Site footer
  */
 .site-footer {
+    // width: 80%;
+    margin: auto;
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
     color: $grey-color;
@@ -184,6 +181,8 @@ h2, .post-link {
     margin: 0px;
     line-height: 1.25em;
     margin-bottom: .5em;
+
+
 }
 
 
