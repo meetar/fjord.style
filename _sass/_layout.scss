@@ -21,14 +21,24 @@
     color: black;
     width: 100%;
     margin: auto;
-    border-bottom: 1px solid $grey-color-light;
-    margin-bottom: 1em;
+    border-bottom: 2px solid $grey-color-light;
+    padding-bottom: .1em;
+    margin-bottom: .75em;
+    background-color: #fff;
 
     &,
     &:visited {
         color: black;
     }
 }
+
+@include media-query($on-palm) {
+    .site-title {
+        letter-spacing: .075em;
+        font-weight: 900;
+    }
+}
+
 
 .site-title, a:hover {
     text-decoration: none;
@@ -171,8 +181,16 @@
     font-size: $small-font-size;
     color: black;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     margin-top: -1.5em;
+    margin-bottom: .25em;
+    display: block;
+}
+
+@include media-query($on-palm) {
+    .post-meta {
+       font-size: $small-font-size * .9;
+   }
 }
 
 h2, .post-link {
@@ -181,15 +199,32 @@ h2, .post-link {
     margin: 0px;
     line-height: 1.25em;
     margin-bottom: .5em;
-
-
 }
 
+
+@include media-query($on-palm) {
+    h2, .post-link {
+        font-size: 18px;
+        margin: 0px;
+        line-height: 1.25em;
+        margin-bottom: .25em;
+    }
+}
+
+li p {
+    margin-bottom: $spacing-unit * .5;
+}
 
 
 /**
  * Posts
  */
+
+span.post-img {
+    display: inline-block;
+    margin-top: $spacing-unit * .5;
+}
+
 .post-header {
     margin-bottom: $spacing-unit * 1.5;
 }
@@ -287,6 +322,13 @@ hr {
     border-top: 1px;
     background-color: $grey-color-light;
     padding: 0; 
+}
+
+@include media-query($on-palm) {
+    hr {
+        margin-top: $spacing-unit;
+        margin-bottom: $spacing-unit;
+    }
 }
 
 section#archive time {

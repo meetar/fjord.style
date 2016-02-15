@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "The Lay of the Land"
-date:   2013-08-08 12:02:02
+title: "The Lay of the Land"
+date: 2013-08-08 12:02:02
 categories: terrain
 published: true
+image: 1446403033.png
 ---
 
 I have a lot of questions. I blame the fact that I grew up in a fjord.
