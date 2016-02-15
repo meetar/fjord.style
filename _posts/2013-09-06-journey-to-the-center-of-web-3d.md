@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Journey to the Center of Web&nbsp;3D"
-date:   2013-09-06 22:02:02 -0500
+date:   2013-09-06 12:02:02
 categories: terrain
 published: false
 excerpt: Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with <a href="http://threejs.org/">three.js</a>, a popular web 3D library.

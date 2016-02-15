@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Going Into Detail"
-date:   2014-03-11 22:02:02 -0500
+date:   2014-03-11 12:02:02
 categories: terrain
 published: false
 ---
