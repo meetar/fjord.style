@@ -89,7 +89,7 @@
 .site-footer {
     // width: 80%;
     margin: auto;
-    border-top: 1px solid $grey-color-light;
+    border-top: 2px solid $grey-color-light;
     padding: $spacing-unit 0;
     color: $grey-color;
     font-size: .9em;
@@ -171,9 +171,8 @@
 .post-list {
     margin-left: 0;
     list-style: none;
-
     > li {
-        margin-bottom: $spacing-unit;
+        margin-bottom: $spacing-unit * 2;
     }
 }
 
@@ -186,6 +185,11 @@
     margin-bottom: .25em;
     display: block;
 }
+
+header.post-header .post-meta {
+    text-align: center;
+}
+
 
 @include media-query($on-palm) {
     .post-meta {
@@ -240,11 +244,16 @@ span.post-img {
     text-align: center;
     text-transform: uppercase;
     border-bottom: 1px solid #999;
-    padding-bottom: .25em;
-    @include media-query($on-laptop) {
-        font-size: 28px;
-    }
+    padding-bottom: $spacing-unit * .5;
+    margin-bottom: $spacing-unit * 1.25;
     line-height: 1.25em;
+    @include media-query($on-laptop) {
+        font-size: 24px;
+        line-height: 1.15em;
+        letter-spacing: .05em;
+        padding-bottom: $spacing-unit * .25;
+        margin-bottom: $spacing-unit;
+    }
 }
 
 .post-content {
@@ -275,19 +284,6 @@ span.post-img {
     }
 }
 
-div#globecontainer {
-    width: 100%;
-    height: 100%;
-    // margin: 0px;
-    padding: 0px;
-    z-index: 1;
-    overflow: hidden;
-}
-
-iframe {
-    border: 0px;
-}
-
 img {
     display: block;
     margin: auto;
@@ -311,17 +307,14 @@ footer img {
 }
 
 hr {
+    border: 0;
     margin: auto;
-    margin-top: $spacing-unit * 1.5;
-    margin-bottom: $spacing-unit * 1.5;
-    width: 80%;
+    margin-top: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 2;
+    width: 60%;
     display: block;
-    height: 0px;
-    // border-top: 1px solid $grey-color-light;
-    border-color: #999;
-    border-top: 1px;
-    background-color: $grey-color-light;
-    padding: 0; 
+    height: 1px;
+    background-color: #999;
 }
 
 @include media-query($on-palm) {
@@ -333,4 +326,29 @@ hr {
 
 section#archive time {
     margin-right: 1em;
+}
+
+
+div#globecontainer {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+iframe {
+    border: 0px;
+}
+
+@include media-query($on-palm) {
+    div#globecontainer img {
+        display: block;
+        margin: auto;
+        margin-bottom: $spacing-unit;
+    }
+
+    iframe {
+        display: none;
+    }
 }
