@@ -15,7 +15,7 @@ So: I've been interested in describing hard-to-describe things for a long time.
 
 I've worked as animator, designer, and technical director on a wide variety of commercial, industrial, and artistic projects, mostly involving 3D graphics. My most strongly-held opinions concern the timing of very brief events. I believe there are few irreducibly complex ideas, but many inadequate explanations.
 
-"Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accent colors, and lists of things which turn out to be metaphors.
+"Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accents, and lists of things which turn out to be metaphors.
 
 Currently, I make unusual maps at [Mapzen](mapzen.com) in New York. I like getting email and meeting people, so please do drop me a note and say hello.
 
