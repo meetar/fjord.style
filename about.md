@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<div id="globecontainer"><iframe src="https://meetar.github.io/FSglobe-terrain/" width="100%" height="550px"></iframe></div>
+<div id="globecontainer" style="margin-top:-2em;margin-bottom:2em;"><a href="https://github.com/meetar/FSglobe-terrain"><img id="globegif" src="/assets/FSglobe-terrain.gif"></a><iframe id="FSglobe" src="" width="100%" height="550px"></iframe></div>
 
 
 I was raised to believe that the earth was not my home, but it's growing on me.
@@ -18,3 +18,12 @@ I've worked as animator, designer, and technical director on a wide variety of c
 "Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accent colors, and lists of things which turn out to be metaphors.
 
 Currently, I make unusual maps at [Mapzen](mapzen.com) in New York. I like getting email and meeting people, so please do drop me a note and say hello.
+
+<script>
+var width = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+if (width > 700) {
+	document.getElementById("FSglobe").src = "https://meetar.github.io/FSglobe-terrain/"
+}
+</script>
