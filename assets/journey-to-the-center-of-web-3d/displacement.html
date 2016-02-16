@@ -1,0 +1,266 @@
+<html>
+    <head>
+
+        <meta charset="utf-8">
+    <script type="text/javascript" src="three.js"></script>
+    <script type="text/javascript" src="dat.gui.min.js"></script>
+    <script src="TrackballControls.js"></script>
+    
+    </head>
+    <body style="background:#ececec; margin:0px; padding:0px" onmousemove="update()">
+
+  <div id="container"></div>
+
+
+    
+    
+
+ 
+    
+    
+  <!-- ----- MAIN THREE.JS CODE ----- -->   
+ 
+  <script type="text/javascript">
+  
+  var camera, scene, renderer, container;
+  var light, ambientLight, pointLight, geometry, mesh;
+  var uniforms, attributes, material;
+  var heightmap, diffTexture, dispTexture;
+  
+  var t           = 0;
+  var diameter    = 1200;
+  var dist_x      = 0;
+  var step        = 0;
+
+   
+  function start() {
+
+    container = document.getElementById( 'container' );
+
+    // --- WebGl render
+
+    try {
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.autoClear = false;
+        container.appendChild( renderer.domElement );
+    }
+    catch (e) {
+        alert(e);
+    }
+
+    scene = new THREE.Scene();
+
+    // --- Camera
+
+    var fov = 15; // camera field-of-view in degrees
+    var width = renderer.domElement.width;
+    var height = renderer.domElement.height;
+    var aspect = width / height; // view aspect ratio
+    camera = new THREE.PerspectiveCamera( fov, aspect );
+    camera.position.z = -600;
+    camera.position.y = -800;
+    camera.lookAt(scene.position);
+    camera.updateMatrix();
+
+    controls = new THREE.TrackballControls( camera, renderer.domElement );
+    controls.rotateSpeed = 3.0;
+    controls.zoomSpeed = 1.2;
+    controls.panSpeed = 0.8;
+    controls.noZoom = false;
+    controls.noPan = false;
+    controls.staticMoving = true;
+    controls.dynamicDampingFactor = 0.3;
+    controls.addEventListener( 'change', render );
+
+    
+    // --- Lights
+        
+    // ambientLight = new THREE.AmbientLight( 0xffffff );
+    // scene.add( ambientLight );
+
+    pointLight = new THREE.PointLight( 0xffffff, 1.0 );
+    scene.add( pointLight );
+    
+    pointLight.position.set(0, 100, -200);
+
+
+    
+    // MATERIAL
+
+    var ambient = 0xffffff, diffuse = 0x666666, specular = 0xffffff, shininess = 50.0;
+
+    dispTexture = new THREE.ImageUtils.loadTexture( 'uk_heightmap.jpg', new THREE.UVMapping(), function() { 
+      update();
+    });
+      
+    var shader = THREE.ShaderLib[ "normalmap" ];
+    uniforms = THREE.UniformsUtils.clone( shader.uniforms );
+    
+    uniforms[ "enableDisplacement" ] = { type: 'i', value: 1 };
+    uniforms[ "tDisplacement" ] = { type: 't', value: dispTexture };
+    uniforms[ "uDisplacementScale" ] = { type: 'f', value: 35 };
+    
+    uniforms[ "enableDiffuse" ] = { type: 'i', value: 1 };
+    uniforms[ "tDiffuse" ].value = dispTexture;
+
+        // uniforms[ "uAmbientColor" ].value = ambient;
+        
+            // uniforms[ "uAmbientLightColor" ] = {type: "c", value: 0xffffff}
+
+    uniforms[ "tNormal" ] = { type: 't', value: new THREE.ImageUtils.loadTexture( 'flat.png' )};
+    
+    
+    
+    material = new THREE.ShaderMaterial( {
+            uniforms: uniforms,
+            vertexShader: shader.vertexShader,
+            fragmentShader: shader.fragmentShader,
+            lights: true,
+            side: THREE.DoubleSide
+    } );
+
+    
+    // GEOMETRY
+
+    geometry = new THREE.PlaneGeometry(256, 256, 256, 256);
+    geometry.computeTangents();
+    mesh = new THREE.Mesh( geometry, material);
+    mesh.rotation.y = Math.PI;
+    scene.add(mesh);
+
+    
+    t = -3;
+    diameter = 200;
+    
+   
+    update();
+  }
+  
+  function update() {
+    render();
+    controls.update(); // trackball interaction
+  }
+
+  function render() {
+    renderer.clear();
+    renderer.render(scene, camera);
+  }
+  
+
+ 
+    
+    //
+    // JAVASCRIPT IMAGE MANIPULATION
+    //
+    
+    
+  function log(n) {
+    console.log(n);
+  }
+
+
+function imageFromCanvas(canvas) {
+
+    var m = canvas.width
+    var n = canvas.height
+    var data = canvas.getContext('2d').getImageData(0, 0, m, n).data
+    var image = new Array(m*n)
+    
+    for (var i=0; i<n*m; i++) {
+        image[i] = data[i*4]
+    }
+    return image
+}
+
+  function drawImage(image, canvas) {
+    // set destination canvas
+    c = document.getElementById(canvas+"Canvas");
+    context = c.getContext('2d')
+    var m = c.width
+    var n = c.height
+    
+    // find range
+    minimum = 1000000000000000000
+    maximum = 0
+
+    first = true
+    var d = 0
+    for (var i=0; i<n*m; i++) {
+      try {d = image[i]}
+      catch(e) {log(e); log("i: "+i); log("image: "+image); break}
+        
+        minimum = Math.min(minimum, d)
+        maximum = Math.max(maximum, d)
+      if (i == m*n-1) {
+        first = false
+
+      }
+    }
+
+    var finalImage = ictx.createImageData(m, n);
+    var data = finalImage.data    // pixel data array of (width*height*4) elements
+
+    var contrast  = 2
+    var distanceColor = { r : 255*contrast/255, g : 255*contrast/255, b : 255*contrast/255 }
+
+    var ceil = 255
+    var floor = 0
+    
+    newmin = 1000000000000000
+    newmax = 0
+    
+    // Convert to visible
+    for (var i=0; i<n*m; i++) {
+        d = image[i]
+        normd = ((ceil - floor) * (d - minimum))/(maximum - minimum) + floor
+        newmin = Math.min(newmin, normd)
+        newmax = Math.max(newmax, normd)
+
+        data[i*4+0] = normd
+        data[i*4+1] = normd
+        data[i*4+2] = normd
+
+        data[i*4+3] = 255
+    }
+
+    context.putImageData(finalImage, 0, 0)
+    
+    geometry.normalsNeedUpdate = true;
+    geometry.tangentsNeedUpdate = true;
+    diffTexture.needsUpdate = true;
+    dispTexture.needsUpdate = true;
+    geometry.computeTangents();
+    update();
+  }
+  
+
+
+  var initDisp = function() {
+    this.scale = 25;
+  }
+  
+  
+  window.onload = function() {
+    var disp = new initDisp();
+    var gui = new dat.GUI();
+    var scaleVal = 25.0;
+    
+ 		scControl = gui.add(disp, "scale", 0, 200);
+    scControl.onChange(function(value) {
+      scaleVal = value;
+      uniforms[ "uDisplacementScale" ].value = value;
+    });
+
+    start();
+    controls.update();
+
+  }
+
+
+    
+      
+  </script>
+  
+	</body>
+</html>

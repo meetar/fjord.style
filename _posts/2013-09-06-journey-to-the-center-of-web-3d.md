@@ -3,15 +3,20 @@ layout: post
 title:  "Journey to the Center of Web&nbsp;3D"
 date:   2013-09-06 12:02:02
 categories: terrain
-published: false
+published: true
 excerpt: Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with <a href="http://threejs.org/">three.js</a>, a popular web 3D library.
+image: displacement3.png
 ---
 
-[TL;DR: Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with [three.js](http://threejs.org/), a popular web 3D library.]
+*Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with [three.js](http://threejs.org/), a popular web 3D library.*
 
-I recently [wrote at some length about mountains](http://edgeca.se/the-lay-of-the-land/). My thoughts were punctuated with [some 3D demos](https://github.com/meetar/heightmap-demos), viewable in certain modern web browsers. I’d like to thank you for reading this far, so here’s a 3D animated gif of a llama (click to toggle playback):
+<hr>
 
-([Try the 3D llama gif demo](http://meetar.github.io/shader-demos/llama.html). Or, view [the original llama gif](http://gifl.be/original_llama.gif), for comparison.)
+I recently [wrote at some length about mountains]({{ site.url }}/the-lay-of-the-land/). My thoughts were punctuated with [some 3D demos](https://github.com/meetar/heightmap-demos), viewable in certain modern web browsers. I’d like to thank you for reading this far, so here’s a 3D animated gif of a llama:
+
+![A 3D animated gif of a llama]({{ site.url }}/assets{{ page.url }}/llama3D.gif)
+
+([Try the 3D llama gif demo](http://meetar.github.io/threejs-shader-demos/llama.html). Or, view [the original llama gif]({{ site.url }}/assets{{ page.url }}/original_llama.gif), for comparison.)
 
 As if that weren’t enough, I’d now like to explain the rationale behind the mountain demos, and then describe their construction for anyone who’d like to know why they were interesting, how I built them, or why I’d go to the trouble. (I’ll start high-level and get increasingly detailed.)
 
@@ -31,7 +36,7 @@ So far – apart from a few applications explicitly focused on the production an
 
 So much for the rationale – now for a fascinating technical overview.
 
-[Three.js](http://threejs.org/) is a JavaScript library which allows easy control of graphics cards, also known as [GPUs](https://en.wikipedia.org/wiki/Graphics_processing_unit. This is particularly interesting because GPUs are interesting: they’re specialized processors, developed to relieve CPUs of the burden of graphics calculations. In the old days, the CPU not only handled computing tasks, but also did all the work of sending pixels to the screen, which turned out to be increasingly inefficient as graphics became more complex. With a separate, specialized GPU, you can run certain kinds of code much, much faster than otherwise. The trouble with GPUs is that, being newer and more specialized than CPUs, they’ve been the domain of specialists. This is where three.js comes in.
+[Three.js](http://threejs.org/) is a JavaScript library which allows easy control of graphics cards, also known as [GPUs](https://en.wikipedia.org/wiki/Graphics_processing_unit). This is particularly interesting because GPUs are interesting: they’re specialized processors, developed to relieve CPUs of the burden of graphics calculations. In the old days, the CPU not only handled computing tasks, but also did all the work of sending pixels to the screen, which turned out to be increasingly inefficient as graphics became more complex. With a separate, specialized GPU, you can run certain kinds of code much, much faster than otherwise. The trouble with GPUs is that, being newer and more specialized than CPUs, they’ve been the domain of specialists. This is where three.js comes in.
 
 Like any code library, three.js is a set of shortcuts. In this case, the shortcuts are to [WebGL](https://en.wikipedia.org/wiki/WebGL) code, which is itself a shortcut to the binary language of moisture vaporators, by which I mean GPUs. For us, that means three.js an easy, speedy way to do a lot of very surprisingly cool stuff with pixels. Of course, if you want to move beyond the default settings, you have to know something about how the library is put together.
 
@@ -39,14 +44,13 @@ This brings us to the major downside of three.js: so far, its [documentation](ht
 
 ---
 
-
 So about [those demos](https://github.com/meetar/heightmap-demos). They show various ways to use three.js to manipulate elevation data, in the form of heightmaps: images which depict the height of terrain, in this case as scanned by the Space Shuttle. I wanted to turn these 2D representations of 3D information back into a 3D representation of mountains, in part because I have a thing for [raised-relief maps](https://en.wikipedia.org/wiki/Raised-relief_map), and in part because I wanted to try something that could feasibly be a real-world application, achievable by an individual, using readily-available tools.
 
 This started with a heightmap, which I used to deform a plane, the same way Google Earth does it. The 3D term for this kind of transformation is “displacement.” This process takes a base mesh of vertices, and then “displaces” the vertices – pushes or pulls them – by some amount, depending on a control texture. Three.js includes this capability by default in certain circumstances, and when used in the way three.js intended, I was able to use a displacement map with no custom code.
 
-A 2D heightmap of the UK next to its 3D representation
+[![A 2D heightmap of the UK next to its 3D representation]({{ site.url }}/assets{{ page.url }}/displacement.png)]({{ site.url }}/assets{{ page.url }}/displacement.png)
 
-([Try the displacement demo](http://meetar.github.io/shader-demos/displacement.html).)
+([Try the displacement demo](http://meetar.github.io/threejs-shader-demos/displacement.html).)
 
 However, I wanted more control over the look of my mountains. Other common features of 3D lighting – such as normal mapping and specular highlights – are included in three.js, but only in certain other circumstances.
 
@@ -60,9 +64,9 @@ To complicate matters still further, three.js is in continuous development. Many
 
 So let’s take a look at a shader. Here is a sphere with three different shaders applied:
 
-Three spheres with different shaders
+[![Three spheres with different shaders]({{ site.url }}/assets{{ page.url }}/shaders.png)]({{ site.url }}/assets{{ page.url }}/shaders.png)
 
-(Left to right: a Lambert shader; a Phong shader, including a specular highlight; a “normal” shader, which colors each face based on its angle relative to the camera. [Try the shaders demo](http://meetar.github.io/shader-demos/shaders.html).)
+(Left to right: a Lambert shader; a Phong shader, including a specular highlight; a “normal” shader, which colors each face based on its angle relative to the camera. [Try the shaders demo](http://meetar.github.io/threejs-shader-demos/shaders.html).)
 
 To a user, shaders are sets of instructions for defining the look of a 3D object. To a GPU, a shader is a program which is run once per pixel, often for many pixels at a time simultaneously. In the [OpenGL shading language](https://en.wikipedia.org/wiki/OpenGL_Shading_Language), there are two primary types of shaders: a “vertex” shader, which determines where the vertices in a 3D model should go, and a “fragment” or “pixel” shader, which determines the color of the faces defined by those vertices. Both include special variables which allow communication with other shaders and with the wrapper code, which defines and packages the shaders, and sends them to the GPU for processing.
 
@@ -84,9 +88,9 @@ However, the normalmap shader doesn’t include built-in specular shading, which
 
 The normalmap shader’s displacement ability was also missing a few other features I had expected: for instance, though it successfully displaced vertices, the displacement was not factored into the normal calculation. So though the faces were now in new orientations, they were reflecting light as though they hadn’t moved. This is because in the normalmap shader, the normals are assumed to come from a “normal map” texture passed in separately. Additionally, there was no mechanism in three.js to update normals once the vertices had been displaced. This is all stuff which a professional 3D application will handle for you, but the current incarnation of three.js does not.
 
-Spheres showing displacement and normal maps
+[![Spheres showing displacement and normal maps]({{ site.url }}/assets{{ page.url }}/sphere-normals.png)]({{ site.url }}/assets{{ page.url }}/sphere-normals.png)
 
-(Left to right: a displacement map taken from a heightmap of the moon’s surface, without adjusted normals; a normal map with no displacement; displacement and adjusted normals combined. [Try the normals demo](http://meetar.github.io/shader-demos/normalmap.html) to toggle these features, and see the relationship between them.)
+(Left to right: a displacement map taken from a heightmap of the moon’s surface, without adjusted normals; a normal map with no displacement; displacement and adjusted normals combined. [Try the normals demo](http://meetar.github.io/threejs-shader-demos/normalmap.html) to toggle these features, and see the relationship between them.)
 
 To work around these problems, I decided to derive normals straight from the displacement map, a technique called “[bump mapping](https://en.wikipedia.org/wiki/Bump_mapping).” To do this, I pulled in [a chunk from the “phong” shader](https://github.com/mrdoob/three.js/blob/r58/src/renderers/WebGLShaders.js#L328) which does exactly that, and integrated it with my custom normalmap shader. So the final shader (as seen in [this terrain demo](http://meetar.github.io/heightmap-demos/scale.html)) is a kind of normalmap-phong hybrid.
 
@@ -98,8 +102,6 @@ I wrapped it all up with a small interface using another simple library called [
 
 One might argue that terrain manipulation is a weirdly specific way to learn these techniques, and one would be right; but you’ve got to follow your kinks. These tools and techniques can certainly be used for more interesting explorations, visualizations, and interfaces. Still, it’s going to take a lot more work to navigate web 3D from “shiny trinket” to “productive member of society.” I live in hope.
 
-(All the demos in this post are collected at [https://github.com/meetar/shader-demos](https://github.com/meetar/shader-demos).)
+(All the demos in this post are collected at [https://github.com/meetar/threejs-shader-demos](https://github.com/meetar/threejs-shader-demos).)
 
-
-
- (This post was originally published at http://edgeca.se/journey-to-the-center-of-web3d/ .)
+(This post was originally published at http://edgeca.se/journey-to-the-center-of-web3d/ .)
