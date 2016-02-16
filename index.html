@@ -13,7 +13,7 @@ layout: default
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
 
-        <span class="post-excerpt">{{ post.excerpt }}</span>
+        <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
         {% if post.image %}<span class="post-img"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><img class="headerimg" src="{{ site.url }}/assets{{ post.url }}/{{ post.image }}"></a></span>{% endif %}
 
       </li>

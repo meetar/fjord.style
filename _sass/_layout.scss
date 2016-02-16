@@ -164,6 +164,13 @@
     padding: $spacing-unit 0;
 }
 
+@include media-query($on-palm) {
+    .page-content {
+        padding: $spacing-unit * .5 0;
+    }
+}
+
+
 .page-heading {
     font-size: 20px;
 }
@@ -223,6 +230,12 @@ li p {
 /**
  * Posts
  */
+
+span.post-excerpt {
+    display: block;
+    margin-top: $spacing-unit * .25;
+    margin-bottom: $spacing-unit * .25;
+}
 
 span.post-img {
     display: inline-block;
