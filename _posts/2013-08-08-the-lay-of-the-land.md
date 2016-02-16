@@ -4,7 +4,7 @@ title: "The Lay of the Land"
 date: 2013-08-08 12:02:02
 categories: terrain
 published: true
-image: 1446403033.png
+image: 1446403033.jpg
 ---
 
 I have a lot of questions. I blame the fact that I grew up in a fjord.
@@ -17,7 +17,7 @@ Eventually I escaped my fjord, but a few lessons of my youth have been repeatedl
 
 Some of my favorite things combine topography and cartoons. One in particular holds a special place in my heart: the raised relief map.​
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/1446403033.png)](http://www.flickr.com/photos/mbsurf/4918986082/)
+[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/1446403033.jpg)](http://www.flickr.com/photos/mbsurf/4918986082/)
 
 I love these maps because they feel like a very simple way of approaching some very complex questions which I don’t think anyone has answered to my satisfaction:
 
@@ -29,7 +29,7 @@ Lately I’ve been focusing on a small part of this question set, something I’
 
 Most attempts to get a feel for large-scale topography, including many relief maps, involve scale models. Here are two scale models of Everest:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/3519779_orig.png)]({{ site.url }}/assets{{ page.url }}/3519779_orig.png)
+[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/3519779_orig.jpg)]({{ site.url }}/assets{{ page.url }}/3519779_orig.png)
 
 [![ALTTEXT]({{ site.url }}/assets{{ page.url }}/5302791282_401017626c_z.jpg)](http://www.flickr.com/photos/watz/5302791282/)
 
