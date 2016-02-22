@@ -4,28 +4,41 @@ title:  "Going Into Detail"
 date:   2014-03-11 12:02:02
 categories: terrain
 published: false
-excerpt: Mapmakers have long attempted to use various geographical features to define Europe’s eastern border for their own purposes, citing rivers, mountains, and so on.
+excerpt: Mapmakers have long attempted to use various geographical features to define Europe’s eastern border for their own purposes, citing rivers, mountains, and so on. These days, the Urals are most often given as the boundary; this is partly because they happen to be the unusually well-preserved result of two sub-continents running into each other, and this carries a lot of weight with people who base arguments on precedent.
 image:
 ---
+<link rel="stylesheet" type="text/css" href="css/globe.css">
+<script type='text/javascript' src="js/Detector.js"></script>
+<script data-src="shaders/vs_rt.js" data-name="vs_rt" type="x-shader/x-vertex"></script>
+<script data-src="shaders/fs_erode.js" data-name="fs_erode" type="x-shader/x-fragment"></script>
+<script data-src="shaders/fs_dilate.js" data-name="fs_dilate" type="x-shader/x-fragment"></script>
+<script data-src="shaders/fs_maximum.js" data-name="fs_maximum" type="x-shader/x-fragment"></script>
+<script data-src="shaders/fs_rtt.js" data-name="fs_rtt" type="x-shader/x-fragment"></script>
+<script data-src="shaders/vs_main.js" data-name="vs_main" type="x-shader/x-vertex"></script>
+<script data-src="shaders/fs_main.js" data-name="fs_main" type="x-shader/x-fragment"></script>
+<script type='text/javascript' src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/three.min.js"></script>
+<script type='text/javascript' src="js/TrackballControls2.js"></script>
+<script type='text/javascript' src='js/tween.min.js'></script>
+<script type='text/javascript' src='js/RTT_setup.js'></script>
+<script type="text/javascript" src="js/ShaderLoader.min.js"></script>
+<script type="text/javascript" src="js/THREEx.WindowResize.js"></script>
+<script type='text/javascript' src='js/globe01.js'></script>
 
-​For a place named “Earth,” the oceans appear wildly over-represented. I haven’t been able to make more dirt, so I’ve been working on the representation angle a bit lately:
+For a place named “Earth,” the oceans appear wildly over-represented. I haven’t been able to make more dirt, so I’ve been working on the representation angle a bit lately:
 
-[Scroll down to advance the demo — then, click and drag to rotate each view.]
+(Click and drag to rotate each view.)
 
-DEMO
-<div id="globecontainerwrap">
+<div id="apology">(Apologies: your browser doesn't appear to support WebGL or JavaScript, so please accept these consolation gifs.)</div>
+
+<div id="div2" class="globewrapper"><div class="fallback"><img src="img/globe1.gif"></div>
 	<div id="globecontainer"></div>
 </div>
-<div id="globewrapper">
-<div id="div1">
-<div class="globetext">
-</div>
-<div class="globefadeout"></div>
-</div>
+
 
 This representation isn’t “to scale” in the Cartesian sense, though maybe it’s to scale *emotionally*. I’m adjusting levels until they’re within the range of human feeling. It’s a theme-park, *Le Petit Prince*, Mario Galaxy kind of feeling, a cartoon.
 
-And though manipulated, the source data is real, taken from NASA scans. In a way, I’m changing the apparent physical properties of the globe’s material, from the unmediated, authoritative pixel-as-data — each point claiming a one-to-one correlation with some kind of empirical measurement — to something more recognizable, more like a plastic vac-u-form [raised-relief map](https://web.archive.org/web/20150310183537/http://edgeca.se/going-into-detail/edgeca.se/the-lay-of-the-land/).
+And though manipulated, the source data is real, taken from NASA scans. In a way, I’m changing the apparent physical properties of the globe’s material, from the unmediated, authoritative pixel-as-data — each point claiming a one-to-one correlation with some kind of empirical measurement — to something more recognizable, more like a plastic vac-u-form [raised-relief map](/the-lay-of-the-land/).
 
 At this level, you can recognize the borders of some countries, which immediately suggests one point: much of history is dictated by topographical features — oceans, rivers, and mountains, especially — which aid or hinder our collective ability to move around and bump into each other.
 
@@ -35,17 +48,23 @@ The western end of Eurasia is called Europe. (“Europe” might mean, more or l
 
 We think of it as a distinct place because as places go, it’s comparatively hard to enter and leave — to the north, west, and south, it’s bordered by water; to the east, by a long history of disagreements, primarily over where the border lies.
 
-Mapmakers have long attempted to use various geographical features to define Europe’s eastern border for their own purposes, citing rivers, mountains, and so on. These days, the Urals are most often given as the boundary; this is partly because they happen to be the unusually well-preserved result of two sub-continents running into each other, and this carries a lot of weight with people who base arguments on precedent. But it’s also because it allows Moscow to be European without defining all of [Russia as part of Europe](https://web.archive.org/web/20150310183537/http://opinionator.blogs.nytimes.com/2012/01/09/where-is-europe/), the prospect of which irritates cartographers.
+<div id="div3" class="globewrapper"><div class="fallback"></div></div>
+
+Mapmakers have long attempted to use various geographical features to define Europe’s eastern border for their own purposes, citing rivers, mountains, and so on. These days, the Urals are most often given as the boundary; this is partly because they happen to be the unusually well-preserved result of two sub-continents running into each other, and this carries a lot of weight with people who base arguments on precedent. But it’s also because it allows Moscow to be European without defining all of [Russia as part of Europe](http://opinionator.blogs.nytimes.com/2012/01/09/where-is-europe/), the prospect of which irritates cartographers.
+
+<div id="div4" class="globewrapper"><div class="fallback"></div></div>
 
 The truth is that to the east, there is no easy physical border, only a cultural gradient, built in great, shuddering spasms by the Persians, Greeks, and Romans, the Schisms, and the Wars, marked in literal form by walls and metaphorical form by curtains. It’s messy, but that’s hard to draw on a map.
 
 ---
 
-Some astronauts have described a phenomenon called the [overview effect](https://web.archive.org/web/20150310183537/http://en.wikipedia.org/wiki/Overview_effect) whereby, when viewed from space, the Earth’s distinct lack of visible political borders reveals the ultimately unified character of human civilization. I get the feeling this may also just describe the kind of relief you get from vacation, an escape from the effort required to internalize so many of the arbitrary facets of human civilization simultaneously.
+Some astronauts have described a phenomenon called the [overview effect](http://en.wikipedia.org/wiki/Overview_effect) whereby, when viewed from space, the Earth’s distinct lack of visible political borders reveals the ultimately unified character of human civilization. I get the feeling this may also just describe the kind of relief you get from vacation, an escape from the effort required to internalize so many of the arbitrary facets of human civilization simultaneously.
 
 Of course, if we all lived in orbit, I expect we’d find other ways to separate ourselves. At any rate: time for a segue.
 
 One boundary that’s never been in question is the Alps. (“Alps” more or less means “mountains.”)
+
+<div id="div5" class="globewrapper"><div class="fallback"></div></div>
 
 Inconveniently located in prime central Europe, the Alps have formed the northern physical and conceptual border of Italy since before the Romans.
 
@@ -53,17 +72,21 @@ For instance, in the middle ages, when a non-Italian man was elected to the papa
 
 And of course there’s Hannibal. Nobody’s sure where he and his pachydermatic procession perambulated across the Alps. We only have the stories, and some of them conflict. But few doubt that he crossed — the fact of the mountains remains.
 
+<div id="div6" class="globewrapper"><div class="fallback"></div></div>
+
 Mountains are good at forming boundaries. Nobody knows this better than the Swiss.
 
 Switzerland is serious about their heightmaps. Two-thirds of the country is Alps. This is one of the reasons they’ve been neutral for so long: invading them thoroughly is a huge pain. Panzers, especially, aren’t so good on an incline.
 
-The Swiss capitalized on this, building a series of fortifications called the [National Redoubt](https://web.archive.org/web/20150310183537/https://en.wikipedia.org/wiki/National_Redoubt_(Switzerland)) to which their army could retreat if threatened, which says something about their national character. These days, they’re leasing bunkers as data storage, and debating shuttering the system, which says something else.
+The Swiss capitalized on this, building a series of fortifications called the [National Redoubt](https://en.wikipedia.org/wiki/National_Redoubt_(Switzerland)) to which their army could retreat if threatened, which says something about their national character. These days, they’re leasing bunkers as data storage, and debating shuttering the system, which says something else.
 
 At any rate: by now they’ve scanned their country at extremely high resolution. You can buy the entire dataset, the whole country, for about $125,000.
 
 I think that’s fascinating. The Swiss will sell you a comprehensive, intimate knowledge of their country’s topography for an eighth of a million dollars. If nothing else, this shows how confident they are in their borders.
 
-I did not buy the Swiss data. The mountains seen above are still based on the NASA heightmap. But at this level I’m using [color data](https://web.archive.org/web/20150310183537/http://en.wikipedia.org/wiki/Moderate-Resolution_Imaging_Spectroradiometer) from a different source, processed through an [open-source tool which removes the clouds from satellite imagery](https://web.archive.org/web/20150310183537/https://github.com/celoyd/wheather). So it’s still “free” data, but getting it required some work.
+I did not buy the Swiss data. The mountains seen above are still based on the NASA heightmap. But at this level I’m using [color data](http://en.wikipedia.org/wiki/Moderate-Resolution_Imaging_Spectroradiometer) from a different source, processed through an [open-source tool which removes the clouds from satellite imagery](https://github.com/celoyd/wheather). So it’s still “free” data, but getting it required some work.
+
+<div id="div7" class="globewrapper"><div class="fallback"></div></div>
 
 This part of Switzerland, centered around a prominent valley, is known as Valais. (“Valais” more or less means “valley.”) At this level we’re running into the limits of the publicly-available color data, but the NASA height data still holds up — the Valais is clearly visible.
 
@@ -78,6 +101,7 @@ A stately general named Defour led the campaign that changed their minds, claimi
 How Swiss! The most civil war ever. Even across a Schism, the Swiss states had a kind of internal cultural cohesion peculiar to the region. Having lived my entire life either in a network of remote valleys or online, I can attest to the feeling of surly camaraderie which exists when introverts of a similar stripe are forced together by circumstance. Geological and technological barriers become naturalized as cultural barriers, and eventually you’re all drinking together and comparing scars.
 
 Speaking of which:
+<div id="div8" class="globewrapper"><div class="fallback"></div></div>
 
 So, that was an ugly transition. This zoom level is where the free data breaks down. What *licensable* data exists is browsable with Google Earth, though not easily extractable, and is of course laden with restrictions.
 
@@ -95,11 +119,11 @@ Given that, I won’t say much else about the Matterhorn, except to point out th
 
 I suppose that’s the benefit of using physical features as borders: they’re indisputable. Maybe national borders are a map of where people got tired of arguing over where the borders are. I suppose without the physical boundaries, it’s harder to tell where one’s obligations start and end, which brings us back out to space:
 
- Picture
+[![Blue Marble image of Earth from space]({{ site.url }}/assets{{ page.url }}/22727_9.jpg)](http://www.lpi.usra.edu/resources/apollo/frame/?AS17-148-22727)
 
-[The 1972 photo of Earth known as “The Blue Marble”](https://web.archive.org/web/20150310183537/http://www.lpi.usra.edu/resources/apollo/frame/?AS17-148-22727) is now ubiquitous, a cliché, shorthand for “everything that matters,” but without going into specifics. But as summaries go, the photo is weirdly editorial: we see clouds, and sea, and a lot of Africa. No mountains are visible, hardly any forests, certainly no cities. Nothing of any scale that we can apprehend directly. It’s strikingly humanity-free.
+[The 1972 photo of Earth known as “The Blue Marble”](http://www.lpi.usra.edu/resources/apollo/frame/?AS17-148-22727) is now ubiquitous, a cliché, shorthand for “everything that matters,” but without going into specifics. But as summaries go, the photo is weirdly editorial: we see clouds, and sea, and a lot of Africa. No mountains are visible, hardly any forests, certainly no cities. Nothing of any scale that we can apprehend directly. It’s strikingly humanity-free.
 
-In this way, the photo makes a kind of political statement — a [“truth claim”](https://web.archive.org/web/20150310183537/https://en.wikipedia.org/wiki/Truth_claim_(photography)) — which is both vague and hyperbolic simultaneously. This is the context, it says. This is the whole thing. But of course that’s ridiculous. It is obfuscatory in its apparent completeness. It’s a map of the planet’s color and brightness, at relatively low resolution. It is a context — we get to decide for what.
+In this way, the photo makes a kind of political statement — a [“truth claim”](https://en.wikipedia.org/wiki/Truth_claim_(photography)) — which is both vague and hyperbolic simultaneously. This is the context, it says. This is the whole thing. But of course that’s ridiculous. It is obfuscatory in its apparent completeness. It’s a map of the planet’s color and brightness, at relatively low resolution. It is a context — we get to decide for what.
 
 ---
 
@@ -117,9 +141,9 @@ So that’s why I made this demo.
 
 ---
 
-Explore [an interactive version of this demo](https://web.archive.org/web/20150310183537/http://meetar.github.io/globe-terrain/) on github!
+Explore [an interactive version of this demo](http://meetar.github.io/globe-terrain/) on github!
 
-And [here’s a link to the repo](https://web.archive.org/web/20150310183537/https://github.com/meetar/globe-terrain).
+And [here’s a link to the repo](https://github.com/meetar/globe-terrain).
 
 More than anything, this is a proof of concept; a sketch of an idea. It conjures up a number of related ideas, like rendered tilesets of public-domain heightmap and satellite imagery, and perhaps an interface like the one suggested above for navigating, layering, and displaying them.
 
@@ -127,10 +151,8 @@ More than anything, this is a proof of concept; a sketch of an idea. It conjures
 
 Further, and with thanks:
 
-Jen Lowe on memory, and context, and empathy: [The Entropy of Memory](https://web.archive.org/web/20150310183537/http://vimeo.com/44291138)
-
-Charlie Loyd on facts, interpretation, and empathy: [Making Smart](https://web.archive.org/web/20150310183537/http://basecase.org/env/making-smart)
-
-Charlie Loyd on the Earth as a context: [Politicizing Sandy](https://web.archive.org/web/20150310183537/http://basecase.org/env/politicizing-Sandy)
+- Jen Lowe on memory, and context, and empathy: [The Entropy of Memory](http://vimeo.com/44291138)
+- Charlie Loyd on facts, interpretation, and empathy: [Making Smart](http://basecase.org/env/making-smart)
+- Charlie Loyd on the Earth as a context: [Politicizing Sandy](http://basecase.org/env/politicizing-Sandy)
 
 (This post was originally published at http://edgeca.se/going-into-detail/ .)

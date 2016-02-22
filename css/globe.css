@@ -1,0 +1,25 @@
+
+#globecontainer {
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	float: left;
+	border: 2px solid gold;
+}
+
+.globewrapper {
+	margin-bottom: 2em;
+}
+
+canvas {
+	position: absolute;
+	display: inline-block;
+}
+
+/*	
+/* --- iPad Portrait --- */
+@media screen and (max-width: 800px) {
+#globecontainerwrap {
+	width: 95%;
+}
+*/
