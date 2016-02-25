@@ -4,7 +4,7 @@ title:  "Going Into Detail"
 date:   2014-03-11 12:02:02
 categories: terrain
 published: false
-excerpt: Mapmakers have long attempted to use various geographical features to define Europe’s eastern border for their own purposes, citing rivers, mountains, and so on. These days, the Urals are most often given as the boundary; this is partly because they happen to be the unusually well-preserved result of two sub-continents running into each other, and this carries a lot of weight with people who base arguments on precedent.
+excerpt: This representation isn’t “to scale” in the Cartesian sense, though maybe it’s to scale <em>emotionally</em>. I’m adjusting levels until they’re within the range of human feeling. It’s a theme-park, <cite>Le Petit Prince</cite>, Mario Galaxy kind of feeling, a cartoon.
 image:
 ---
 <link rel="stylesheet" type="text/css" href="css/globe.css">
