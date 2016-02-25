@@ -33,7 +33,7 @@ Most attempts to get a feel for large-scale topography, including many relief ma
 
 [![ALTTEXT]({{ site.url }}/assets{{ page.url }}/5302791282_401017626c_z.jpg)](http://www.flickr.com/photos/watz/5302791282/)
 
-﻿Both involve an attempt to reduce the landscape to a scale directly appreciable to humans, but they don’t say anything about the mountain’s context. Normally, to do this you have to go bigger. Here’s the South Rim Visitor’s Center at the Grand Canyon:
+Both involve an attempt to reduce the landscape to a scale directly appreciable to humans, but they don’t say anything about the mountain’s context. Normally, to do this you have to go bigger. Here’s the South Rim Visitor’s Center at the Grand Canyon:
 
 [![ALTTEXT]({{ site.url }}/assets{{ page.url }}/7027659795_07db2d8be7_z.jpg)](http://www.flickr.com/photos/grand_canyon_nps/7027659795/)
 
@@ -59,7 +59,7 @@ Those are hand-cut plywood pieces. There are nearly a million of them. The origi
 
 [![ALTTEXT]({{ site.url }}/assets{{ page.url }}/82619A.jpg)]({{ site.url }}/assets{{ page.url }}/82619A.jpg)<span class="caption">Bank of Commerce directors viewing the Challenger map in the PNE BC building, 1954. Source: A. Jones, <a href="http://www3.vpl.ca/spe/histphotos/">Vancouver Public Library</a></span>
 
-﻿The map is an incredible feat, but it’s also an interesting set of decisions.
+The map is an incredible feat, but it’s also an interesting set of decisions.
 
 I want to go back to that 3D-printed Everest for a second. Though I believe it to be a true-scale representation, it’s also a simplification, by virtue of its construction. It’s rendered in a single color, stripped of environmental factors and all other depth cues. And like the Challenger map, it features layering artifacts, which serve as a kind of low-pass filter; it can’t show vertical details smaller than one layer tall, or horizontal details smaller than the radius of the extruded plastic in the former case, and the blade of George Challenger’s fretsaw in the latter. So rather than being purely mimetic, these models are also cartoons, in the [Raphael and da Vinci](http://en.wikipedia.org/wiki/Cartoon#Fine_art) sense: an outline, or compression, of a more complex idea.
 
