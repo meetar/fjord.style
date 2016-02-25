@@ -1,5 +1,3 @@
-startTime = new Date();  
-
 //
 // SCENE SETUP
 //
@@ -19,8 +17,10 @@ var mats, textureMats;
 var easeType, easeSpeed;
 
 var loopSteps = 1;
+var large = $(window).width() < 1200 ? false : true;
 
 var clock = new THREE.Clock();
+startTime = new Date();
 
 // divs to watch for and associated functions
 var divList = {
@@ -58,18 +58,9 @@ function setMatUniform(name, value) {
 
 function init() {
 
+// init WebGL renderer
 
 container = document.getElementById( 'globecontainer' );
-console.log('container.offsetWidth:', container.offsetWidth);
-// for (div in divList) {
-// 	console.log('div:', div);
-// 	$('#'+div).height(container.offsetWidth+"px");
-// 	console.log($('#'+div).height());
-// }
-
-
-// --- WebGl renderer
-
 try {
     renderer = new THREE.WebGLRenderer( { alpha: true, 'antialias':false } );
     renderer.setSize( container.offsetWidth, container.offsetWidth );
@@ -82,14 +73,12 @@ catch (e) {
 }
 
 	
-//
+
 // MASTER SCENE SETUP
-//
 	
 scene = new THREE.Scene();
-
     
-// --- Camera def
+// Camera def
 
 var fov = 15; // camera field-of-view in degrees
 var width = renderer.domElement.width;
@@ -102,7 +91,7 @@ camera.position.y = 0;
 camera.lookAt(scene.position);
 camera.updateMatrix();
 
-// --- Light def
+// Light def
 
 ambientLight = new THREE.AmbientLight( 0x000000 );
 scene.add( ambientLight );
@@ -126,30 +115,25 @@ scene.add(light);
 var ambient = 0xffffff, diffuse = 0xffffff, specular = 0x999999, shininess = 100.0, scale = 100;
 
 var shader = THREE.ShaderLib[ "normalmap" ];
+
 uniforms = THREE.UniformsUtils.clone( shader.uniforms );
 
 flatNormalTex = THREE.ImageUtils.loadTexture( '../img/flat.png' );
 uniforms[ "tNormal" ] = { type: 't', value: flatNormalTex };
-
 uniforms[ "diffuse" ].value.setHex( diffuse );
 uniforms[ "specular" ].value.setHex( specular );
 uniforms[ "ambient" ].value.setHex( ambient );
 uniforms[ "shininess" ].value = shininess;
-
 uniforms[ "enableDiffuse" ] = { type: 'i', value: 1 };
-
 uniforms[ "tDiffuseOpacity" ] = { type: 'f', value: 0 };
 uniforms[ "tDiffuse2Opacity" ] = { type: 'f', value: 0 };
-
 uniforms[ "uPointLightPos"] =   { type: "v3", value: pointLight.position },
 uniforms[ "uPointLightColor" ] = {type: "c", value: new THREE.Color( pointLight.color )};
 uniforms[ "uAmbientLightColor" ] = {type: "c", value: new THREE.Color( ambientLight.color )};
-
 uniforms[ "matrightBottom" ] = { type: 'v2', value: new THREE.Vector2( 180.0, -90.0 ) };
 uniforms[ "matleftTop" ] = { type: 'v2', value: new THREE.Vector2( -180.0, 90.0 ) };
 uniforms[ "sphereRadius" ] = { type: 'f', value: 100.0 };
 uniforms[ "mixAmount" ] = { type: 'f', value: 1.0 };
-
 // necessary? yes
 uniforms[ "diffuse" ].value.convertGammaToLinear();
 uniforms[ "specular" ].value.convertGammaToLinear();
@@ -158,7 +142,6 @@ uniforms[ "ambient" ].value.convertGammaToLinear();
 uniforms[ "enableDisplacement" ] = { type: 'i', value: 1 };
 uniforms[ "uDisplacementScale" ] = { type: 'f', value: 100 };
 uniforms[ "uDisplacementPostScale" ] = {type: 'f', value: 50 };
-
 uniforms[ "bumpScale" ] = { type: "f", value: 1.0 };
 uniforms[ "opacity" ] = { type: "f", value: 0.0 };
 uniforms[ "uNormalOffset" ] = { type: "v2", value: new THREE.Vector2( 1.0, 1.0 ) };
@@ -286,12 +269,15 @@ addMouseHandler(renderer.domElement);
 
 // calculate all textures
 for (x in RTTs) prepTextures(RTTs[x]);
+// start render loop
 startLoop();
+// animate in globe
 doDiv1();
+// start checking for container visibility
 startDivCheck();
 
 endTime = new Date();
-console.log( (endTime - startTime) / 1000);
+// console.log( (endTime - startTime) / 1000);
 
 } // end init()
 
@@ -551,9 +537,9 @@ function doDiv4() { // eurobordersmain
 }
 function doDiv5() { // alpsmain
 	if (currentView != 4) {
-		if (currentView != 5) {
+		// if (currentView != 5) {
 			alpsSettings.opacity = 0.0;
-		}
+		// }
 		lastView = currentView;
 		currentView = 4;
 		getCameraState();
@@ -700,52 +686,54 @@ function getCameraState() {
 
 // SHADER TWEENS
 
-globeSettings = { opacity : 0.0,
+globeSettings = { opacity: 0.0,
 					bumpScale: 0.0,
-					uDisplacementPostScale : 0.0,
-					u_erode : 0.008,
-					u_dilate : 0.008,
+					uDisplacementPostScale: 0.0,
+					u_erode: large ? 0.005 : 0.008,
+					u_dilate: 0.008,
 					scale: 0.0,
 					diffuse: 0.3,
-					steps: 10
+					steps: large ? 15 : 10
 				};		
-globeMain = 	{ opacity : 1.0,
+globeMain = 	{ opacity: 1.0,
 					bumpScale: 25.0,
 					uDisplacementPostScale : 0.0,
-					u_erode : 0.008,
-					u_dilate : 0.008,
+					u_erode: large ? 0.005 : 0.008,
+					u_dilate: 0.008,
 					scale: 1.0,
 					diffuse: 0.3,
-					steps: 50
+					steps: large ? 15 : 10
 				};
 globe2Main = 	{ opacity : 1.0,
 					bumpScale: 25.0,
-					uDisplacementPostScale : 40.0,
-					u_erode : 0.01,
+					uDisplacementPostScale : large ? 80 : 50.0,
+					u_erode : large ? 0.005 : 0.008,
 					u_dilate : 0.008,
 					scale: 1.0,
 					diffuse: 0.5,
-					steps: 50
-				};	
+					steps: large ? 15 : 10
+				};
 europeMain = 	{ opacity : 1.0,
-					bumpScale: 10,
-					uDisplacementPostScale : 30.0,
-					u_erode : 0.04,
-					u_dilate : 0.025,
+					bumpScale: large ? 7 : 10,
+					uDisplacementPostScale: large ? 28 : 30.0,
+					u_erode: 0.05,
+					u_dilate: 0.025,
 					diffuse: 0.2,
 					scale: 1.0,
+					steps: large? 20 : 10,
 				};
 eurobordersMain =	{ opacity : 1.0,
 						bumpScale: 10,
 						uDisplacementPostScale : 30.0,
-						u_erode : 0.03,
-						u_dilate : 0.025,
+						u_erode: 0.03,
+						u_dilate: 0.025,
 						diffuse: 0.2,
-						scale: 1.0
+						scale: 1.0,
+						steps: 10
 				};
 alpsSettings = 	{ opacity : 0.0,
 					opacity2: 0.0,
-					bumpScale : 10.0,
+					bumpScale : large ? 10 : 10,
 					u_erode : 0.05,
 					u_dilate: 0.02,
 					diffuse : 0.4,
@@ -756,7 +744,7 @@ alpsSettings = 	{ opacity : 0.0,
 				};
 alpsMain = 		{ opacity : 1.0,
 					opacity2: 1.0,
-					bumpScale : 10.0,
+					bumpScale : large ? 10 : 10,
 					u_erode : 0.05,
 					u_dilate: 0.02,
 					diffuse : 0.4,
@@ -877,7 +865,6 @@ var globe_tween = new TWEEN.Tween(globeSettings)
 .to(globeMain, 2000)
 .easing(easeType)
 	.onStart( function () {
-		log('globe_tween');
 		globeMesh.visible = true;
 		globeMat.uniforms.opacity.value = 1;
 		alpsMat.uniforms.opacity.value = 0;
@@ -905,7 +892,6 @@ var globe2_tween = new TWEEN.Tween(globeSettings)
 .to(globe2Main, 2000)
 .easing(easeType)
 .onStart( function () {
-	log('globe2_tween');
 	globeMesh.visible = true;
 	alpsMat.uniforms.opacity.value = 0;
 	regionMat.uniforms.opacity.value = 0;
@@ -986,7 +972,6 @@ var euroborders_tween = new TWEEN.Tween(globeSettings)
 		globeMat.uniforms.uDisplacementPostScale.value = this.uDisplacementPostScale;
 		if (lastView > 3) {
 			mats[lastView].uniforms.opacity.value = alpsSettings.opacity = 1 - this.opacity;
-			globeMesh.scale.set(this.scale, this.scale, this.scale);
 		}
 })
 	.onComplete( function () {
@@ -1011,26 +996,26 @@ alps_tween = new TWEEN.Tween(alpsSettings)
 		}
 	})
 .onUpdate( function () {
-		alpsMat.uniforms.tDiffuseOpacity.value = this.diffuse;
-		alpsMat.uniforms.uPointLightColor.value = new THREE.Color().setRGB(this.uPointLightColor,this.uPointLightColor,this.uPointLightColor);
-		alpsMat.uniforms.shininess.value = this.shininess;
-		alpsMat.uniforms.specular.value = new THREE.Color().setRGB(this.specular,this.specular,this.specular);
-		
-		alpsMat.uniforms.bumpScale.value = this.bumpScale;
-		alpsMat.uniforms.uDisplacementPostScale.value = this.uDisplacementPostScale;
-		alpsMat.uniforms.opacity.value = this.opacity;
+	alpsMat.uniforms.tDiffuseOpacity.value = this.diffuse;
+	alpsMat.uniforms.uPointLightColor.value = new THREE.Color().setRGB(this.uPointLightColor,this.uPointLightColor,this.uPointLightColor);
+	alpsMat.uniforms.shininess.value = this.shininess;
+	alpsMat.uniforms.specular.value = new THREE.Color().setRGB(this.specular,this.specular,this.specular);
 
-		alpsTexture.textureMat2.uniforms.u_erode.value = this.u_erode;
-		alpsTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
-		alpsTexture.textureMat.uniforms.u_erode.value = this.u_erode;
-		alpsTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
+	alpsMat.uniforms.bumpScale.value = this.bumpScale;
+	alpsMat.uniforms.uDisplacementPostScale.value = this.uDisplacementPostScale;
+	alpsMat.uniforms.opacity.value = this.opacity;
+
+	alpsTexture.textureMat2.uniforms.u_erode.value = this.u_erode;
+	alpsTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
+	alpsTexture.textureMat.uniforms.u_erode.value = this.u_erode;
+	alpsTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
 
 	// transition from globe
-		if (lastView < currentView) {
-			globeMat.uniforms.uDisplacementPostScale.value = globeSettings.uDisplacementPostScale * (1 - this.opacity * .75);
-		} else if (lastView == 5) {
-			prepTextures(RTTs["alps"]);
-		}
+	if (lastView < currentView) {
+		globeMat.uniforms.uDisplacementPostScale.value = globeSettings.uDisplacementPostScale * (1 - this.opacity * .75);
+	} else if (lastView == 5) {
+		prepTextures(RTTs["alps"]);
+	}
 
 })
 	.onComplete( function() { 
@@ -1057,30 +1042,30 @@ hannibal_tween = new TWEEN.Tween(alpsSettings)
 
 	})
 .onUpdate( function () {
-		alpsMat.uniforms.bumpScale.value = this.bumpScale;
-		alpsMat.uniforms.tDiffuseOpacity.value = this.diffuse;
+	alpsMat.uniforms.bumpScale.value = this.bumpScale;
+	alpsMat.uniforms.tDiffuseOpacity.value = this.diffuse;
 
-		alpsMat.uniforms.bumpScale.value = this.bumpScale;
-		alpsMat.uniforms.uDisplacementPostScale.value = this.uDisplacementPostScale;
-		alpsMat.uniforms.opacity.value = this.opacity;
-		
-		alpsTexture.textureMat2.uniforms.u_erode.value = this.u_erode;
-		alpsTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
-		alpsTexture.textureMat.uniforms.u_erode.value = this.u_erode;
-		alpsTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
-		
-		alpsMat.uniforms.uPointLightColor.value = new THREE.Color().setRGB(this.uPointLightColor,this.uPointLightColor,this.uPointLightColor);
-		alpsMat.uniforms.shininess.value = this.shininess;
-		alpsMat.uniforms.specular.value = new THREE.Color().setRGB(this.specular,this.specular,this.specular);
+	alpsMat.uniforms.bumpScale.value = this.bumpScale;
+	alpsMat.uniforms.uDisplacementPostScale.value = this.uDisplacementPostScale;
+	alpsMat.uniforms.opacity.value = this.opacity;
+	
+	alpsTexture.textureMat2.uniforms.u_erode.value = this.u_erode;
+	alpsTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
+	alpsTexture.textureMat.uniforms.u_erode.value = this.u_erode;
+	alpsTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
+	
+	alpsMat.uniforms.uPointLightColor.value = new THREE.Color().setRGB(this.uPointLightColor,this.uPointLightColor,this.uPointLightColor);
+	alpsMat.uniforms.shininess.value = this.shininess;
+	alpsMat.uniforms.specular.value = new THREE.Color().setRGB(this.specular,this.specular,this.specular);
 
-		// only recalculate if coming from alps
-		if (lastView == 4) {
-			prepTextures(RTTs["alps"]);
-		}
-			else if (lastView == 6) {
-			regionSettings.opacity = 1 - this.opacity2;
-			regionMat.uniforms.opacity.value = 1 - this.opacity2;
-		}
+	// only recalculate if coming from alps
+	if (lastView == 4) {
+		prepTextures(RTTs["alps"]);
+	}
+		else if (lastView == 6) {
+		regionSettings.opacity = 1 - this.opacity2;
+		regionMat.uniforms.opacity.value = 1 - this.opacity2;
+	}
 })
 	.onComplete( function() { 
 		globeMesh.scale.set(.95,.95,.95);
@@ -1174,57 +1159,60 @@ function doMaterialTweens() {
 	}
 }
 
-var docViewTop, docViewBottom;
-
-// finds the visible element whose top is closest to the top of the window
-function isVisible(elem) {
-	// console.log('elem:', elem)
-	if ($("#"+elem).offset() == undefined) {return false;}
-	else {
-		var elemTop = $("#"+elem).offset().top;
-		var elemBottom = elemTop + $("#"+elem).height();
-		// console.log(elem, (elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-		return ((elemTop <= docViewBottom) && (elemTop >= docViewTop) || (elemBottom <= docViewBottom) && (elemBottom >= docViewTop));
-		// return (elemTop <= docViewBottom) && (elemTop >= docViewTop);
-	}
-}
-
-// check to see which div is visible every quarter second
-function startDivCheck() {
-	setInterval( function() {
-		docViewTop = $(window).scrollTop();
-		docViewBottom = docViewTop + $(window).height();
-		docMiddle = (docViewTop+docViewBottom)/2;
-	
-		// determine which div is visible
-		for (var div in divList) {
-			if (isVisible(div) && currentDiv != div) {
-				currentDiv = div;
-
-				// move canvas to visible div
-				$("#globecontainer").fadeOut(250);
-				$("#globecontainer").appendTo('#'+div);
-				$("#globecontainer").fadeIn(250);
-				// trigger the associated tween
-				divList[div]();
-			}
-		}
-	 
-	}, 250);
-}
-
 
 //
 // PAGE SETUP
 //
 
 window.addEventListener("load", function() {
-	// first time page loads
+	// when page loads, size all container divs to make them square
 	container = document.getElementById("globecontainer");
 	for (div in divList) {
 		$('#'+div).height(container.offsetWidth+"px");
 	}
 });
+
+var docViewTop, docViewBottom;
+
+// finds the div whose middle is closest to center screen
+function position(div) {
+	// console.log('div:', div)
+	if ($("#"+div).offset() == undefined) {return false;}
+	else {
+		var divTop = $("#"+div).offset().top;
+		var divBottom = divTop + $("#"+div).height();
+		return (divTop + divBottom)/2;
+	}
+}
+
+// check to see which div is closest to center screen
+function startDivCheck() {
+	setInterval( function() {
+		docViewTop = $(window).scrollTop();
+		docViewBottom = docViewTop + $(window).height();
+		docMiddle = (docViewTop+docViewBottom)/2;
+		var closest = ["", 1000000]
+		// determine which div is closest
+		for (var div in divList) {
+			var distance = Math.abs(position(div) - docMiddle);
+			if (distance < closest[1]) {
+				closest[0] = div;
+				closest[1] = distance;
+			}
+		}
+		// if it's a new closest div
+		if (closest[0] != currentDiv) {
+			currentDiv = closest[0];
+			// move canvas to div
+			$("#globecontainer").fadeOut(100, function() {
+				setTimeout($("#globecontainer").appendTo('#'+closest[0]), 250);
+			}).fadeIn(350);
+			// trigger the associated tween
+			divList[closest[0]]();
+		}
+	// check every n milliseconds
+	}, 500);
+}
 
 function globeResize() {
 	container = document.getElementById("globecontainer");
@@ -1233,7 +1221,6 @@ function globeResize() {
 	}
 	// make renderer square
 	containerHeight = container.offsetWidth;
-
 	// fit the renderer to the container
 	renderer.setSize( container.offsetWidth, containerHeight );
 	// update the camera
@@ -1272,9 +1259,7 @@ window.onload = function() {
 	});
 
 	// switch textures images based on window width
-	// large = $(window).width() < 900 ? false : true;
 	large = false
-	log("large: "+large);
 	// load dem textures first thing
 	globeImage = THREE.ImageUtils.loadTexture(
 		large ? '../img/Srtm.2k_norm.jpg' : '../img/Srtm.1k_norm.jpg',
@@ -1336,9 +1321,8 @@ function adjustNormScene(width, height) {
 }
 
 
-
 //
-// interaction
+// INTERACTION
 //
 
 var mouseDown = false,
@@ -1375,10 +1359,7 @@ function onMouseUp(evt) {
 }
 
 
-//
 // cross-browser scrollwheel handling
-//
-
 function addMouseHandler(div) {
 	div.addEventListener('mousemove', function (e) {
 			onMouseMove(e);
