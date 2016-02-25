@@ -14,9 +14,6 @@ var globeTexture, alpsTexture, regionTexture, mountainTexture;
 var myDbgMat, myDbgMat2, myDbgMat3;
 var RTTs = {};
 
-// normalizing switch -- off for now
-var normalize = false;
-
 var normScene, normCamera, normTexture, normTextureMat, normTextureGeo;
 var mats, textureMats;
 var easeType, easeSpeed;
@@ -25,6 +22,16 @@ var loopSteps = 1;
 
 var clock = new THREE.Clock();
 
+// divs to watch for and associated functions
+var divList = {
+	"div2" : doDiv2,
+    "div3" : doDiv3,
+    "div4" : doDiv4,
+    "div5" : doDiv5,
+    "div6" : doDiv6,
+    "div7" : doDiv7,
+    "div8" : doDiv8
+};
 
 //
 // HELPER FUNCTIONS
@@ -51,20 +58,27 @@ function setMatUniform(name, value) {
 
 function init() {
 
+
 container = document.getElementById( 'globecontainer' );
+console.log('container.offsetWidth:', container.offsetWidth);
+// for (div in divList) {
+// 	console.log('div:', div);
+// 	$('#'+div).height(container.offsetWidth+"px");
+// 	console.log($('#'+div).height());
+// }
+
 
 // --- WebGl renderer
 
 try {
     renderer = new THREE.WebGLRenderer( { alpha: true, 'antialias':false } );
-    log('renderer:', renderer);
     renderer.setSize( container.offsetWidth, container.offsetWidth );
 	renderer.setClearColor(0xf9f9f9);
 	renderer.autoClear = false;
     container.appendChild( renderer.domElement );
 }
 catch (e) {
-    alert(e);
+    console.log("Couldn't make THREE.js renderer:", e);
 }
 
 	
@@ -287,6 +301,18 @@ console.log( (endTime - startTime) / 1000);
 // TEXTURE FUNCTIONS
 //
 
+var vs, fs_erode, fs_dilate, fs_maximum, fs_rtt, vs_main, fs_main;
+
+SHADER_LOADER.load( function (data) {
+    vs = data.vs_rt.vertex;
+    fs_erode = data.fs_erode.fragment;
+    fs_dilate = data.fs_dilate.fragment;
+    fs_rtt = data.fs_rtt.fragment;
+
+    vs_main = data.vs_main.vertex;
+	fs_main = data.fs_main.fragment;
+});
+
 function prepTextures(myRTT) {
 	// the results differ wildly depending on whether erode or dilate runs first -
 	// could interleave them but with current setup that would involve
@@ -389,7 +415,6 @@ return  window.requestAnimationFrame       ||
 //
 
 
-var docViewTop, docViewBottom;
 // define objects for tween.js to act on
 var camPos = { x : 0, y: 0, z: -1200.0 };
 var camTarget = { x : 0, y: 0, z: 0 };
@@ -673,10 +698,8 @@ function getCameraState() {
 }
 
 
-// define tweens
-var easeType = TWEEN.Easing.Quartic.InOut;
+// SHADER TWEENS
 
-// 
 globeSettings = { opacity : 0.0,
 					bumpScale: 0.0,
 					uDisplacementPostScale : 0.0,
@@ -796,7 +819,12 @@ globe3Main = 	{ opacity : 0.0,
 					diffuse : 0.2,
 					uDisplacementPostScale : 1.0,
 				};
-							
+
+
+// GEOMETRY TWEENS
+
+var easeType = TWEEN.Easing.Quartic.InOut;
+
 tweencamPos = new TWEEN.Tween(camPos)
 .to(camPosTarget, 2000)
 .easing(easeType)
@@ -843,7 +871,8 @@ tweenLight = new TWEEN.Tween(lightPos)
 
 
 
-// tween shader properties
+// VIEW TWEENS
+
 var globe_tween = new TWEEN.Tween(globeSettings)
 .to(globeMain, 2000)
 .easing(easeType)
@@ -1144,17 +1173,8 @@ function doMaterialTweens() {
 		}
 	}
 }
-  
-// divs to watch for and associated functions
-var divList = {
-	"div2" : doDiv2,
-    "div3" : doDiv3,
-    "div4" : doDiv4,
-    "div5" : doDiv5,
-    "div6" : doDiv6,
-    "div7" : doDiv7,
-    "div8" : doDiv8
-};
+
+var docViewTop, docViewBottom;
 
 // finds the visible element whose top is closest to the top of the window
 function isVisible(elem) {
@@ -1176,12 +1196,16 @@ function startDivCheck() {
 		docViewBottom = docViewTop + $(window).height();
 		docMiddle = (docViewTop+docViewBottom)/2;
 	
-		// determine which div is visible and trigger the associated tween
+		// determine which div is visible
 		for (var div in divList) {
 			if (isVisible(div) && currentDiv != div) {
 				currentDiv = div;
-				// console.log($('#'+div));
+
+				// move canvas to visible div
+				$("#globecontainer").fadeOut(250);
 				$("#globecontainer").appendTo('#'+div);
+				$("#globecontainer").fadeIn(250);
+				// trigger the associated tween
 				divList[div]();
 			}
 		}
@@ -1198,12 +1222,11 @@ window.addEventListener("load", function() {
 	// first time page loads
 	container = document.getElementById("globecontainer");
 	for (div in divList) {
-		// $('#'+div).height(container.offsetWidth);
+		$('#'+div).height(container.offsetWidth+"px");
 	}
 });
 
 function globeResize() {
-	log('resizing');
 	container = document.getElementById("globecontainer");
 	for (div in divList) {
 		$('#'+div).height(container.offsetWidth);
@@ -1290,35 +1313,8 @@ window.onload = function() {
 function addRTT(name, texture) {
 	RTTs[name] = texture; // register texture so it can be referenced by name
 
+	// once all three RTTs are loaded
 	if (Object.keys(RTTs).length == 3) {
-
-		if (normalize) {
-			// setup normalizing scene
-			normScene = new THREE.Scene();
-					
-			// create buffer - initialize with size 1 - will be adjusted by adjustNormScene()
-			normTexture = new THREE.WebGLRenderTarget( 1, 1 );		
-
-			// custom RTT material
-			normUniforms = {
-				colorMap: { type: "t", value: texture.image },
-				u_divisor: { type: "f", value: 1.0 },
-				u_textureSize: { type: "v2", value: new THREE.Vector2( 1, 1 ) },
-			};
-			normTextureMat = new THREE.ShaderMaterial({
-				uniforms: normUniforms,
-				vertexShader: vs,
-				fragmentShader: fs_maximum
-			});		
-	
-			// Setup render-to-texture scene
-			normCamera = new THREE.OrthographicCamera( 1 / - 2, 1 / 2, 1 / 2, 1 / - 2, 1, 10000 );
-
-			normTextureGeo = new THREE.PlaneGeometry( 1, 1 );
-			normTextureMesh = new THREE.Mesh( normTextureGeo, myTextureMat );
-			normScene.add( normTextureMesh );
-		}
-
 		init();
 	}
 }
@@ -1401,17 +1397,3 @@ function rotateScene(deltaX, deltaY) {
 	if (globe.rotation.y > Math.PI) { globe.rotation.y -= Math.PI*2 }
 	if (globe.rotation.y < -Math.PI) { globe.rotation.y += Math.PI*2 }
 }
-
-var vs, fs_erode, fs_dilate, fs_maximum, fs_rtt, vs_main, fs_main;
-
-SHADER_LOADER.load( function (data) {
-    vs = data.vs_rt.vertex;
-    fs_erode = data.fs_erode.fragment;
-    fs_dilate = data.fs_dilate.fragment;
-	if (normalize) fs_maximum = data.fs_maximum.fragment;
-    fs_rtt = data.fs_rtt.fragment;
-				
-    vs_main = data.vs_main.vertex;
-	fs_main = data.fs_main.fragment;
-});
-	

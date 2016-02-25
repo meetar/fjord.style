@@ -4,15 +4,18 @@
 	width: 100%;
 	padding: 0;
 	float: left;
-	border: 2px solid gold;
+	/*border: 2px solid gold;*/
 }
 
 .globewrapper {
+	display: inline-block;
+	width: 100%;
 	margin-bottom: 2em;
+	/*border: 2px solid black;*/
 }
 
 canvas {
-	position: absolute;
+	/*position: absolute;*/
 	display: inline-block;
 }
 
