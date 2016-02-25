@@ -69,7 +69,7 @@ try {
     container.appendChild( renderer.domElement );
 }
 catch (e) {
-    console.log("Couldn't make THREE.js renderer:", e);
+    log("Couldn't make THREE.js renderer:", e);
 }
 
 	
@@ -277,7 +277,7 @@ doDiv1();
 startDivCheck();
 
 endTime = new Date();
-// console.log( (endTime - startTime) / 1000);
+// log( (endTime - startTime) / 1000);
 
 } // end init()
 
@@ -714,7 +714,7 @@ globe2Main = 	{ opacity : 1.0,
 					steps: large ? 15 : 10
 				};
 europeMain = 	{ opacity : 1.0,
-					bumpScale: large ? 7 : 10,
+					bumpScale: large ? 8 : 10,
 					uDisplacementPostScale: large ? 28 : 30.0,
 					u_erode: 0.05,
 					u_dilate: 0.025,
@@ -929,7 +929,6 @@ var europe_tween = new TWEEN.Tween(globeSettings)
 .to(europeMain, 2000)
 .easing(easeType)
 	.onStart( function () {
-		log('europe_tween');
 		alpsMat.uniforms.opacity.value = 0;
 		regionMat.uniforms.opacity.value = 0;
 		mountainMat.uniforms.opacity.value = 0;
@@ -1146,7 +1145,6 @@ function doSceneTweens() {
 
 // trigger visibility tweens based on view
 function doMaterialTweens() {
-	// log("currentView: "+currentView+" lastView: "+lastView)
 	for (x in viewsList) {
 		if (currentView == x) {
 			// current view position
@@ -1176,7 +1174,6 @@ var docViewTop, docViewBottom;
 
 // finds the div whose middle is closest to center screen
 function position(div) {
-	// console.log('div:', div)
 	if ($("#"+div).offset() == undefined) {return false;}
 	else {
 		var divTop = $("#"+div).offset().top;
@@ -1240,7 +1237,7 @@ window.onload = function() {
 	// if WebGL support not detected, bail
 	if (!Detector.webgl || (msie > 0) || (trident > 0)) {
 	// if (true) { // testing
-		console.log("Scene failed to start.")
+		log("Scene failed to start.")
 		return;
 	}
 

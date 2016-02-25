@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<div id="globecontainer" style="margin-top:-2em;margin-bottom:2em;"><a href="https://github.com/meetar/FSglobe-terrain"><img id="globegif" src="/assets/FSglobe-terrain.gif"></a><iframe id="FSglobe" src="" width="100%" height="550px"></iframe></div>
+<div id="globecontainer" style="margin-top:-2em;margin-bottom:2em;"><a target="_blank" href="https://github.com/meetar/FSglobe-terrain"><img id="globegif" src="/assets/FSglobe-terrain.gif"></a><iframe id="FSglobe" src="" width="100%" height="550px"></iframe></div>
 
 
 I was raised to believe that the earth was not my home, but it's growing on me.
