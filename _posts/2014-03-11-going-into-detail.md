@@ -27,11 +27,9 @@ image: going.jpg
 
 For a place named “Earth,” the oceans appear wildly over-represented. I haven’t been able to make more dirt, so I’ve been working on the representation angle a bit lately:
 
-(Click and drag to rotate each view.)
+<div id="apology" style="margin-bottom:2em">(Apologies: your browser doesn't appear to have WebGL enabled, so please accept these consolation gifs.)</div>
 
-<div id="apology">(Apologies: your browser doesn't appear to support WebGL or JavaScript, so please accept these consolation gifs.)</div>
-
-<div id="div2" class="globewrapper"><div class="fallback"><img src="img/globe1.gif"></div>
+<div id="div2" class="globewrapper"><div class="fallback"><img alt="globe with mountains scaling up" src="img/globe1.gif"></div>
 	<div id="globecontainer"></div>
 </div>
 
@@ -48,11 +46,11 @@ The western end of Eurasia is called Europe. (“Europe” might mean, more or l
 
 We think of it as a distinct place because as places go, it’s comparatively hard to enter and leave — to the north, west, and south, it’s bordered by water; to the east, by a long history of disagreements, primarily over where the border lies.
 
-<div id="div3" class="globewrapper"><div class="fallback"><img src="img/globe2.gif"></div></div>
+<div id="div3" class="globewrapper"><div class="fallback"><img alt="zoom in to europe" src="img/globe2.gif"></div></div>
 
 Mapmakers have long attempted to use various geographical features to define Europe’s eastern border for their own purposes, citing rivers, mountains, and so on. These days, the Urals are most often given as the boundary; this is partly because they happen to be the unusually well-preserved result of two sub-continents running into each other, and this carries a lot of weight with people who base arguments on precedent. But it’s also because it allows Moscow to be European without defining [all of Russia as part of Europe](http://opinionator.blogs.nytimes.com/2012/01/09/where-is-europe/), the prospect of which irritates cartographers.
 
-<div id="div4" class="globewrapper"><div class="fallback"><img src="img/globe3.gif"></div></div>
+<div id="div4" class="globewrapper"><div class="fallback"><img alt="pan to the Ural mountains" src="img/globe3.gif"></div></div>
 
 The truth is that to the east, there is no easy physical border, only a cultural gradient, built in great, shuddering spasms by the Persians, Greeks, and Romans, the Schisms, and the Wars, marked in literal form by walls and metaphorical form by curtains. It’s messy, but that’s hard to draw on a map.
 
@@ -64,7 +62,7 @@ Of course, if we all lived in orbit, I expect we’d find other ways to separate
 
 One boundary that’s never been in question is the Alps. (“Alps” more or less means “mountains.”)
 
-<div id="div5" class="globewrapper"><div class="fallback"><img src="img/globe4.gif"></div></div>
+<div id="div5" class="globewrapper"><div class="fallback"><img alt="zoom in to the Alps" src="img/globe4.gif"></div></div>
 
 Inconveniently located in prime central Europe, the Alps have formed the northern physical and conceptual border of Italy since before the Romans.
 
@@ -72,7 +70,7 @@ For instance, in the middle ages, when a non-Italian man was elected to the papa
 
 And of course there’s Hannibal. Nobody’s sure where he and his pachydermatic procession perambulated across the Alps. We only have the stories, and some of them conflict. But few doubt that he crossed — the fact of the mountains remains.
 
-<div id="div6" class="globewrapper"><div class="fallback"><img src="img/globe5.gif"></div></div>
+<div id="div6" class="globewrapper"><div class="fallback"><img alt="zoom in to the Swiss alps" src="img/globe5.gif"></div></div>
 
 Mountains are good at forming boundaries. Nobody knows this better than the Swiss.
 
@@ -86,7 +84,7 @@ I think that’s fascinating. The Swiss will sell you a comprehensive, intimate 
 
 I did not buy the Swiss data. The mountains seen above are still based on the NASA heightmap. But at this level I’m using [color data](http://en.wikipedia.org/wiki/Moderate-Resolution_Imaging_Spectroradiometer) from a different source, processed through an [open-source tool which removes the clouds from satellite imagery](https://github.com/celoyd/wheather). So it’s still “free” data, but getting it required some work.
 
-<div id="div7" class="globewrapper"><div class="fallback"><img src="img/globe6.gif"></div></div>
+<div id="div7" class="globewrapper"><div class="fallback"><img alt="zoom in to Switzerland" src="img/globe6.gif"></div></div>
 
 This part of Switzerland, centered around a prominent valley, is known as Valais. (“Valais” more or less means “valley.”) At this level we’re running into the limits of the publicly-available color data, but the NASA height data still holds up — the Valais is clearly visible.
 
@@ -101,7 +99,7 @@ A stately general named Defour led the campaign that changed their minds, claimi
 How Swiss! The most civil war ever. Even across a Schism, the Swiss states had a kind of internal cultural cohesion peculiar to the region. Having lived my entire life either in a network of remote valleys or online, I can attest to the feeling of surly camaraderie which exists when introverts of a similar stripe are forced together by circumstance. Geological and technological barriers become naturalized as cultural barriers, and eventually you’re all drinking together and comparing scars.
 
 Speaking of which:
-<div id="div8" class="globewrapper"><div class="fallback"><img src="img/globe7.gif"></div></div>
+<div id="div8" class="globewrapper"><div class="fallback"><img alt="zoom in to the Matterhorn" src="img/globe7.gif"></div></div>
 
 So, that was an ugly transition. This zoom level is where the free data breaks down. What *licensable* data exists is browsable with Google Earth, though not easily extractable, and is of course laden with restrictions.
 
@@ -155,4 +153,4 @@ Further, and with thanks:
 - Charlie Loyd on facts, interpretation, and empathy: [Making Smart](http://basecase.org/env/making-smart)
 - Charlie Loyd on the Earth as a context: [Politicizing Sandy](http://basecase.org/env/politicizing-Sandy)
 
-(This post was originally published at http://edgeca.se/going-into-detail/.)
+<span class="note">This post was originally published at http://edgeca.se/going-into-detail/.</span>
