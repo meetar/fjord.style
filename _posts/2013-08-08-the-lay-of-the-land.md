@@ -4,8 +4,13 @@ title: "The Lay of the Land"
 date: 2013-08-08 12:02:02
 categories: terrain
 published: true
+excerpt: I have a lot of questions. I blame the fact that I grew up in a fjord.
 image: 1446403033.jpg
 ---
+
+[![A hand squishing a mountain range's head]({{ site.url }}/assets{{ page.url }}/squish.jpg)](http://www.flickr.com/photos/trs/3476133166/
+)<span class="credit">(c) <a href="http://www.flickr.com/photos/trs/3476133166/">tsibley</a>, used with kind permission</span>
+
 
 I have a lot of questions. I blame the fact that I grew up in a fjord.
 
@@ -17,7 +22,7 @@ Eventually I escaped my fjord, but a few lessons of my youth have been repeatedl
 
 Some of my favorite things combine topography and cartoons. One in particular holds a special place in my heart: the raised relief map.​
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/1446403033.jpg)](http://www.flickr.com/photos/mbsurf/4918986082/)
+[![A closeup of a raised-relief map]({{ site.url }}/assets{{ page.url }}/1446403033.jpg)](http://www.flickr.com/photos/mbsurf/4918986082/)
 
 I love these maps because they feel like a very simple way of approaching some very complex questions which I don’t think anyone has answered to my satisfaction:
 
@@ -29,35 +34,35 @@ Lately I’ve been focusing on a small part of this question set, something I’
 
 Most attempts to get a feel for large-scale topography, including many relief maps, involve scale models. Here are two scale models of Everest:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/3519779_orig.jpg)]({{ site.url }}/assets{{ page.url }}/3519779_orig.png)
+[![A large white model of Mt. Everest]({{ site.url }}/assets{{ page.url }}/3519779_orig.jpg)]({{ site.url }}/assets{{ page.url }}/3519779_orig.png)
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/5302791282_401017626c_z.jpg)](http://www.flickr.com/photos/watz/5302791282/)
+[![A small green 3D-printed model of Mt. Everest]({{ site.url }}/assets{{ page.url }}/5302791282_401017626c_z.jpg)](http://www.flickr.com/photos/watz/5302791282/)
 
 Both involve an attempt to reduce the landscape to a scale directly appreciable to humans, but they don’t say anything about the mountain’s context. Normally, to do this you have to go bigger. Here’s the South Rim Visitor’s Center at the Grand Canyon:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/7027659795_07db2d8be7_z.jpg)](http://www.flickr.com/photos/grand_canyon_nps/7027659795/)
+[![A wall-sized terrain map under construction]({{ site.url }}/assets{{ page.url }}/7027659795_07db2d8be7_z.jpg)](http://www.flickr.com/photos/grand_canyon_nps/7027659795/)
 
 This one takes up the side of a building in Anchorage – it’s worth checking out the large version, where you can really see the texture:​
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/5003527378_9bb76b11cd_b.jpg)](http://www.flickr.com/photos/jaygalvin/5003527378/)
+[![A very large map of the Pacific Northwest coast on the side of a building]({{ site.url }}/assets{{ page.url }}/5003527378_9bb76b11cd_b.jpg)](http://www.flickr.com/photos/jaygalvin/5003527378/)
 
 The outdoor, all-concrete [Great Polish Map of Scotland](http://en.wikipedia.org/wiki/Great_Polish_Map_of_Scotland) claims the title of largest relief map, and is pretty great:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/8419794377_bf3c05a21f_z.jpg)](http://www.flickr.com/photos/hagdorned/8419794377/)
+[![A huge map of Scotland made of snow-covered concrete chunks in a field]({{ site.url }}/assets{{ page.url }}/8419794377_bf3c05a21f_z.jpg)](http://www.flickr.com/photos/hagdorned/8419794377/)
 
 Though [this .9-km Chinese replica](http://www.theage.com.au/news/web/chinese-xfile-not-so-mysterious-after-all/2006/07/23/1153593217781.html) of [disputed territory between India and China](http://en.wikipedia.org/wiki/Aksai_Chin) would be larger by far, if it was in the running.
 
 But my favorite of all is the [Challenger Relief Map](http://www.challengermap.org/home.htm), depicting the entirety of British Columbia, built on 196 plywood panels, now sadly split up. Here are eight of them:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/4195835625_19544fa299_b.jpg)](http://www.flickr.com/photos/retrocactus/4195835625/)
+[![A chunk of British Columbia in a room-sized box]({{ site.url }}/assets{{ page.url }}/4195835625_19544fa299_b.jpg)](http://www.flickr.com/photos/retrocactus/4195835625/)
 
 A closeup:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/4195842743_3e7761873d_z.jpg)](http://www.flickr.com/photos/retrocactus/4195842743/)
+[![Lots of tiny pieces of wood stacked into a mountain range]({{ site.url }}/assets{{ page.url }}/4195842743_3e7761873d_z.jpg)](http://www.flickr.com/photos/retrocactus/4195842743/)
 
 Those are hand-cut plywood pieces. There are nearly a million of them. The original map was for many years on display in Vancouver. I can’t tell whether my dim memory of seeing it is genuine, or just empathy for a familiar landscape. Here’s an old photo of the whole thing, with bankers for scale:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/82619A.jpg)]({{ site.url }}/assets{{ page.url }}/82619A.jpg)<span class="caption">Bank of Commerce directors viewing the Challenger map in the PNE BC building, 1954. Source: A. Jones, <a href="http://www3.vpl.ca/spe/histphotos/">Vancouver Public Library</a></span>
+[![Black-and-white photo of bankers on a walkway over British Columbia]({{ site.url }}/assets{{ page.url }}/82619A.jpg)]({{ site.url }}/assets{{ page.url }}/82619A.jpg)<span class="caption">Bank of Commerce directors viewing the Challenger map in the PNE BC building, 1954. Source: A. Jones, <a href="http://www3.vpl.ca/spe/histphotos/">Vancouver Public Library</a></span>
 
 The map is an incredible feat, but it’s also an interesting set of decisions.
 
@@ -77,7 +82,7 @@ And a funny thing happens when you approach a mountain – it grows until you re
 
 Certain mountains are much higher than their surroundings, and thus appear much, much larger than others; these encroach on that vertiginous sweet spot. Denali, especially when approached from the north, appears to be alone in a great plain. Here it is from 130 miles away:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/6228053561_1a93405ff3_b.jpg)](http://www.flickr.com/photos/glaciergirl/6228053561/)
+[![Denali in the distance over taiga in fall]({{ site.url }}/assets{{ page.url }}/6228053561_1a93405ff3_b.jpg)](http://www.flickr.com/photos/glaciergirl/6228053561/)
 
 But take away the depth cues – atmospheric perspective, texture, and snow coverage – and one mountain looks much the same as another. Can we understand mountains without these details? Or could these details be incorporated or transformed into some other kind of understanding? A topographical depiction ought to relate to our subjective experience of topography, particularly our ability to grasp differences in scale. Which kinds of differences matter?
 
@@ -87,7 +92,7 @@ All this to say: We have our limits. Can we fit a mountain range into them?
 
 To a satellite’s radar eyes, mountains look like this:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/SRTM_US_scaled_512.jpg)]({{ site.url }}/assets{{ page.url }}/SRTM_US_scaled_512.jpg)
+[![US heightmap]({{ site.url }}/assets{{ page.url }}/SRTM_US_scaled_512.jpg)]({{ site.url }}/assets{{ page.url }}/SRTM_US_scaled_512.jpg)
 
 This is a “heightmap” of the contiguous 48 United States. In this image, higher elevations, as scanned by [a satellite](http://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission), are represented as brighter pixels.
 
@@ -95,15 +100,15 @@ With a 3D model, we can reverse this scanning process, representing brighter pix
 
 Here’s Denali again, as seen by Google Earth at true scale, zoomed in far enough that its height is apparent, the curvature of the Earth only just visible:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/denali_space_1x.png)]({{ site.url }}/assets{{ page.url }}/denali_space_1x.png)
+[![Denali region from a great distance]({{ site.url }}/assets{{ page.url }}/denali_space_1x.png)]({{ site.url }}/assets{{ page.url }}/denali_space_1x.png)
 
 If we want a clearer view, we can exaggerate the elevation, while leaving distance alone. Here’s a factor of 3, which is the most Google Earth allows:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/denali_space_3x.png)]({{ site.url }}/assets{{ page.url }}/denali_space_3x.png)
+[![Denali region scaled up]({{ site.url }}/assets{{ page.url }}/denali_space_3x.png)]({{ site.url }}/assets{{ page.url }}/denali_space_3x.png)
 
 Denali is properly shown as weirdly massive, as though it had been dropped from space. But when applied to our heightmap, at a continental scale, even a 3x exaggeration is invisible:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/flat_US.png)]({{ site.url }}/assets{{ page.url }}/flat_US.png)
+[![US heightmap laid out flat]({{ site.url }}/assets{{ page.url }}/flat_US.png)]({{ site.url }}/assets{{ page.url }}/flat_US.png)
 
 In this image, the US is at a graspable scale. But we don’t live on that scale, and neither does topography. How can we translate the language of mountains?
 
@@ -111,13 +116,13 @@ In this image, the US is at a graspable scale. But we don’t live on that scale
 
 Here’s an image showing approximately a 10x elevation exaggeration, with lighting applied to brighten the scene a bit:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_10x.png)]({{ site.url }}/assets{{ page.url }}/US_10x.png)
+[![US heightmap, very slightly bumpy]({{ site.url }}/assets{{ page.url }}/US_10x.png)]({{ site.url }}/assets{{ page.url }}/US_10x.png)
 
 The mountains are now more recognizable, and subjectively appropriately tall, but the lowlands are still unnaturally flat-looking; here, they look flatter than they feel.
 
 ​Here’s a scaling factor of about 150:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_150x.png)]({{ site.url }}/assets{{ page.url }}/US_150x.png)
+[![US heightmap, spiky]({{ site.url }}/assets{{ page.url }}/US_150x.png)]({{ site.url }}/assets{{ page.url }}/US_150x.png)
 
 Now the lowlands have some texture – look at the gradual slope of the plains! – but the mountains are lost in high-frequency spikiness. They’re too noisy to read.
 
@@ -127,11 +132,11 @@ So far, we’ve been seeing linear mappings of pixel values to height values, me
 
 Here’s a “knee” curve, which exaggerates lowlands and squishes higher elevations flat:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_knee.png)]({{ site.url }}/assets{{ page.url }}/US_knee.png)
+[![US heightmap with knee curve]({{ site.url }}/assets{{ page.url }}/US_knee.png)]({{ site.url }}/assets{{ page.url }}/US_knee.png)
 
 And a "bézier" S-curve, compressing the middle values and exaggerating both the lowlands and peaks:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_s-curve.png)]({{ site.url }}/assets{{ page.url }}/US_s-curve.png)
+[![US heightmap with S-curve]({{ site.url }}/assets{{ page.url }}/US_s-curve.png)]({{ site.url }}/assets{{ page.url }}/US_s-curve.png)
 
 Some of the values here work pretty well, but only for some regions. When the Great Plains look good, the Rockies are distorted, and California never makes any sense.
 
@@ -161,7 +166,7 @@ In our exaggerated elevation map, the scaled-up peaks no longer look like peaks.
 
 The easy way to smooth things out would be to blur the heightmap, or to lower the resolution of either the image or the number of points in the base 3D geometry, which amounts to the same thing, though the artifacts manifest differently:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_blur.png)]({{ site.url }}/assets{{ page.url }}/US_blur.png)
+[![blurry US heightmap]({{ site.url }}/assets{{ page.url }}/US_blur.png)]({{ site.url }}/assets{{ page.url }}/US_blur.png)
 
 ([Try the blur demo](http://meetar.github.io/heightmap-demos/blur.html).)
 
@@ -173,25 +178,25 @@ There are two ways of desteepening a slope: we can lower the peaks or raise the 
 
 So let’s take a look at an “erode.” It might be more accurate to describe this as a “relax” – similar to the way that wet sand can pile at a steeper slope than dry sand, an “erode” changes the terrain’s limit of pile-ability. Here are our peaks being eroded, collapsing into each other as sharp differences are smoothed:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_erode1.png)]({{ site.url }}/assets{{ page.url }}/US_erode1.png)
+[![eroded US heightmap]({{ site.url }}/assets{{ page.url }}/US_erode1.png)]({{ site.url }}/assets{{ page.url }}/US_erode1.png)
 
 ([Try the erosion demo](http://meetar.github.io/heightmap-demos/erode.html). Fun fact: if you turn the erosion threshold down to 0, you get a “distance map” in which brightness represents each pixel’s distance to the nearest edge!)
 
 And here are the lowlands around peaks being “dilated”, the mountains swelling like barnacles as the valleys between them are filled:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_dilate1.png)]({{ site.url }}/assets{{ page.url }}/US_dilate1.png)
+[![US heightmap dilated]({{ site.url }}/assets{{ page.url }}/US_dilate1.png)]({{ site.url }}/assets{{ page.url }}/US_dilate1.png)
 
 ([Try the dilation demo](http://meetar.github.io/heightmap-demos/dilate.html).)
 
 And here’s a combination of the two:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_combo1.png)]({{ site.url }}/assets{{ page.url }}/US_combo1.png)
+[![US heightmap eroded and dilated]({{ site.url }}/assets{{ page.url }}/US_combo1.png)]({{ site.url }}/assets{{ page.url }}/US_combo1.png)
 
 I’m a fan of this last combination – the peakiness of the tallest peaks is well-preserved, while lesser peaks are sacrificed to reinforce the prominence of their larger neighbors. Simultaneously, smaller details are magnified in areas with less variance in elevation – the character of the lowlands is enhanced.
 
 The beauty of these processes is that they only apply to steeply sloping areas, leaving flatter areas untouched. But by their nature they tend to remove the subtleties from the areas they affect. If we’d like to restore some of those subtleties, we can fade the original heightmap back in on top of the edited version:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/US_overlay1.png)]({{ site.url }}/assets{{ page.url }}/US_overlay1.png)
+[![US heightmap eroded and dilated with more texture]({{ site.url }}/assets{{ page.url }}/US_overlay1.png)]({{ site.url }}/assets{{ page.url }}/US_overlay1.png)
 
 ([Try the combination demo with overlay](http://meetar.github.io/heightmap-demos/combo.html) – this one is a bit of a beast, and may run very slowly.)
 
@@ -199,7 +204,7 @@ The beauty of these processes is that they only apply to steeply sloping areas, 
 
 These images represent the results of specific combinations of mathematical and geometrical processes, but don’t let the math fool you: the choices I’ve made here are largely aesthetic. In particular, they have been “tuned” for this continental view; the same settings wouldn’t work as well from further out or closer in, though a different combination of settings could. In fact, for my last trick, I’ll tie the values controlling erosion to the distance from the camera to the model, so that the size on the screen of the largest mountain stays relatively steady as you approach it:
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/adaptive_elevation3.gif)]({{ site.url }}/assets{{ page.url }}/adaptive_elevation3.gif)
+[![US heightmap zooming in and out, with mountains simplifying with increased distance]({{ site.url }}/assets{{ page.url }}/adaptive_elevation3.gif)]({{ site.url }}/assets{{ page.url }}/adaptive_elevation3.gif)
 
 ([Try the zoom demo](http://meetar.github.io/heightmap-demos/adaptive.html).)
 
@@ -222,6 +227,7 @@ This obsession with nominal accuracy, and its conflation with realism, completel
 
 (All the demos above are collected at [https://github.com/meetar/heightmap-demos](https://github.com/meetar/heightmap-demos).)
 
-[![ALTTEXT]({{ site.url }}/assets{{ page.url }}/6882101346_136e2f7ed0_z.jpg)](http://www.flickr.com/photos/grand_canyon_nps/6882101346/)
+[![Man writing "you are here" on map of the Grand Canyon]({{ site.url }}/assets{{ page.url }}/6882101346_136e2f7ed0_z.jpg)](http://www.flickr.com/photos/grand_canyon_nps/6882101346/)
 
- (This post was originally published at http://edgeca.se/the-lay-of-the-land/ .)
+<span class="note">All photos are (c) P Richardson or their respective owners as linked.</span>
+<span class="note">This post was originally published at http://edgeca.se/the-lay-of-the-land/.</span>
