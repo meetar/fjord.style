@@ -10,7 +10,7 @@ image: displacement3.png
 
 *Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with [three.js](http://threejs.org/), a popular web 3D library.*
 
-<hr>
+---
 
 I recently [wrote at some length about mountains]({{ site.url }}/the-lay-of-the-land/). My thoughts were punctuated with [some 3D demos](https://github.com/meetar/heightmap-demos), viewable in certain modern web browsers. I’d like to thank you for reading this far, so here’s a 3D animated gif of a llama:
 
