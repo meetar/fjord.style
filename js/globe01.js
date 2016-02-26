@@ -916,7 +916,7 @@ var globe2_tween = new TWEEN.Tween(globeSettings)
 	globeTexture.textureMat.uniforms.u_erode.value = this.u_erode;
 	globeTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
 	// if coming from below
-	if (lastView => 2) {
+	if (lastView >= 2) {
 		prepTextures(RTTs["globe"]);
 	}
 	globeMesh.scale.set(this.scale, this.scale, this.scale);

@@ -23,7 +23,7 @@ image: going.jpg
 <script type='text/javascript' src='js/RTT_setup.js'></script>
 <script type="text/javascript" src="js/ShaderLoader.min.js"></script>
 <script type="text/javascript" src="js/THREEx.WindowResize.js"></script>
-<script type='text/javascript' src='js/globe01.js'></script>
+<script type='text/javascript' src='js/globe01.min.js'></script>
 
 For a place named “Earth,” the oceans appear wildly over-represented. I haven’t been able to make more dirt, so I’ve been working on the representation angle a bit lately:
 
