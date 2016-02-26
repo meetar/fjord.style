@@ -1162,14 +1162,6 @@ function doMaterialTweens() {
 // PAGE SETUP
 //
 
-window.addEventListener("load", function() {
-	// when page loads, size all container divs to make them square
-	container = document.getElementById("globecontainer");
-	for (div in divList) {
-		$('#'+div).height(container.offsetWidth+"px");
-	}
-});
-
 var docViewTop, docViewBottom;
 
 // finds the div whose middle is closest to center screen
@@ -1235,15 +1227,20 @@ window.onload = function() {
 	// if (msie > 0)
 
 	// if WebGL support not detected, bail
-	if (!Detector.webgl || (msie > 0) || (trident > 0)) {
-	// if (true) { // testing
+	// if (!Detector.webgl || (msie > 0) || (trident > 0)) {
+	if (true) { // testing
 		log("Scene failed to start.")
 		return;
 	}
 
+	// size all container divs to make them square
+	container = document.getElementById("globecontainer");
+	for (div in divList) {
+		$('#'+div).height(container.offsetWidth+"px");
+	}
+
 	// hide fallback images and apology
-	document.getElementById("apology").style.visibility = "hidden";
-	document.getElementById("apology").style.display = "none";
+	document.getElementById("apology").innerHTML = "(Click and drag to rotate each view.)";
 	var fallbacks = document.getElementsByClassName('fallback');
 	for(i=0; i<fallbacks.length; i++) {
 		fallbacks[i].style.display = 'none';
