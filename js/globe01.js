@@ -877,7 +877,7 @@ var globe_tween = new TWEEN.Tween(globeSettings)
 		globeTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
 		globeTexture.textureMat.uniforms.u_erode.value = this.u_erode;
 		globeTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
-		
+		loopSteps = this.steps;
 		
 		prepTextures(RTTs["globe"]);
 	})
@@ -885,7 +885,10 @@ var globe_tween = new TWEEN.Tween(globeSettings)
 	globeMat.uniforms.opacity.value = this.opacity;
 	globeMat.uniforms.uDisplacementPostScale.value = this.uDisplacementPostScale;
 	globeMesh.scale.set(this.scale, this.scale, this.scale);
-
+	globeTexture.textureMat2.uniforms.u_erode.value = this.u_erode;
+	globeTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
+	globeTexture.textureMat.uniforms.u_erode.value = this.u_erode;
+	globeTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
 });
 
 var globe2_tween = new TWEEN.Tween(globeSettings)
@@ -904,7 +907,6 @@ var globe2_tween = new TWEEN.Tween(globeSettings)
 	prepTextures(RTTs["globe"]);
 	})
 .onUpdate( function () {
-
 	globeMat.uniforms.tDiffuseOpacity.value = this.diffuse;
 	globeMat.uniforms.opacity.value = this.opacity;
 	globeMat.uniforms.bumpScale.value = this.bumpScale;
@@ -913,8 +915,8 @@ var globe2_tween = new TWEEN.Tween(globeSettings)
 	globeTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
 	globeTexture.textureMat.uniforms.u_erode.value = this.u_erode;
 	globeTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
-	// if coming from europe
-	if (lastView == 2 || lastView == 3) {
+	// if coming from below
+	if (lastView => 2) {
 		prepTextures(RTTs["globe"]);
 	}
 	globeMesh.scale.set(this.scale, this.scale, this.scale);
@@ -946,7 +948,7 @@ var europe_tween = new TWEEN.Tween(globeSettings)
 		globeTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
 		prepTextures(RTTs["globe"]);
 	}
-	});
+});
 
 // dodiv4
 var euroborders_tween = new TWEEN.Tween(globeSettings)
@@ -969,6 +971,13 @@ var euroborders_tween = new TWEEN.Tween(globeSettings)
 .onUpdate( function () {
 	globeMat.uniforms.bumpScale.value = this.bumpScale;
 		globeMat.uniforms.uDisplacementPostScale.value = this.uDisplacementPostScale;
+		if (globeSettings.u_erode != europeMain.u_erode) {
+			globeTexture.textureMat2.uniforms.u_erode.value = this.u_erode;
+			globeTexture.textureMat2.uniforms.u_dilate.value = this.u_dilate;
+			globeTexture.textureMat.uniforms.u_erode.value = this.u_erode;
+			globeTexture.textureMat.uniforms.u_dilate.value = this.u_dilate;
+			prepTextures(RTTs["globe"]);
+		}
 		if (lastView > 3) {
 			mats[lastView].uniforms.opacity.value = alpsSettings.opacity = 1 - this.opacity;
 		}
@@ -1227,8 +1236,7 @@ window.onload = function() {
 	// if (msie > 0)
 
 	// if WebGL support not detected, bail
-	// if (!Detector.webgl || (msie > 0) || (trident > 0)) {
-	if (true) { // testing
+	if (!Detector.webgl || (msie > 0) || (trident > 0)) {
 		log("Scene failed to start.")
 		return;
 	}
@@ -1253,7 +1261,7 @@ window.onload = function() {
 	});
 
 	// switch textures images based on window width
-	large = false
+	// large = false // testing
 	// load dem textures first thing
 	globeImage = THREE.ImageUtils.loadTexture(
 		large ? '../img/Srtm.2k_norm.jpg' : '../img/Srtm.1k_norm.jpg',
