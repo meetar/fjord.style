@@ -77,4 +77,10 @@ if (!Detector.webgl || (msie > 0) || (trident > 0)) {
 		fallbacks[i].style.display = 'none';
 		fallbacks[i].style.visibility = 'hidden';
 	}
+
+	// size all container divs to make them square
+	container = document.getElementById("globecontainer");
+	for (div in divList) {
+		$('#'+div).height(container.offsetWidth+"px");
+	}
 }

@@ -1231,12 +1231,6 @@ function globeResize() {
 window.onload = function() {
 	if (failure) return;
 
-	// size all container divs to make them square
-	container = document.getElementById("globecontainer");
-	for (div in divList) {
-		$('#'+div).height(container.offsetWidth+"px");
-	}
-
 	// enable div resizing
 	window.addEventListener("resize", function() {
 		globeResize();	
