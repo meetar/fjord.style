@@ -3,7 +3,7 @@ layout: post
 title:  "Journey to the Center of Web&nbsp;3D"
 date:   2013-09-06 12:02:02
 categories: terrain
-published: false
+published: true
 excerpt: Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with <a href="http://threejs.org/">three.js</a>, a popular web 3D library.
 image: displacement3.png
 ---
@@ -104,4 +104,4 @@ One might argue that terrain manipulation is a weirdly specific way to learn the
 
 (All the demos in this post are collected at [https://github.com/meetar/threejs-shader-demos](https://github.com/meetar/threejs-shader-demos).)
 
-(This post was originally published at http://edgeca.se/journey-to-the-center-of-web3d/ .)
+<span class="note">This post was originally published at http://edgeca.se/journey-to-the-center-of-web3d/.</span>
