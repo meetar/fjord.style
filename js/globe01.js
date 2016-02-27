@@ -1229,30 +1229,12 @@ function globeResize() {
 
 
 window.onload = function() {
-	// check for IE
-	var ua = window.navigator.userAgent;
-	var msie = ua.indexOf("MSIE ");
-	var trident = ua.indexOf("Trident");
-	// if (msie > 0)
-
-	// if WebGL support not detected, bail
-	if (!Detector.webgl || (msie > 0) || (trident > 0)) {
-		log("Scene failed to start.")
-		return;
-	}
+	if (failure) return;
 
 	// size all container divs to make them square
 	container = document.getElementById("globecontainer");
 	for (div in divList) {
 		$('#'+div).height(container.offsetWidth+"px");
-	}
-
-	// hide fallback images and apology
-	document.getElementById("apology").innerHTML = "(Click and drag to rotate each view.)";
-	var fallbacks = document.getElementsByClassName('fallback');
-	for(i=0; i<fallbacks.length; i++) {
-		fallbacks[i].style.display = 'none';
-		fallbacks[i].style.visibility = 'hidden';
 	}
 
 	// enable div resizing

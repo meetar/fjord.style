@@ -8,22 +8,6 @@ excerpt: This representation isn’t “to scale” in the Cartesian sense, thou
 image: going.jpg
 ---
 <link rel="stylesheet" type="text/css" href="css/globe.css">
-<script type='text/javascript' src="js/Detector.js"></script>
-<script data-src="shaders/vs_rt.js" data-name="vs_rt" type="x-shader/x-vertex"></script>
-<script data-src="shaders/fs_erode.js" data-name="fs_erode" type="x-shader/x-fragment"></script>
-<script data-src="shaders/fs_dilate.js" data-name="fs_dilate" type="x-shader/x-fragment"></script>
-<script data-src="shaders/fs_maximum.js" data-name="fs_maximum" type="x-shader/x-fragment"></script>
-<script data-src="shaders/fs_rtt.js" data-name="fs_rtt" type="x-shader/x-fragment"></script>
-<script data-src="shaders/vs_main.js" data-name="vs_main" type="x-shader/x-vertex"></script>
-<script data-src="shaders/fs_main.js" data-name="fs_main" type="x-shader/x-fragment"></script>
-<script type='text/javascript' src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/three.min.js"></script>
-<script type='text/javascript' src="js/TrackballControls2.js"></script>
-<script type='text/javascript' src='js/tween.min.js'></script>
-<script type='text/javascript' src='js/RTT_setup.js'></script>
-<script type="text/javascript" src="js/ShaderLoader.min.js"></script>
-<script type="text/javascript" src="js/THREEx.WindowResize.js"></script>
-<script type='text/javascript' src='js/globe01.min.js'></script>
 
 For a place named “Earth,” the oceans appear wildly over-represented. I haven’t been able to make more dirt, so I’ve been working on the representation angle a bit lately:
 
@@ -154,3 +138,20 @@ Further, and with thanks:
 - Charlie Loyd on the Earth as a context: [Politicizing Sandy](http://basecase.org/env/politicizing-Sandy)
 
 <span class="note">This post was originally published at http://edgeca.se/going-into-detail/.</span>
+
+<script type='text/javascript' src="js/Detector.js"></script>
+<script data-src="shaders/vs_rt.js" data-name="vs_rt" type="x-shader/x-vertex"></script>
+<script data-src="shaders/fs_erode.js" data-name="fs_erode" type="x-shader/x-fragment"></script>
+<script data-src="shaders/fs_dilate.js" data-name="fs_dilate" type="x-shader/x-fragment"></script>
+<script data-src="shaders/fs_maximum.js" data-name="fs_maximum" type="x-shader/x-fragment"></script>
+<script data-src="shaders/fs_rtt.js" data-name="fs_rtt" type="x-shader/x-fragment"></script>
+<script data-src="shaders/vs_main.js" data-name="vs_main" type="x-shader/x-vertex"></script>
+<script data-src="shaders/fs_main.js" data-name="fs_main" type="x-shader/x-fragment"></script>
+<script type='text/javascript' src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/three.min.js"></script>
+<script type='text/javascript' src="js/TrackballControls2.js"></script>
+<script type='text/javascript' src='js/tween.min.js'></script>
+<script type='text/javascript' src='js/RTT_setup.js'></script>
+<script type="text/javascript" src="js/ShaderLoader.min.js"></script>
+<script type="text/javascript" src="js/THREEx.WindowResize.js"></script>
+<script type='text/javascript' src='js/globe01.min.js'></script>

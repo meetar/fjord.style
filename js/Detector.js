@@ -2,6 +2,7 @@
  * @author alteredq / http://alteredqualia.com/
  * @author mr.doob / http://mrdoob.com/
  */
+var failure = false;
 
 var Detector = {
 
@@ -57,3 +58,23 @@ var Detector = {
 	}
 
 };
+
+// check for IE
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
+var trident = ua.indexOf("Trident");
+// if (msie > 0)
+
+// if WebGL support not detected, bail
+if (!Detector.webgl || (msie > 0) || (trident > 0)) {
+	log("Scene failed to start.")
+	failure = true;
+} else {
+	// hide fallback images and apology
+	document.getElementById("apology").innerHTML = "(Click and drag to rotate each view.)";
+	var fallbacks = document.getElementsByClassName('fallback');
+	for(i=0; i<fallbacks.length; i++) {
+		fallbacks[i].style.display = 'none';
+		fallbacks[i].style.visibility = 'hidden';
+	}
+}
