@@ -78,9 +78,20 @@ if (!Detector.webgl || (msie > 0) || (trident > 0)) {
 		fallbacks[i].style.visibility = 'hidden';
 	}
 
+	// divs to watch for and associated functions
+	var divList = {
+		"div2" : 0,
+	    "div3" : 0,
+	    "div4" : 0,
+	    "div5" : 0,
+	    "div6" : 0,
+	    "div7" : 0,
+	    "div8" : 0
+	};
+
 	// size all container divs to make them square
 	container = document.getElementById("globecontainer");
 	for (div in divList) {
-		$('#'+div).height(container.offsetWidth+"px");
+		document.getElementById(div).setAttribute("height",container.offsetWidth+"px");
 	}
 }
