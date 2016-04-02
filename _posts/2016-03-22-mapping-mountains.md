@@ -9,6 +9,7 @@ tag: [tangram, data, demo, terrain, elevation]
 published: true
 ---
 
+
 <script>
 function elementIntersectsViewport (el) {
   var top = el.offsetTop;
@@ -26,20 +27,23 @@ function elementIntersectsViewport (el) {
 }
 
 function hide(el) {
-    el.style.height = "0px";
-    if (el.src != "") el.removeAttribute("src");
+    iframe = el.getElementsByTagName("iframe")[0];
+    if (typeof iframe != "undefined") el.removeChild(iframe);
 }
 function show(el) {
-    el.style.height = "100%";
-    if (el.hasAttribute("src") == false) {
-        el.src = el.getAttribute("source");
+    iframe = el.getElementsByTagName("iframe")[0];
+    if (typeof iframe == "undefined") {
+        iframe = document.createElement("iframe");
+        el.appendChild(iframe);
+        iframe.style.height = "100%";
+        iframe.src = el.getAttribute("source");
     }
 }
 
 // check visibility every half-second, hide off-screen demos to go easy on the GPU
 
 setInterval( function() {
-    var elements = document.getElementsByTagName("iframe");
+    var elements = document.getElementsByClassName("demo-wrapper");
     for (var i=0; i < elements.length; i++) {
         el = elements[i];
         if (elementIntersectsViewport(el) || (i == 0 && window.pageYOffset < 500)) {
@@ -58,22 +62,25 @@ setInterval( function() {
 </script>
 
 <style>
-    .envmap {
-        vertical-align: top;
-        width: 25%;
-        max-height: 150px;
-        max-width: 150px;
-        float: left;
-    }
-    .envframe {
-        height: 150px;
-        width: 75%;
-    }
-    .envwrapper {
-        height: 150px;
-        width: 100%;
-    }
+.envmap {
+    vertical-align: top;
+    width: 25%;
+    max-height: 150px;
+    max-width: 150px;
+    float: left;
+}
+.envframe {
+    height: 150px;
+    width: 75%;
+}
+.envwrapper {
+    height: 150px;
+    width: 100%;
+}
 
+iframe.envframe {
+    width: 75%;
+}
     .static-content img:not([width]):not([height]).envmap {
         width: 25%;
         margin: 0;
@@ -110,7 +117,7 @@ _This post was originally published on the Mapzen blog at [http://mapzen.com/blo
 
 I've been spending a lot of time over the mountains of Northern California lately. To view mountains from above is to journey through _time itself_: over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of _elevation data_:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/elevation-tiles.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&url=styles/elevation-tiles.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( These maps are interactive! <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/elevation-tiles.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 If you see something above that looks like a lightning storm in a Gak factory, you're in the right place. This is a "heightmap" of the area around [Mount Diablo](https://en.wikipedia.org/wiki/Mount_Diablo), about 30 miles to the east of San Francisco. The stripes correlate to constant elevations, but they're not intended to be viewed in this way – the unusual coloring is the result of the way the data is "packed" into an RGBA image: each channel encodes a different order of magnitude, combining to form a 4-digit value in base-256.
@@ -119,7 +126,7 @@ The data originates from many sources, including those compiled by the [USGS](ht
 
 When "unpacked," processed, and displayed with WebGL, this data can be turned into what you were maybe expecting to see:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/green.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&url=styles/green.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/green.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 This is a shaded terrain map, using tiled open-source elevation data, drawn in real time by your very own browser, and looking _sweet_.
@@ -132,8 +139,7 @@ Why, you ask, and how? I'm glad you asked. For the Why, come with me back throug
 
 Depicting terrain in a cartographic context historically required the trigonometric precision of the surveyor's craft with an artist's eye for summary and nuance, which is to say: it was difficult, time-consuming, and expensive. It was easier to just draw some bumps on the map, so your army knew which areas to avoid as it marched around conquering stuff.
 
-<img alt="1561 Girolami Ruscelli map of West Africa" width="100%" src="assets/mapping-mountains/libia.jpg">
-<span class="caption">1561 Girolami Ruscelli map of West Africa, <a href="https://commons.wikimedia.org/wiki/File:1561_map_of_West_Africa_by_Girolamo_Ruscelli.JPG">via Wikimedia</a></span>
+<img alt="1561 Girolami Ruscelli map of West Africa" width="100%" src="assets/mapping-mountains/libia.jpg"><span class="caption">1561 Girolami Ruscelli map of West Africa, <a href="https://commons.wikimedia.org/wiki/File:1561_map_of_West_Africa_by_Girolamo_Ruscelli.JPG">via Wikimedia</a></span>
 
 Eventually it became useful to depict the landscape as a navigable surface rather than merely a series of discrete features, though slight differences in elevation weren't seen as important; mostly people wanted to know which hills were best for putting guns on:
 
@@ -141,9 +147,9 @@ Eventually it became useful to depict the landscape as a navigable surface rathe
 
 By contrast, true relief mapping treats elevation as a continuously variable scalar field, and depicts the terrain as though lit and viewed from above. As such, it requires comprehensive information about the area of interest.
 
-Before satellites, acquiring this kind of information required paying meticulous attention to detail with precision equipment at high altitudes, so naturally it was pioneered by the Swiss. The first known relief map was of the Canton of Zurich, completed by [a lone, clearly-mad cartographer](https://de.wikipedia.org/wiki/Hans_Conrad_Gyger) over 38 years. Here's a detail:
+Before satellites, acquiring this kind of information required paying meticulous attention to detail with precision equipment at high altitudes, so naturally it was pioneered by the Swiss. The first known relief map was of the Canton of Zürich, completed by [a lone, clearly-mad cartographer](https://de.wikipedia.org/wiki/Hans_Conrad_Gyger) over 38 years. Here's a detail:
 
-<img alt="Hans Congrad Gyger 1667 Map of Canton of Zurich" width="100%" src="assets/mapping-mountains/gyger.jpg"><span class="caption">Hans Congrad Gyger 1667 Map of Canton of Zurich</span>
+<img alt="Hans Congrad Gyger 1667 Map of Canton of Zürich" width="100%" src="assets/mapping-mountains/gyger.jpg"><span class="caption">Hans Congrad Gyger 1667 Map of Canton of Zürich</span>
 
 The map was so good it was declared a military secret. ([Here's a link to the whole thing](https://commons.wikimedia.org/wiki/File:Gygerkarte.jpg), but don't tell anybody.) By the late 1800's Switzerland had calmed down a bit and these relief techniques were publicized, resulting in a wave of very modern-looking terrain maps. Here's representative work from 1896:
 
@@ -167,17 +173,17 @@ Returning to the present, assume for sake of argument that you have this elevati
 
 Even in its raw, Gak-like form, elevation data is immediately useful for creating terrain maps. Using soon-to-be-released [Tangram](http://mapzen.com/tangram) functionality, we can apply the elevation data to our map tiles as a texture, and then use a custom shader to generate a "hypsometric" map, which applies a color gradient to the unpacked elevation range. Here's one with a simple grayscale:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/grayscale.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/grayscale.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/grayscale.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 The classic hypsometric tinting scheme has green in the lower elevations, white on higher elevations, and earth tones in between. It's generally frowned upon because it starts to look meaningful, as though we were using color to represent some other kind of data such as landcover. Here's a typical example:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/hypsometric.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/hypsometric.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/hypsometric.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 With a more complex gradient, you can make a gratuitously animated contour map:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/contours.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/contours.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/contours.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 But for proper hillshading, we need to light our terrain. To do that, we need more information.
@@ -194,7 +200,7 @@ Through the magic of WebGL we have access to every pixel on any 3D face, so we c
 
 We can compute the normal of each pixel of a heightmap by comparing that pixel with its neighbors. The result is a normal map, which gives us the "slope" of the height data at each pixel. This can be done live in a shader with texture lookups, but it's simpler to calculate these maps offline and serve them separately, and Mapzen has a normal map tile server doing just that. Here's what those tiles look like:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/normals-tiles.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/normals-tiles.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/normals-tiles.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 Here, the three RGB channels are mapped to the axes of 3D space, with a lower-resolution heightmap in the alpha just for fun. Once this normal map is applied, our previously flat elevation data pops with 3D texture and responds to light like any other 3D object, yet it still plays nice underneath other map data.
@@ -203,22 +209,22 @@ Here, the three RGB channels are mapped to the axes of 3D space, with a lower-re
 
 Now that we have normals, we can add a light to the scene. However, with a single light, surfaces which don't face the light are lumped together in shadow. You can get a sense of relative elevation, but it's not always obvious which features are more prominent overall, and the primary effect is an ambiguous sense of texture. Here's a scene with a single directional light at an extreme angle to illustrate the point:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/single-light.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/single-light.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/single-light.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 While generally undesirable, we can exploit this phenomenon by pointing our light straight down at the terrain, brightening flat areas. This immediately produces the classic "slopeshade" often used as a layer in topographic maps:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/slope.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/slope.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/slope.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 But if your goal is a hillshade, two light sources can cover different sets of angles, allowing for a kind of luminous stereoscopic triangulation. Using only two directional lights, we can immediately recreate classic hillshading looks, with greater depth and more subtle shading:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/two-lights.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/two-lights.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/two-lights.yaml#12/37.8773/-121.9290" target="_blank" target="_blank">Open full screen ➹</a> )</span>
 
 But why stop there? The classic theatrical and studio photographic lighting setup is made of three lights – key, fill, and rim – and allow the subject to be separated from and grounded in its context. In our case there isn't a background _per se_, but we can use similar principles to suggest sky light with a warm key and a cool fill, and highlight smaller, steeper features with a third, low-angle kicker:
 
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/three-lights.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/three-lights.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/three-lights.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 As we know from strings of holiday lights, the more light sources which contribute to a scene, the softer the resulting light, and the sharper an angle needs to be to stand out. And in general, multiple colors of light, illuminating the same feature from multiple angles, give us the best chance to determine the shapes of solid objects.
@@ -248,7 +254,7 @@ The effect is of a strongly colored sky casting light on the scene, which can pr
 And at the risk of being struck dead for hubris by the ghost of Eduard Imhof, here's a hastily-daubed homage to the Swiss Style:
 
 <img alt="environment map in the style of eduard imhof" style="display: block; margin: auto" width="50%" src="https://tangrams.github.io/terrain-demos/img/imhof5.jpg">
-<div class="demo-wrapper"><iframe source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/imhof.yaml#12/37.8773/-121.9290"></iframe></div>
+<div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/imhof.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/imhof.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
 
 ### Throwing Shade
