@@ -63,7 +63,7 @@ setInterval( function() {
     }
 }, 250);
 </script>
-_This post was originally published on the Mapzen blog at [http://mapzen.com/blog/escape-from-mercator](http://mapzen.com/blog/escape-from-mercator)._
+_This post was originally published on the Mapzen blog at http://mapzen.com/blog/escape-from-mercator._
 
 Like most web mapping services, our [Tangram](http://github.com/tangrams/tangram) library draws maps in the "[Web Mercator](https://en.wikipedia.org/wiki/Web_Mercator)" projection. This projection has its benefits, but it's certainly quirky. Mercator projections are well-known for their distortion at high latitudes – this is because they place the north and south poles at positive and negative infinity, which means a Mercator map of the whole world would be infinitely tall.
 

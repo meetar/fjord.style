@@ -113,7 +113,7 @@ iframe.envframe {
         }
     }
 </style>
-_This post was originally published on the Mapzen blog at [http://mapzen.com/blog/mapping-mountains](http://mapzen.com/blog/mapping-mountains)._
+_This post was originally published on the Mapzen blog at http://mapzen.com/blog/mapping-mountains._
 
 I've been spending a lot of time over the mountains of Northern California lately. To view mountains from above is to journey through _time itself_: over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of _elevation data_:
 
@@ -122,7 +122,7 @@ I've been spending a lot of time over the mountains of Northern California latel
 
 If you see something above that looks like a lightning storm in a Gak factory, you're in the right place. This is a "heightmap" of the area around [Mount Diablo](https://en.wikipedia.org/wiki/Mount_Diablo), about 30 miles to the east of San Francisco. The stripes correlate to constant elevations, but they're not intended to be viewed in this way – the unusual coloring is the result of the way the data is "packed" into an RGBA image: each channel encodes a different order of magnitude, combining to form a 4-digit value in base-256.
 
-The data originates from many sources, including those compiled by the [USGS](https://en.wikipedia.org/wiki/United_States_Geological_Survey) and released as part of [The National Map](http://nationalmap.gov/elevation.html) of the United States. [Mapzen](http://mapzen.com) is currently combining this data with other global datasources including ocean bathymetry, and tiling it for easy access through a tile server.
+The data originates from many sources, including those compiled by the [USGS](https://en.wikipedia.org/wiki/United_States_Geological_Survey) and released as part of [The National Map](http://nationalmap.gov/elevation.html) of the United States. [Mapzen](http://mapzen.com) is currently combining this data with other global datasources including ocean bathymetry, and tiling it for easy access through a tile server. [Update: Mapzen shuttered in 2018, but the data lives on via [Nextzen](http://nextzen.org).]
 
 When "unpacked," processed, and displayed with WebGL, this data can be turned into what you were maybe expecting to see:
 
@@ -131,7 +131,7 @@ When "unpacked," processed, and displayed with WebGL, this data can be turned in
 
 This is a shaded terrain map, using tiled open-source elevation data, drawn in real time by your very own browser, and looking _sweet_.
 
-We're processing this data with a view toward custom real-time hillshading, terrain maps, and other elevation-adjacent analysis, suitable for use by (for instance) the [Tangram](http://mapzen.com/tangram) map-rendering library.
+We're processing this data with a view toward custom real-time hillshading, terrain maps, and other elevation-adjacent analysis, suitable for use by (for instance) the [Tangram](http://github.com/tangrams/tangram) map-rendering library.
 
 Why, you ask, and how? I'm glad you asked. For the Why, come with me back through time, to _the past_.
 
@@ -171,7 +171,7 @@ In these maps, the hillshading serves as the base on which everything else rests
 
 Returning to the present, assume for sake of argument that you have this elevation data, and some way to manipulate it. How can we get from there to maps such as the ones seen above?
 
-Even in its raw, Gak-like form, elevation data is immediately useful for creating terrain maps. Using soon-to-be-released [Tangram](http://mapzen.com/tangram) functionality, we can apply the elevation data to our map tiles as a texture, and then use a custom shader to generate a "hypsometric" map, which applies a color gradient to the unpacked elevation range. Here's one with a simple grayscale:
+Even in its raw, Gak-like form, elevation data is immediately useful for creating terrain maps. Using soon-to-be-released [Tangram](http://github.com/tangrams/tangram) functionality, we can apply the elevation data to our map tiles as a texture, and then use a custom shader to generate a "hypsometric" map, which applies a color gradient to the unpacked elevation range. Here's one with a simple grayscale:
 
 <div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&quiet&url=styles/grayscale.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/grayscale.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>

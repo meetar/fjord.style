@@ -115,13 +115,13 @@ iframe {
 }
 
 </style>
-_This post was originally published on the Mapzen blog at [http://mapzen.com/blog/terrain-generalization](http://mapzen.com/blog/terrain-generalization)._
+_This post was originally published on the Mapzen blog at http://mapzen.com/blog/terrain-generalization._
 
 "Generalization" is a term used in cartography to describe reducing the complexity of data while preserving its essential characteristics in a meaningful way. It's not just simplification, but finding and revealing the most important details. It's a useful skill when you have more information than you need, and that's almost always the case.
 
 Cartographers can learn to recognize significant details in mappable data, but teaching a computer this skill is trickier.
 
-I'm interested in this problem lately as it relates to terrain. Mountains are a hobby of mine, and depicting them has made up a significant portion of my work at Mapzen (for more on this, see [Mapping Mountains](https://mapzen.com/blog/mapping-mountains)). Since that post, we've integrated terrain data in our [Walkabout and Tron house styles](https://mapzen.com/products/maps/).
+I'm interested in this problem lately as it relates to terrain. Mountains are a hobby of mine, and depicting them has made up a significant portion of my work at Mapzen (for more on this, see [Mapping Mountains](http://fjord.style/mapping-mountains)). Since that post, we've integrated terrain data in our [Walkabout and Tron house styles](https://mapzen.com/products/maps/).
 
 At the annual meeting of [NACIS](http://nacis.org) (North American Cartographic Information Society) this year, the generalization of terrain was discussed in several sessions, giving me lots of ideas to explore. Included among these was a technique described by Daniel Huffman in his blog post [On Generalization Blending for Shaded Relief](https://somethingaboutmaps.wordpress.com/2011/10/18/on-generalization-blending-for-shaded-relief/).
 
@@ -131,7 +131,7 @@ Generalization blending is a way to solve two problems at once – terrain data 
 
 However, if you have some knowledge of the terrain's bumpiness, you can use it to blur small details while letting bigger features show through in all their bumpy glory.
 
-Following Daniel's lead, I decided to try to implement a version of this technique in a realtime [Tangram](https://mapzen.com/products/tangram) shader. To detect bumpiness, I used the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation), which describes the range of variation in a collection of samples. Starting with our [tiled terrain normals](https://mapzen.com/documentation/terrain-tiles/), we can sample a small area around each pixel to test how locally smooth or bumpy that area is. This will give us a "bumpiness" map with lines along ridges – the sharper the ridge, the brighter the line.
+Following Daniel's lead, I decided to try to implement a version of this technique in a realtime [Tangram](https://github.com/tangrams/tangram) shader. To detect bumpiness, I used the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation), which describes the range of variation in a collection of samples. Starting with our [tiled terrain normals](https://mapzen.com/documentation/terrain-tiles/), we can sample a small area around each pixel to test how locally smooth or bumpy that area is. This will give us a "bumpiness" map with lines along ridges – the sharper the ridge, the brighter the line.
 
 <div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&url=styles/green-stdev.yaml#10/57.0719/-126.2290"></div>
 <span class='caption'>An interactive bumpiness map of somewhere in British Columbia. <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/green-stdev.yaml#10/57.0719/-126.2290" target="_blank">Open&nbsp;full&nbsp;screen&nbsp;➹</a></span>
