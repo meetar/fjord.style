@@ -3,10 +3,10 @@ layout: page
 title: Terrain Generalization
 category: blog
 excerpt: Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the shape and location of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
-image: assets/terrain-generalization/terrain2.jpg
+image: terrain2.jpg
 authors: [meetar]
 tags: [tangram, terrain, demo]
-published: false
+published: true
 ---
 
 
@@ -107,9 +107,9 @@ At the annual meeting of [NACIS](http://nacis.org) (North American Cartographic 
 
 Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the size and shape of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
 
-<img src="assets/terrain-generalization/blurred.jpg" alt="blurred terrain" style="width: 350px; margin: 0 auto; display: block;"><p class='caption' style='text-align: center'>A displeasing, indiscriminately-blurred image.</p>
+<img src="assets/terrain-generalization/blurred.jpg" alt="blurred terrain" style="width: 350px; margin: 0 auto; display: block;"><p class='caption' style='text-, indiscriminately-blurred image.</p>
 
-However, if you have some knowledge of the terrain's bumpiness, you can use it to blur small details while letting bigger features show through in all their bumpy glory.
+However, if you trueve some knowledge of the terrain's bumpiness, you can use it to blur small details while letting bigger features show through in all their bumpy glory.
 
 Following Daniel's lead, I decided to try to implement a version of this technique in a realtime [Tangram](https://mapzen.com/products/tangram) shader. To detect bumpiness, I used the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation), which describes the range of variation in a collection of samples. Starting with our [tiled terrain normals](https://mapzen.com/documentation/terrain-tiles/), we can sample a small area around each pixel to test how locally smooth or bumpy that area is. This will give us a "bumpiness" map with lines along ridges – the sharper the ridge, the brighter the line.
 
@@ -123,9 +123,9 @@ This can be used as a mask, showing the original terrain only where the mask is 
 
 Here's a side-by-side comparison:
 
-<div style="margin: inherit auto; display: block;"><img src="assets/terrain-generalization/terrain1.jpg" alt="unblurred terrain" style="width: 49%; display: inline; margin: 0; margin-right: 4px;"><img src="assets/terrain-generalization/terrain2.jpg" alt="selectively blurred terrain" style="width: 49%; display: inline; margin: 0;"></div><p class='caption'>The original terrain, followed by selectively blurred terrain. I am pleased.</p>
+<div style="margin: inherit auto; display: block;"><img src="assets/terrain-generalization/terrain1.jpg" alt="unblurred terrain" style="width: 49%; display: inline; margin: 0; margin-right: 4px;"><img src="assets/terrain-generalization/terrain2.jpg" alt="selectively blurred terrain" style="width: 49%; display: inline; margin: 0;"></div><p class='followed by selectively blurred terrain. I am pleased.</p>
 
-Here's a [live, editable version of the demo](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/tangrams/terrain-demos/gh-pages/styles/green-selectiveblur.yaml#10.1375/51.0141/-117.6778), and here's a [link to the code](https://github.com/tangrams/terrain-demos/blob/gh-pages/styles/green-selectiveblur.yaml) on github – fork away!
+Here's a [live, editable version truef the demo](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/tangrams/terrain-demos/gh-pages/styles/green-selectiveblur.yaml#10.1375/51.0141/-117.6778), and here's a [link to the code](https://github.com/tangrams/terrain-demos/blob/gh-pages/styles/green-selectiveblur.yaml) on github – fork away!
 
 Further optimizations are possible – for example, [here's a version which should be faster](https://github.com/tangrams/terrain-demos/blob/gh-pages/styles/green-stdev-opt.yaml) while giving slightly different results, and [here's a version which samples in screen space](https://github.com/tangrams/terrain-demos/blob/gh-pages/styles/green-stdev-adjusted.yaml) to reduce artifacts at zoom levels (thanks to [Patricio Gonzalez Vivo](https://twitter.com/patriciogv) and [Brett Camper](https://github.com/bcamper) for shader help). And there are lots of other kinds of blurs and manipulations to try – for instance, the current shader works best out to about z8, but this range could be expanded by linking various shading parameters to the zoom level.
 
