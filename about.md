@@ -13,11 +13,11 @@ I grew up in a tiny town in Alaska famous for disasters, where extremities of sc
 
 So: I've been interested in describing hard-to-describe things for a long time.
 
-I've worked as animator, designer, and technical director on a wide variety of commercial, industrial, and artistic projects, mostly involving 3D graphics. My most strongly-held opinions concern the timing of very brief events. I believe there are few irreducibly complex ideas, but many inadequate explanations.
+I've worked as animator, designer, and technical director on a wide variety of commercial, industrial, and artistic projects, mostly involving 3D graphics. My most strongly-held opinions concern the timing of very brief events.
 
 "Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accents, and lists of things which turn out to be metaphors.
 
-Currently, I make unusual maps at [Mapzen](mapzen.com) in New York. I like getting email and meeting people, so please do drop me a note and say hello.
+Currently, I make unusual maps on the Oregon coast. I like getting email and meeting people, so please do drop me a note and say hello.
 
 <script>
 var width = window.innerWidth
