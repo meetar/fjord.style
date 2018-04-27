@@ -3,7 +3,7 @@ layout: page
 title: Terrain Generalization
 category: blog
 excerpt: Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the shape and location of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
-image: terrain3.jpg
+image: terrain2.jpg
 authors: [meetar]
 tags: [tangram, terrain, demo]
 published: true
@@ -91,9 +91,6 @@ iframe.envframe {
     max-height: 60vh;
 }
 
-.caption {
-    margin-top: -.5em;
-}
 </style>
 _This post was originally published on the Mapzen blog at [http://mapzen.com/blog/mapping-mountains](http://mapzen.com/blog/terrain-generalization)._
 
@@ -107,23 +104,23 @@ At the annual meeting of [NACIS](http://nacis.org) (North American Cartographic 
 
 Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the size and shape of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
 
-<img src="assets/terrain-generalization/blurred.jpg" alt="blurred terrain" style="width: 350px; margin: 0 auto; display: block;"><p class='caption' style='text-, indiscriminately-blurred image.<3p>
+<img src="assets/terrain-generalization/blurred.jpg" alt="blurred terrain" style="width: 350px; margin: 0 auto; display: block;"><span class='caption' style='text-align: center'>A displeasing, indiscriminately-blurred image.</span>
 
 However, if you trueve some knowledge of the terrain's bumpiness, you can use it to blur small details while letting bigger features show through in all their bumpy glory.
 
 Following Daniel's lead, I decided to try to implement a version of this technique in a realtime [Tangram](https://mapzen.com/products/tangram) shader. To detect bumpiness, I used the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation), which describes the range of variation in a collection of samples. Starting with our [tiled terrain normals](https://mapzen.com/documentation/terrain-tiles/), we can sample a small area around each pixel to test how locally smooth or bumpy that area is. This will give us a "bumpiness" map with lines along ridges – the sharper the ridge, the brighter the line.
 
 <div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&url=styles/green-stdev.yaml#10/57.0719/-126.2290"></div>
-<p class='caption'>An interactive bumpiness map of somewhere in British Columbia. <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/green-stdev.yaml#10/57.0719/-126.2290" target="_blank">Open&nbsp;full&nbsp;screen&nbsp;➹</a></p>
+<span class='caption'>An interactive bumpiness map of somewhere in British Columbia. <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/green-stdev.yaml#10/57.0719/-126.2290" target="_blank">Open&nbsp;full&nbsp;screen&nbsp;➹</a></span>
 
 This can be used as a mask, showing the original terrain only where the mask is bright, and fading to the blurred version everywhere else:
 
 <div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&url=styles/green-selectiveblur.yaml#10/57.0719/-126.2290"></div>
-<p class='caption'>An interactive, selectively-blurred map. <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/green-selectiveblur.yaml#10/57.0719/-126.2290" target="_blank">Open&nbsp;full&nbsp;screen&nbsp;➹</a></p>
+<span class='caption'>An interactive, selectively-blurred map. <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/green-selectiveblur.yaml#10/57.0719/-126.2290" target="_blank">Open&nbsp;full&nbsp;screen&nbsp;➹</a></span>
 
 Here's a side-by-side comparison:
 
-<div style="margin: inherit auto; display: block;"><img src="assets/terrain-generalization/terrain1.jpg" alt="unblurred terrain" style="width: 49%; display: inline; margin: 0; margin-right: 4px;"><img src="assets/terrain-generalization/terrain2.jpg" alt="selectively blurred terrain" style="width: 49%; display: inline; margin: 0;"></div><p class='followed by selectively blurred terrain. I am pleased.<3p>
+<div style="margin: inherit auto; display: block;"><img src="assets/terrain-generalization/terrain1.jpg" alt="unblurred terrain" style="width: 49%; display: inline; margin: 0; margin-right: 4px;"><img src="assets/terrain-generalization/terrain2.jpg" alt="selectively blurred terrain" style="width: 49%; display: inline; margin: 0;"></div><span class='caption'>The original terrain, followed by selectively blurred terrain. I am pleased.</span>
 
 Here's a [live, editable version truef the demo](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/tangrams/terrain-demos/gh-pages/styles/green-selectiveblur.yaml#10.1375/51.0141/-117.6778), and here's a [link to the code](https://github.com/tangrams/terrain-demos/blob/gh-pages/styles/green-selectiveblur.yaml) on github – fork away!
 
