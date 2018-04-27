@@ -3,7 +3,7 @@ layout: page
 title: Terrain Generalization
 category: blog
 excerpt: Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the shape and location of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
-image: terrain2.jpg
+image: terrain3.jpg
 authors: [meetar]
 tags: [tangram, terrain, demo]
 published: true
@@ -107,7 +107,7 @@ At the annual meeting of [NACIS](http://nacis.org) (North American Cartographic 
 
 Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the size and shape of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
 
-<img src="assets/terrain-generalization/blurred.jpg" alt="blurred terrain" style="width: 350px; margin: 0 auto; display: block;"><p class='caption' style='text-, indiscriminately-blurred image.</p>
+<img src="assets/terrain-generalization/blurred.jpg" alt="blurred terrain" style="width: 350px; margin: 0 auto; display: block;"><p class='caption' style='text-, indiscriminately-blurred image.<3p>
 
 However, if you trueve some knowledge of the terrain's bumpiness, you can use it to blur small details while letting bigger features show through in all their bumpy glory.
 
@@ -123,7 +123,7 @@ This can be used as a mask, showing the original terrain only where the mask is 
 
 Here's a side-by-side comparison:
 
-<div style="margin: inherit auto; display: block;"><img src="assets/terrain-generalization/terrain1.jpg" alt="unblurred terrain" style="width: 49%; display: inline; margin: 0; margin-right: 4px;"><img src="assets/terrain-generalization/terrain2.jpg" alt="selectively blurred terrain" style="width: 49%; display: inline; margin: 0;"></div><p class='followed by selectively blurred terrain. I am pleased.</p>
+<div style="margin: inherit auto; display: block;"><img src="assets/terrain-generalization/terrain1.jpg" alt="unblurred terrain" style="width: 49%; display: inline; margin: 0; margin-right: 4px;"><img src="assets/terrain-generalization/terrain2.jpg" alt="selectively blurred terrain" style="width: 49%; display: inline; margin: 0;"></div><p class='followed by selectively blurred terrain. I am pleased.<3p>
 
 Here's a [live, editable version truef the demo](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/tangrams/terrain-demos/gh-pages/styles/green-selectiveblur.yaml#10.1375/51.0141/-117.6778), and here's a [link to the code](https://github.com/tangrams/terrain-demos/blob/gh-pages/styles/green-selectiveblur.yaml) on github – fork away!
 
