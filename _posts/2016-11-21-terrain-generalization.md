@@ -88,7 +88,30 @@ iframe.envframe {
 }
 
 .demo-wrapper {
+    background-color: grey;
+    height: 30em;
     max-height: 60vh;
+    width: 98vw;
+    left: calc(-48vw + 48%);
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+iframe {
+    position: relative;
+    width: 98vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .demo-wrapper {
+        height: 300px;
+    }
 }
 
 </style>
