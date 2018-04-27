@@ -3,7 +3,7 @@ layout: page
 title: Terrain Generalization
 category: blog
 excerpt: Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the shape and location of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
-image: terrain2.jpg
+image: terrain3.jpg
 authors: [meetar]
 tags: [tangram, terrain, demo]
 published: true
@@ -92,7 +92,7 @@ iframe.envframe {
 }
 
 </style>
-_This post was originally published on the Mapzen blog at [http://mapzen.com/blog/mapping-mountains](http://mapzen.com/blog/terrain-generalization)._
+_This post was originally published on the Mapzen blog at [http://mapzen.com/blog/terrain-generalization](http://mapzen.com/blog/terrain-generalization)._
 
 "Generalization" is a term used in cartography to describe reducing the complexity of data while preserving its essential characteristics in a meaningful way. It's not just simplification, but finding and revealing the most important details. It's a useful skill when you have more information than you need, and that's almost always the case.
 
