@@ -15,7 +15,7 @@ I've worked as animator, designer, and technical director on a wide variety of c
 
 "Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accents, and lists of things which turn out to be metaphors.
 
-Currently, I make unusual maps on the Oregon coast. I like getting email and meeting people, so please do drop me a note and say hello: <a email="pxrich@gmail.com">pxrich@gmail.com</a>
+Currently, I make unusual maps on the Oregon coast. I like getting email and meeting people, so please do drop me a note and say hello: <a href="mailto:pxrich@gmail.com">pxrich@gmail.com</a>
 
 <script>
 var width = window.innerWidth
