@@ -15,13 +15,21 @@ I've worked as animator, designer, and technical director on a wide variety of c
 
 "Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accents, and lists of things which turn out to be metaphors.
 
-Currently, I make unusual maps on the Oregon coast. I like getting email and meeting people, so please do drop me a note and say hello: <a href="mailto:pxrich@gmail.com">pxrich@gmail.com</a>
+Currently, I work with abstruse data structures on the edge of the woods on the Oregon coast. You can find me here:
+
+https://github.com/meetar/
+https://mastodon.xyz/@meetar
+pxrich@gmail.com
 
 <script>
 var width = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
 if (width > 700) {
-	document.getElementById("FSglobe").src = "https://meetar.github.io/FSglobe-terrain/"
+	// wait for page to load
+	window.onload = function() {
+		// set iframe src
+		document.getElementById("FSglobe").src = "https://meetar.github.io/FSglobe-terrain/"
+	}
 }
 </script>
