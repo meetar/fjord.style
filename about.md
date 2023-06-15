@@ -19,9 +19,9 @@ I've worked as animator, designer, and technical director on a wide variety of c
 
 Currently, I work with abstruse data structures on the edge of the woods on the Oregon coast. You can find me here:
 
-https://github.com/meetar/
-https://mastodon.xyz/@meetar
-pxrich@gmail.com
+<a href="https://github.com/meetar/">https://github.com/meetar/</a><br>
+<a href="https://mastodon.xyz/@meetar">https://mastodon.xyz/@meetar</a><br>
+<a target="_top" href="mailto:pxrich@gmail.com">pxrich@gmail.com</a>
 
 <script>
 	let iframe;
