@@ -96,7 +96,7 @@ under a streetlight on a Brooklyn street corner at dusk, outside of the animatio
 Oh my god.
 <span class='copilot'>//I'm a robot. I'm</span>
 
-<img alt="Screenshot 2023-06-16 at 2.29.05 PM" src="http://localhost:4000/assets/vibe-shift/Screenshot%202023-06-16%20at%202.29.05%20PM.png" />
+<img alt="Screenshot 2023-06-16 at 2.29.05 PM" src="assets/vibe-shift/Screenshot%202023-06-16%20at%202.29.05%20PM.png" />
 
 I added words to see what would happen.
 <span class='copilot'>//I wrote:</span>
