@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title:  "Going Into Detail"
 date:   2014-03-11 12:02:02
 categories: terrain
@@ -136,8 +136,6 @@ Further, and with thanks:
 - Jen Lowe on memory, and context, and empathy: [The Entropy of Memory](http://vimeo.com/44291138)
 - Charlie Loyd on facts, interpretation, and empathy: [Making Smart](http://basecase.org/env/making-smart)
 - Charlie Loyd on the Earth as a context: [Politicizing Sandy](http://basecase.org/env/politicizing-Sandy)
-
-<span class="note">This post was originally published at http://edgeca.se/going-into-detail/.</span>
 
 <script type='text/javascript' src="js/Detector.js"></script>
 <script data-src="shaders/vs_rt.js" data-name="vs_rt" type="x-shader/x-vertex"></script>

@@ -115,8 +115,6 @@ iframe {
 }
 
 </style>
-_This post was originally published on the Mapzen blog at http://mapzen.com/blog/terrain-generalization._
-
 "Generalization" is a term used in cartography to describe reducing the complexity of data while preserving its essential characteristics in a meaningful way. It's not just simplification, but finding and revealing the most important details. It's a useful skill when you have more information than you need, and that's almost always the case.
 
 Cartographers can learn to recognize significant details in mappable data, but teaching a computer this skill is trickier.
@@ -150,3 +148,5 @@ Here's a [live, editable version of the demo](https://tangram.city/play/?scene=h
 Further optimizations are possible – for example, [here's a version which should be faster](https://github.com/tangrams/terrain-demos/blob/master/styles/green-stdev-opt.yaml) while giving slightly different results, and [here's a version which samples in screen space](https://github.com/tangrams/terrain-demos/blob/master/styles/green-stdev-adjusted.yaml) to reduce artifacts at zoom levels (thanks to [Patricio Gonzalez Vivo](https://twitter.com/patriciogv) and [Brett Camper](https://github.com/bcamper) for shader help). And there are lots of other kinds of blurs and manipulations to try – for instance, the current shader works best out to about z8, but this range could be expanded by linking various shading parameters to the zoom level.
 
 In this way, I believe terrain can be made legible at all scales, and then my life's work will be complete.
+
+<span class="aside">This post was originally published on the Mapzen blog at <http://mapzen.com/blog/terrain-generalization>.</span>

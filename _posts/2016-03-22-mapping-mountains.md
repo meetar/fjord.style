@@ -113,7 +113,6 @@ iframe.envframe {
         }
     }
 </style>
-_This post was originally published on the Mapzen blog at http://mapzen.com/blog/mapping-mountains._
 
 I've been spending a lot of time over the mountains of Northern California lately. To view mountains from above is to journey through _time itself_: over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of _elevation data_:
 
@@ -264,3 +263,7 @@ The main pitfall with hillshading is that it begins to look realistic. If a moun
 Terrain mapping is not a straightforward or exact science, and the shaders demonstrated here are no replacement for a sensitive and thoughtful eye. And of course, hillshading is really only the start of what can be done with this kind of data. These examples are just gestures, pointing toward new ways of seeing our most basic and overlooked contexts.
 
 We're going to continue working on real-time terrain mapping and analysis techniques, and we're very interested to see what happens when more people have access to this data directly. We plan to make the tilesets public soon, starting with California, and then – the world!
+
+<hr>
+
+<span class="aside">This post was originally published on the Mapzen blog at http://mapzen.com/blog/mapping-mountains.</span>

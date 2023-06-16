@@ -63,9 +63,7 @@ setInterval( function() {
     }
 }, 250);
 </script>
-_This post was originally published on the Mapzen blog at http://mapzen.com/blog/escape-from-mercator._
-
-Like most web mapping services, our [Tangram](http://github.com/tangrams/tangram) library draws maps in the "[Web Mercator](https://en.wikipedia.org/wiki/Web_Mercator)" projection. This projection has its benefits, but it's certainly quirky. Mercator projections are well-known for their distortion at high latitudes – this is because they place the north and south poles at positive and negative infinity, which means a Mercator map of the whole world would be infinitely tall.
+Like most web mapping services, the [Tangram](http://github.com/tangrams/tangram) library draws maps in the "[Web Mercator](https://en.wikipedia.org/wiki/Web_Mercator)" projection. This projection has its benefits, but it's certainly quirky. Mercator projections are well-known for their distortion at high latitudes – this is because they place the north and south poles at positive and negative infinity, which means a Mercator map of the whole world would be infinitely tall.
 
 <img src="/assets{{ page.url }}/mercator.jpg" alt="Mercator: the Infinite Map" title="This also means Mercator maps are invisible, statistically speaking."/>
 
@@ -126,3 +124,7 @@ And this next one rolls those same vector tiles into a tiny planet, by wrapping 
 ## Caveat Everybody
 
 Wet-blanket time: these maps are *~highly~* experimental, and not production-ready. The global projections get shaky past zoom 15 because of floating-point precision limits, we don't have tile-fetching worked out for them yet, and they don't work with our current labels system – but we're working to address all of these issues, and as always, [we encourage contributions](https://github.com/tangrams/tangram/blob/master/CONTRIBUTING.md)! In the meantime, we think these experiments are useful for demonstrating the ways open data viewed with OpenGL can expand our cartographic horizons.
+
+<hr>
+
+<span class="aside">This post was originally published on the Mapzen blog at <http://mapzen.com/blog/escape-from-mercator>.</span>
