@@ -25,7 +25,7 @@ Whatever. Apparently he liked to tell this story, to "mythologize" it as the pro
 It'
 <span class='copilot'>//s a performance all the way down.</span>
 
-It's a fantasy of our ability to self-actualize. I've indulged in that fastasy myself – in my stupid youth I would drink huge quantities of caffeine and freestyle ridiculous stories for friends in non-existent accents. I
+It's a fantasy of our ability to self-actualize. I've indulged in that fantasy myself – in my stupid youth I would drink huge quantities of caffeine and freestyle ridiculous stories for friends in non-existent accents. I
 <span class='copilot'>// was a character, and I was a character playing a character, and I was a character playing a character playing a character, and so on. I was a character all the way down.</span>
 
 Um, okay. So. I'm writing this in vscode
