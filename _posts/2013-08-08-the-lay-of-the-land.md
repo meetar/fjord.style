@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "The Lay of the Land"
 date: 2013-08-08 12:02:02
 categories: terrain
