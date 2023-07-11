@@ -36,9 +36,9 @@ if (width > 700) {
 		// set iframe src
 		iframe = document.getElementById("FSglobe");
 		if (iframe) {
-			// iframe.src = "https://meetar.github.io/FSglobe-terrain/"
+			iframe.src = "https://meetar.github.io/FSglobe-terrain/"
 			iframe.style.height="550px"
-			iframe.src = "http://localhost:8080"
+			// iframe.src = "http://localhost:8080"
 		}
 	}
 
