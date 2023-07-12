@@ -13,12 +13,13 @@ I grew up in a tiny town in Alaska famous for disasters, where extremities of sc
 
 So: I've been interested in describing hard-to-describe things for a long time.
 
-I've worked as animator, designer, and technical director on a wide variety of commercial, industrial, and artistic projects, mostly involving 3D graphics. My most strongly-held opinions concern the timing of very brief events.
+I've worked as animator, technical director, and designer on a wide variety of commercial, industrial, and artistic projects. My most strongly-held opinions concern very brief events and very fast feedback loops.
 
 "Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accents, and lists of things which turn out to be metaphors.
 
-Currently, I work with abstruse data structures on the edge of the woods on the Oregon coast. You can find me here:
+Currently, I mediate between designers and engineers from my studio on the edge of the woods on the Oregon coast.
 
+You can reach me here:<br>
 <a href="https://github.com/meetar/">https://github.com/meetar/</a><br>
 <a href="https://mastodon.xyz/@meetar">https://mastodon.xyz/@meetar</a><br>
 <a target="_top" href="mailto:pxrich@gmail.com">pxrich@gmail.com</a>

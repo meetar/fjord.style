@@ -2,7 +2,7 @@
 layout: page
 title: Mapping Mountains
 category: blog
-excerpt: To view mountains from above is to journey through time itself&#58; over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of elevation data!
+excerpt: "To view mountains from above is to journey through time itself: over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of elevation data!"
 authors: [meetar]
 image: raisedreliefUS.jpg
 tag: [tangram, data, demo, terrain, elevation]
@@ -114,7 +114,7 @@ iframe.envframe {
     }
 </style>
 
-I've been spending a lot of time over the mountains of Northern California lately. To view mountains from above is to journey through _time itself_: over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of _elevation data_:
+I've been spending a lot of time over the mountains of Northern California lately. To view mountains from above is to journey through _time itself:_ over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of _elevation data:_
 
 <div class="demo-wrapper" source="https://tangrams.github.io/terrain-demos/?noscroll&url=styles/elevation-tiles.yaml#12/37.8773/-121.9290"></div>
 <span class='caption'>( These maps are interactive! <a style="font-weight:normal" href="http://tangrams.github.io/terrain-demos/?url=styles/elevation-tiles.yaml#12/37.8773/-121.9290" target="_blank">Open full screen ➹</a> )</span>
