@@ -18,3 +18,7 @@ github_username:  meetar
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-paginate
+# paginate: 1

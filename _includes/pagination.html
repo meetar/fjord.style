@@ -1,0 +1,54 @@
+<!-- <div class="PageNavigation">
+  {% if page.previous.url %}
+  <div class="prevwrapper">
+    Previous post:<br>
+    <a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+  </div>
+  {% endif %}
+  {% if page.next.url %}
+  <div class="nextwrapper">
+    Next post:<br>
+    <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+  </div>
+  {% endif %}
+</div> -->
+
+<!-- thanks php -->
+
+<div class="PageNavigation">
+  {% if page.previous.url %}
+  {% assign prevExcl = page.previous %}
+  {% for counter in (0..999) %}
+    {% if prevExcl%}
+    {% unless prevExcl.hidden %}
+      {% break %}
+    {% endunless %}
+    {% endif %}
+    {% assign prevExcl = prevExcl.previous %}
+  {% endfor %}
+
+
+  <div class="prevwrapper">
+    Previous post:<br>
+    <a href="{{prevExcl.url}}">&laquo; {{prevExcl.title}}</a>
+  </div>
+  {% endif %}
+
+  {% if page.next.url %}
+  {% assign nextExcl = page.next %}
+  {% for counter in (0..999) %}
+    {% if nextExcl%}
+    {% unless nextExcl.hidden %}
+      {% break %}
+    {% endunless %}
+    {% endif %}
+    {% assign nextExcl = nextExcl.next %}
+  {% endfor %}
+  <!-- nextExcl" {{nextExcl}} -->
+  <div class="nextwrapper">
+    Next post:<br>
+    <!-- <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a> -->
+    <a class="next" href="{{nextExcl.url}}">{{nextExcl.title}} &raquo;</a>
+  </div>
+  {% endif %}
+</div>
