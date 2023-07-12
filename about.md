@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <div id="globecontainer"><a target="_blank" href="https://github.com/meetar/FSglobe-terrain"><img id="globegif" src="/assets/FSglobe-terrain.gif"></a>
-<iframe id="FSglobe" src="" width="100%"></iframe>
+<iframe id="FSglobe" src="https://meetar.github.io/FSglobe-terrain/" width="100%" height="550px"></iframe>
 </div>
 
 
@@ -37,8 +37,8 @@ if (width > 700) {
 		// set iframe src
 		iframe = document.getElementById("FSglobe");
 		if (iframe) {
-			iframe.src = "https://meetar.github.io/FSglobe-terrain/"
 			iframe.style.height="550px"
+			iframe.src = "https://meetar.github.io/FSglobe-terrain/"
 			// iframe.src = "http://localhost:8080"
 		}
 	}
@@ -59,6 +59,7 @@ if (width > 700) {
 			iframe.style.display = "none";
 			globegif.style.display = "block";
 		}
+	// }
 });
 
 }
