@@ -5,35 +5,40 @@
     border-top: 5px solid $grey-color-dark;
     width: 100%;
     margin: auto;
-    display: block;
+    display: inline-block;
 }
 
 .site-title {
     font-family: 'Montserrat', Helvetica, sans-serif;
-    font-size: 9vw;
-    font-weight: 700;
+    font-size: max(32px, 9vw);
+    font-weight: 500;
     line-height: 1.25em;
     word-spacing: .1em;
-    letter-spacing: .1em;
     text-align: center;
     float: left;
     color: black;
     width: 100%;
-    margin: auto;
+    margin: 1vw;
     border-bottom: 2px solid $grey-color-light;
     padding-bottom: .1em;
-    margin-bottom: .25em;
     background-color: #fff;
 
     &,
     &:visited {
         color: black;
     }
+
+    .fjord {
+        letter-spacing: .02em;
+    }
+    .style {
+        letter-spacing: .10em;
+    }
 }
 
 @include media-query($on-palm) {
     .site-title {
-        letter-spacing: .025em;
+        // letter-spacing: .025em;
         font-weight: 900;
     }
 }
@@ -186,12 +191,14 @@
 }
 
 .post-meta {
-    font-size: $small-font-size;
-    color: black;
+    font-size: $xsmall-font-size;
+    color: #666;
     font-weight: bold;
     text-align: left;
     display: block;
-    margin-bottom: .75em;
+    margin-top: -.5em;
+    // margin-left: .5em;
+    margin-bottom: 1em;
 }
 
 header.post-header .post-meta {
@@ -207,16 +214,18 @@ header.post-header .post-meta {
 
 h2 .post-link {
     display: block;
-    font-family: 'Montserrat', Helvetica, sans-serif;
-    font-size: 24px;
-    margin-left: -.06em;
+    font-family: 'Lato', Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    margin-left: -.1em;
     line-height: 1em;
 }
 
 
 @include media-query($on-palm) {
-    h2, .post-link {
-        font-size: 18px;
+    h2 .post-link {
+        font-size: 22px;
+        font-weight: bold;
         margin: 0px;
         line-height: 1.25em;
         margin-bottom: .25em;
@@ -257,10 +266,10 @@ span.post-img {
     display: inline-block;
     width: 100%;
     font-family: 'Montserrat', Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: max(24px, min(5vw, 40px));
     font-weight: bold;
     word-spacing: .1em;
-    letter-spacing: .1em;
+    letter-spacing: .05em;
     text-align: center;
     text-transform: uppercase;
     border-bottom: 1px solid #999;
@@ -268,7 +277,8 @@ span.post-img {
     margin-bottom: $spacing-unit * 1.25;
     line-height: 1.25em;
     @include media-query($on-laptop) {
-        font-size: 24px;
+        // font-size: 24px;
+        // font-size: 5vw;
         line-height: 1.15em;
         letter-spacing: .05em;
         padding-bottom: $spacing-unit * .25;
@@ -404,6 +414,7 @@ iframe {
     }
 }
 
+// 👉
 .manicule {
     font-size: 2em;
     line-height: 0;
