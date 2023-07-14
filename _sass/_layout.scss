@@ -6,6 +6,8 @@
     width: 100%;
     margin: auto;
     display: inline-block;
+    background: linear-gradient(0deg, rgba(0,0,0,.05) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0) 40%);
+    border-bottom: 2px solid #eee;
 }
 
 .site-title {
@@ -18,10 +20,33 @@
     float: left;
     color: black;
     width: 100%;
-    margin: 1vw;
-    border-bottom: 2px solid $grey-color-light;
+    margin: 1vw 0 0 0;
     padding-bottom: .1em;
     background-color: #fff;
+
+    
+
+    // .gradient-text {
+      /* Fallback: Set a background color. */
+      background-color: red;
+      
+      /* Create the gradient. */
+      // background-image: linear-gradient(45deg, #f3ec78, #af4261);
+      background-image: linear-gradient(0deg, #000000, #356a92);
+      
+      /* Set the background size and repeat properties. */
+      background-size: 100%;
+      background-repeat: repeat;
+    
+      /* Use the text as a mask for the background. */
+      /* This will show the gradient as a text color rather than element bg. */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+    // }
+
+
 
     &,
     &:visited {
@@ -259,7 +284,34 @@ span.post-img {
  */
 
 .post-header {
-    // margin-bottom: $spacing-unit * 1.5;
+  // background-color: red;
+
+  text-align: center;
+  margin-bottom: $spacing-unit * 1.25;
+  padding-bottom: $spacing-unit * .35;
+  border-bottom: 1px solid #999;
+
+  .date {
+      font-style: italic;
+      color: grey;
+      font-size: .8em;
+      // padding-top: 5em;
+      // border: 2px solid gold;
+  }
+  
+  hr {
+    margin: 10px;
+    width: 100%;
+  }
+
+  @include media-query($on-laptop) {
+      // font-size: 24px;
+      // font-size: 5vw;
+      line-height: 1.15em;
+      letter-spacing: .05em;
+      padding-bottom: $spacing-unit * .25;
+      margin-bottom: $spacing-unit;
+  }
 }
 
 .post-title {
@@ -272,18 +324,11 @@ span.post-img {
     letter-spacing: .05em;
     text-align: center;
     text-transform: uppercase;
-    border-bottom: 1px solid #999;
-    padding-bottom: $spacing-unit * .35;
-    margin-bottom: $spacing-unit * 1.25;
     line-height: 1.25em;
-    @include media-query($on-laptop) {
-        // font-size: 24px;
-        // font-size: 5vw;
-        line-height: 1.15em;
-        letter-spacing: .05em;
-        padding-bottom: $spacing-unit * .25;
-        margin-bottom: $spacing-unit;
-    }
+    margin: 0;
+    padding: 0;
+    // border-bottom: 1px solid #999;
+
 }
 
 .post-content {
@@ -426,6 +471,7 @@ iframe {
 }
 
 .prevwrapper {
+
     // border: 2px solid blue;
     width: 100%;
     // align-items: left;
@@ -452,7 +498,7 @@ iframe {
 
 
 .PageNavigation {
-    font-size: 14px;
+    font-size: 1em;
     // display: block;
     width: auto;
     overflow: hidden;
@@ -479,4 +525,172 @@ iframe {
     font-size: .85em;
     color: grey;
     display: block;
+  }
+
+// 
+// Case Studies
+// 
+
+  .case-study-wrapper {
+    max-width: -webkit-calc(#{$case-study-content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$case-study-content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$case-study-content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$case-study-content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+  }
+
+  .intro {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 2em;
+  }
+  .subtitle {
+    font-size: 1.8em;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .case-study-tag {
+    font-size: .8em;
+    text-transform: uppercase;
+    background-color: rgb(206, 236, 215);
+    padding: 3px 0px 3px 23px;
+    padding-left: 98%;
+    margin-left: -100%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+
+    position: relative;
+    // background: maroon;
+    display: inline-block;
+    // color: white;
+    // padding: .24em .3em .25em;
+
+    &:after {
+      color: red;
+      position: absolute;
+      z-index: -1;
+      content: "?";
+      right: -10px;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      padding-right: 10px;
+      background-color: inherit;
+      -webkit-transform: skewX(-10deg);
+      -moz-transform: skewX(-10deg);
+      -ms-transform: skewX(-10deg);
+      transform: skewX(-10deg);
+    }
+  }
+
+  .emphasis {
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 200;
+
+    text-indent: -15px;
+    padding-left: 15px;
+    
+    label {
+      font-weight: 600;
+    }
+  }
+  .emphasis:last-of-type {
+    // color: red;
+    margin-bottom: 1em;
+  }
+  // .emphasis::before {
+  //   content: '▌';
+  //   color: rgb(72, 119, 84);
+  // }
+
+
+  .desc {
+    margin: 1em;
+  }
+
+  // .case-study:not(:first-of-type) {
+  .case-study:nth-child(1 of .case-study) {
+    // border: 2px solid blue;
+  }
+  .case-study:not(:nth-child(1 of .case-study)) {
+    // border: 2px solid red;
+    margin-top: 4em;
+  }
+  // .case-study:not(:first-of-type) {
+  // .case-study-wrapper > .case-study:first-of-type {
+  //   border: 2px solid blue;
+  // }
+  // .case-study-wrapper > .case-study:not(:first-of-type) {
+  //   border: 2px solid red;
+  //   margin-top: 4em;
+  // }
+
+  .case-study {
+
+    margin: 1vw;
+    
+    p {
+      font-size: .9em;
+      line-height: 1.5em;
+      margin-top: 1em;
+      // color: red;
+      
+      @include media-query($on-laptop) {
+        margin: 1em auto;
+      }
+    }
+
+
+    padding-top: 3em;
+
+  }
+  .case-study ~ .case-study {
+    // color: red;
+    border-top: 1px solid #999;
+  }
+
+
+  ul {
+    margin: none;
+    margin-top: -1.7em;
+    // border-left: 4px dashed grey;
+  }
+  li {
+    list-style-type: none;
+    // font-family: "IBM Plex Mono";
+    font-size: .9em;
+  }
+  li::before {
+    font-style: italic;
+    content: "▪  "; color: rgb(72, 119, 84);
+  }
+
+
+  .external::after {
+    margin-left: 5px;
+    margin-top: -10px;
+    top: 10px;
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='10px' height='10px'><path d='M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/></svg>");
+  }
+
+  .external:hover {
+    // fill: blue;
+  }
+
+  .illustration {
+    margin: 1em 0;
+    background-color: #ccc;
+    border: 1px solid grey;
   }
