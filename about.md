@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-
+<link rel="preconnect" href="https://meetar.github.io/">
 <div id="globecontainer"><a target="_blank" href="https://github.com/meetar/FSglobe-terrain"><img id="globegif" src="/assets/FSglobe-terrain.gif"></a>
 <iframe id="FSglobe" src="https://meetar.github.io/FSglobe-terrain/" width="100%" height="550px"></iframe>
 </div>
@@ -17,7 +17,7 @@ I've worked as animator, technical director, and designer on a wide variety of c
 
 "Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accents, and lists of things which turn out to be metaphors.
 
-Currently, I mediate between designers and engineers from my studio on the edge of the woods on the Oregon coast.
+Currently, I mediate between designers and engineers from the edge of the woods on the Oregon coast.
 
 You can reach me here:<br>
 <a href="https://github.com/meetar/">https://github.com/meetar/</a><br>
