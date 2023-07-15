@@ -532,17 +532,18 @@ iframe {
 // 
 
   .case-study-wrapper {
-    max-width: -webkit-calc(#{$case-study-content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$case-study-content-width} - (#{$spacing-unit} * 2));
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+    position: relative;
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$case-study-content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$case-study-content-width} - (#{$spacing-unit}));
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }
@@ -560,21 +561,34 @@ iframe {
   }
 
   .case-study-tag {
+    left: -10px;
+
     font-size: .8em;
     text-transform: uppercase;
     background-color: rgb(206, 236, 215);
-    padding: 3px 0px 3px 23px;
-    padding-left: 98%;
-    margin-left: -100%;
-    margin-right: 10px;
+    padding: 3px 5px 3px 23px;
+    padding-left: 10px;
+    margin-left: -10px;
+    margin-right: 5px;
     margin-bottom: 10px;
 
-
     position: relative;
-    // background: maroon;
     display: inline-block;
-    // color: white;
-    // padding: .24em .3em .25em;
+
+    &:before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      left: -10%;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: inherit;
+      -webkit-transform: skewX(-10deg);
+      -moz-transform: skewX(-10deg);
+      -ms-transform: skewX(-10deg);
+      transform: skewX(-10deg);
+    }
 
     &:after {
       color: red;
@@ -593,6 +607,7 @@ iframe {
       transform: skewX(-10deg);
     }
   }
+
 
   .emphasis {
     font-size: 1em;
@@ -639,7 +654,12 @@ iframe {
 
   .case-study {
 
-    margin: 1vw;
+    // border: 1px solid red;
+    // width: 80vw;
+    // position: relative;
+    // left: -5vw;
+
+    margin: 0 0;
     
     p {
       font-size: .9em;
@@ -670,7 +690,7 @@ iframe {
   li {
     list-style-type: none;
     // font-family: "IBM Plex Mono";
-    font-size: .9em;
+    font-size: .93em;
   }
   li::before {
     font-style: italic;
@@ -690,7 +710,30 @@ iframe {
   }
 
   .illustration {
-    margin: 1em 0;
-    background-color: #ccc;
-    border: 1px solid grey;
+    width: 200%;
+    margin-left: -50%;
+    margin-bottom: 2em;
+
+    img {
+      border: 1px solid red;
+      background: pink;
+      max-width: 95vw;
+      height: auto;
+      text-align:center;
+    }
+  }
+
+  mark {
+    margin: 0 -0.4em;
+    padding: 0.1em 0.4em;
+    border-radius: 0.8em 0.3em;
+    background: transparent;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 250, 94, 0.682),
+      rgba(239, 255, 66, 0.643) 8%,
+      rgba(255, 233, 90, 0.465)
+    );
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
