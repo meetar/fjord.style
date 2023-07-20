@@ -23,13 +23,15 @@ body {
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
-    letter-spacing: .28;
+    margin: 0;
+    padding: 0;
 }
 
 @include media-query($on-palm) {
     body {
-        font-size: $base-font-size * .95;
-        line-height: $base-line-height * .9;
+        font-size: $base-font-size * 1.15;
+        // font-weight: 500;
+        // line-height: $base-line-height * .9;
     }
 }
 

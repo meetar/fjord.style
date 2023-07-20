@@ -3,16 +3,13 @@
 ---
 @charset "utf-8";
 
-
-
-// Our variables
-// $base-font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-family: "IBM Plex Sans";
-$base-font-size:   17px;
+
+$base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $xsmall-font-size:  $base-font-size * 0.75;
-$base-line-height: 1.7;
+$base-line-height: 1.65;
 
 $spacing-unit:     30px;
 
@@ -29,7 +26,7 @@ $content-width:    700px;
 $on-palm:          600px;
 $on-laptop:        700px;
 
-$case-study-content-width:    1000px;
+// $case-study-content-width:    1000px;
 
 
 
@@ -52,5 +49,6 @@ $case-study-content-width:    1000px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "case-studies"
 ;

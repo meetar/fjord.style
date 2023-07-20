@@ -1,6 +1,8 @@
 <header class="site-header">
-
-    <!-- <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a> -->
-    <a class="site-title" href="{{ site.baseurl }}/"><span class="fjord">FJORD.</span><span class="style">STYLE</span></a>
-
+    <h1><a class="site-title" href="{{ site.baseurl }}/"><span class="fjord">FJORD.</span><span class="style">STYLE</span></a></h1>
+    <div class="links">
+        <a {% if page.url == "/" %}class="active"{% endif %} href="/">Home</a> ~
+        <a {% if page.url == "/posts" %}class="active"{% endif %} href="/posts">Posts</a> ~
+        <a {% if page.url == "/case-studies" %}class="active"{% endif %} href="/case-studies">Case Studies</a>
+    </div>
 </header>

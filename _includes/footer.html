@@ -5,19 +5,21 @@
     <h2 class="footer-heading"><a href="/">{{ site.title }}</a></h2>
 
     <nav class="footer-site-nav">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
-          <a class="page-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a></p>
+      <div class="links">
+        <a {% if page.url == "/" %}class="active"{% endif %} href="/">Home</a> -
+        <a {% if page.url == "/posts" %}class="active"{% endif %} href="/posts">Posts</a> -
+        <a {% if page.url == "/case-studies" %}class="active"{% endif %} href="/case-studies">Case Studies</a> -
+        <a href="/assets/Peter-Richardson-CV.pdf">CV</a>
+        <br>
+        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
+      </div>
 
 
     </nav>
 
-    <p>Peter Richardson is a design technologist working to communicate complex ideas in simple ways. A&nbsp;3D animator for many years, he now works on maps, diagrams, interfaces, and other problems.</p>
+    <p>Peter Richardson is a designer working to communicate complex ideas in simple ways. A&nbsp;3D animator for many years, he now works on maps, diagrams, interfaces, and other problems.</p>
 
-<div style="text-align:center"><p>{% include icon-mastodon.html username="meetar" %} / {% include icon-github.html username="meetar" %} / gmail&nbsp;pxrich@</p>        <p style="font-size:.9em">Copyright 2013-{{ site.time | date: '%y' }} Peter Richardson</p>
+<div style="text-align:center"><p>{% include icon-mastodon.html username="meetar" %} / {% include icon-github.html username="meetar" %} / gmail&nbsp;pxrich@</p>        <p style="font-size:.9em">(c) 2013-{{ site.time | date: '%y' }} Peter Richardson</p>
 </div>
 
 

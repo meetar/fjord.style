@@ -228,6 +228,3 @@ This obsession with nominal accuracy, and its conflation with realism, completel
 (All the demos above are collected at [https://github.com/meetar/heightmap-demos](https://github.com/meetar/heightmap-demos).)
 
 [![Man writing "you are here" on map of the Grand Canyon]({{ site.url }}/assets{{ page.url }}/6882101346_136e2f7ed0_z.jpg)](http://www.flickr.com/photos/grand_canyon_nps/6882101346/)
-
-<span class="note">All photos are (c) P Richardson or their respective owners as linked.</span>
-<span class="note">This post was originally published at http://edgeca.se/the-lay-of-the-land/.</span>
