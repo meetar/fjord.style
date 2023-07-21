@@ -1,6 +1,5 @@
-
+let illustrations = document.querySelectorAll('.illustration');
 let overlays = document.querySelectorAll('.overlay,.underlay,.shadow,.overlayshadow');
-console.log(overlays);
 
     // Function to get the scroll offset of the center of the viewport
     function getViewportCenterScrollOffset() {
@@ -15,10 +14,7 @@ console.log(overlays);
       return offsetY;
     }
 
-    // Example usage
     const centerScrollOffset = getViewportCenterScrollOffset(window);
-    console.log(centerScrollOffset); // Output: Object { x: <center-x-offset>, y: <center-y-offset> }
-  
 
     // Function to find the first ancestor with a scrollable container
     function findScrollableContainer(element) {
@@ -46,19 +42,25 @@ console.log(overlays);
       return offsetY;
     }
 
-    // const element = document.getElementById('element');
-    // const elementScrollOffset = getElementCenterScrollOffset(element);
-    // console.log(elementScrollOffset); // Output: Object { x: <center-x-offset>, y: <center-y-offset> }
-
 
 for (var x=0; x < overlays.length; x++) {
-  console.log(overlays[x]);
-     const centerScrollOffset = getElementCenterScrollOffset(overlays[x]);
-    console.log(centerScrollOffset); // Output: Object { x: <center-x-offset>, y: <center-y-offset> }
+    const centerScrollOffset = getElementCenterScrollOffset(overlays[x]);
 
 }
 
-  // The debounce function receives our function as a parameter
+function toggleSwipe(div) {
+  let targets = div.querySelectorAll(".shadow, .underlay, .overlay")
+  for (var x=0; x < targets.length; x++) {
+    targets[x].classList.toggle('swiped')
+  }
+}
+
+for (var x=0; x < illustrations.length; x++) {
+  let div = illustrations[x];
+    div.addEventListener('click', e => toggleSwipe(e.currentTarget));
+
+}
+
 const debounce = (fn) => {
 
   // This holds the requestAnimationFrame reference, so we can cancel it if we wish
@@ -83,8 +85,6 @@ const debounce = (fn) => {
 };
 
 
-// Reads out the scroll position and stores it in the data attribute
-// so we can use it in our stylesheets
 const storeScroll = () => {
   const centerScrollOffset = getViewportCenterScrollOffset();  
   for (var x=0; x < overlays.length; x++) {
@@ -97,7 +97,6 @@ const storeScroll = () => {
   }
 }
 
-// Listen for new scroll events, here we debounce our `storeScroll` function
 document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 
 // Update scroll position for first time
