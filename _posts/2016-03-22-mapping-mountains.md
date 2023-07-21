@@ -7,6 +7,7 @@ authors: [meetar]
 image: raisedreliefUS.jpg
 imgalt: A macro photo of a raised relief map of the California coast
 tag: [tangram, data, demo, terrain, elevation]
+aria-label: Read the post Mapping Mountains
 published: true
 ---
 

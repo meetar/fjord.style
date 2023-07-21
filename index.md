@@ -38,7 +38,7 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
   <ul class="post-cards">
     {% for post in site.posts limit:4 %}
       {% if post.hidden == null or post.hidden == false %}
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><li class="post-card">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.aria-label }}"><li class="post-card">
           <h2>
             {{ post.title }}
           </h2>
@@ -46,7 +46,7 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
 
           <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
           {% if post.image %}<span class="post-img">
-          <a href="{{ post.url | prepend: site.baseurl }}"><img class="headerimg" src="{{ site.url }}/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></a></span>
+          <img class="headerimg" src="{{ site.url }}/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
           {% endif %}
 
         </li></a>

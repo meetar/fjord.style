@@ -5,6 +5,7 @@ category: blog
 excerpt: Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the shape and location of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.
 image: terrain3.jpg
 imgalt: A terrain map in shades of green
+aria-label: Read the post Terrain Generalization
 authors: [meetar]
 tags: [tangram, terrain, demo]
 published: true
