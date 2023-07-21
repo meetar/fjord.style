@@ -243,13 +243,13 @@ With this technique, a source image is "stretched" over an infinitely large hemi
 
 The effect is of a strongly colored sky casting light on the scene, which can produce striking results with relatively little calculation. For our purposes, smooth gradients in limited palettes work best. Here are some examples, to give you the idea (click each for a full-screen interactive version):
 
-<a href="https://tangrams.github.io/terrain-demos/?url=styles/environment-map1.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env1bg.jpg"></a>
+<a href="https://tangrams.github.io/terrain-demos/?url=styles/environment-map1.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env1bg.jpg" alt='A fiery red terrain map'></a>
 
-<a href="https://tangrams.github.io/terrain-demos/?url=styles/sunrise.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env4bg.jpg"></a>
+<a href="https://tangrams.github.io/terrain-demos/?url=styles/sunrise.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env4bg.jpg" alt='A smooth blue terrain map'></a>
 
-<a href="https://tangrams.github.io/terrain-demos/?url=styles/sunset.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env3bg.jpg"></a>
+<a href="https://tangrams.github.io/terrain-demos/?url=styles/sunset.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env3bg.jpg" alt='A soft green terrain map'></a>
 
-<a href="https://tangrams.github.io/terrain-demos/?url=styles/metal.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env2bg.jpg"></a>
+<a href="https://tangrams.github.io/terrain-demos/?url=styles/metal.yaml#12/37.8773/-121.9290" target="_blank"><img width="100%" src="https://tangrams.github.io/terrain-demos/img/env2bg.jpg" alt='A shiny silver terrain map'></a>
 
 And at the risk of being struck dead for hubris by the ghost of Eduard Imhof, here's a hastily-daubed homage to the Swiss Style:
 
