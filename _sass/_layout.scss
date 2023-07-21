@@ -12,13 +12,11 @@
   justify-content: center;
   background: linear-gradient(0deg, rgba(0,0,0,.05) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0) 40%);
   border-bottom: 2px solid #eee;
-  // border: 1px solid gold;
   text-align: center;
   h1 {
     margin: 0;
   }
   .links {
-    // border: 1px solid gold;
     display: flex;
     gap: 10px;
     margin: auto;
@@ -33,11 +31,9 @@
 
 .site-title {
   
-  // border: 1px solid gold;
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-weight: 500;
     font-size: max(32px, 9vw);
-    // line-height: 1.25em;
     line-height: .8em;
     word-spacing: .1em;
     text-align: center;
@@ -325,9 +321,6 @@ span.post-img {
       font-style: italic;
       color: grey;
       font-size: .8em;
-      // padding-bottom: $spacing-unit * .35;
-      // padding-top: 5em;
-      // border: 2px solid gold;
   }
   
   hr {
@@ -336,8 +329,6 @@ span.post-img {
   }
 
   @include media-query($on-laptop) {
-      // font-size: 24px;
-      // font-size: 5vw;
       line-height: 1.15em;
       letter-spacing: .05em;
       padding-bottom: $spacing-unit * .25;
@@ -346,7 +337,6 @@ span.post-img {
 }
 
 .post-title {
-  // border: 1px solid blue;
     display: inline-block;
     width: 100%;
     font-family: 'Montserrat', Helvetica, sans-serif;
@@ -359,7 +349,6 @@ span.post-img {
     line-height: 1.25em;
     margin: 0;
     padding: 0;
-    // border-bottom: 1px solid #999;
 
 }
 
@@ -467,7 +456,6 @@ div#globecontainer {
 
 #globegif {
     display: none;
-    // margin-bottom: 2em;
 }
 
 iframe {
@@ -554,30 +542,22 @@ iframe {
 
 
   .post-cards {
-    // position: absolute;
     position: relative;
-    // margin: 2vw;
     width: 90vw;
     left: calc(-45vw + 45%);
-    // margin: auto;
     display: flex;
     flex-wrap: wrap;
-    // border: 2px solid blue;
     list-style: none;
-    // gap: 2vw;
     justify-content: center;
     font-size: .9em;
 
     .post-link {
       color: black;
       font-size: 1em;
-      // line-height: .9em;
     }
   }
   .post-card {
     margin: 2vw 1vw;
-    // zoom: .9;
-    // list-style: none;
     border: 1px solid #ddd;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 6px;
     padding: 0 20px;
