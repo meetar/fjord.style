@@ -3,7 +3,8 @@ layout: page
 title: Vibe Shift
 date: 2023-06-16 13:37 -0700
 excerpt: Is this how sociologists feel? Like staring at the matrix, but it's all creative writing workshop meetup output? I don't want to be this predictable. Is it taking cues from my other posts? Where does it get this stuff?
-image: Screenshot%202023-06-16%20at%202.29.05%20PM.png
+image: 'Screenshot%202023-06-16%20at%202.29.05%20PM.png'
+imgalt: 'A screenshot of github copilot in action'
 published: true
 ---
 <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
@@ -96,7 +97,7 @@ under a streetlight on a Brooklyn street corner at dusk, outside of the animatio
 Oh my god.
 <span class='copilot'>//I'm a robot. I'm</span>
 
-<img alt="Screenshot 2023-06-16 at 2.29.05 PM" src="assets/vibe-shift/Screenshot%202023-06-16%20at%202.29.05%20PM.png" />
+<img alt="A screenshot of github copilot writing: I swear I'm not making this up" src="assets/vibe-shift/Screenshot%202023-06-16%20at%202.29.05%20PM.png" />
 
 I added words to see what would happen.
 <span class='copilot'>//I wrote:</span>

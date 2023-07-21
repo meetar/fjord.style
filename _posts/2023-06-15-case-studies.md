@@ -32,7 +32,7 @@ Here are some examples to illustrate that work, as well as the <mark>guiding pri
   <div class="emphasis"><label>The Context:</label> Enterprise network permissions configuration management</div>
 </div>
 
-<div class="illustration"><img src="/assets/case-studies/pathfinder-sketch.jpg" width='800px'></div>
+<div class="illustration"><img src="/assets/case-studies/pathfinder-sketch.jpg" alt='A pen-and-ink sketch of a node-based graph network interface' width='800px'></div>
 
 This project was a key component in a network administration product I worked on as <mark>principal product designer</mark> for a startup inside a large security organization. User research by the product team found that security administrators were unsure what effects a given change to their permissions configuration would produce. Because of the interlocking, overlapping nature of these networks, apparently-simple changes could have extremely wide-ranging, unexpected, and costly effects.
 
@@ -44,13 +44,13 @@ The results dataset was the <mark>key value proposition</mark> of the product, b
   <div class="multiple">
     <div class="shadow">
       <div class="underlay">
-        <img src="/assets/case-studies/screenshot1.png" width='1000px'>
+        <img src="/assets/case-studies/screenshot1.png" alt='A figma mockup of a network interface' width='1000px'>
         <span class="label left">Figma Mockup</span>
       </div>
     </div>
     <div class="overlayshadow">
       <div class="overlay">
-        <img src="/assets/case-studies/screenshot2.png" width='1000px'>
+        <img src="/assets/case-studies/screenshot2.png" alt='An interactive network interface' width='1000px'>
         <span class="label right">Prototype Interface</span>
       </div>
     </div>
@@ -90,7 +90,7 @@ Technology used:
   
 </div>
 
-<div class="illustration"><img src="/assets/case-studies/terrain-sketch3.jpg" width="800px"></div>
+<div class="illustration"><img src="/assets/case-studies/terrain-sketch3.jpg" alt='Pen and ink sketches of globes' width="800px"></div>
 
 In visual effects work, it's common to want to zoom into or away from a depiction of the Earth. In these cases, topographical features are typically only represented at a single scale, if at all – either they are a cartoon version of terrain or real-scale. Actual topographical data becomes difficult to exaggerate at large scales due to a mismatch between the scale of the map and our experience of mountains – when mountains are scaled vertically, things don't look right. Can our expectations about how landscapes should look be described empirically so computers can get involved?
 
@@ -102,13 +102,13 @@ Can this unwieldy data be used to show something new?
   <div class="multiple">
     <div class="shadow">
       <div class="underlay">
-        <img src="/assets/case-studies/earth-bw.jpg" width='1000px'>
+        <img src="/assets/case-studies/earth-bw.jpg" alt='a 3D rendered monochrome globe with exaggerated terrain' width='1000px'>
         <span class="label left">Lighting Layer</span>
       </div>
     </div>
     <div class="overlayshadow">
       <div class="overlay">
-        <img src="/assets/case-studies/earth-color.jpg" width='1000px'>
+        <img src="/assets/case-studies/earth-color.jpg" alt='a 3D rendered colored globe with exaggerated terrain' width='1000px'>
         <span class="label right">Color Layer</span>
       </div>
     </div>
@@ -148,7 +148,7 @@ Technology used:
 </div>
 
 <div class="illustration">
-        <img src="/assets/case-studies/calcite.jpg" width='1000px'>
+        <img src="/assets/case-studies/calcite.jpg" alt="A screenshot of a website showing design system components" width='1000px'>
 </div>
 
 While at the R&D center of a large GIS organization, I was part of the development and launch of a <a href="https://developers.arcgis.com/calcite-design-system/">design and component system</a> for a major product offering in widespread use by governments at all levels as a public-facing communications platform. Part of that initiative was focused on increasing accessibility while expanding the capabilities of the component system, not least to ensure compliance with federal regulation.
@@ -158,7 +158,7 @@ The average digital map is an inherently visual object, with text embedded as pi
 Are there ways to use the strengths of a map to reach people who don't use them in the typical way?
 
 <div class="illustration">
-        <img src="/assets/case-studies/musicmap.jpg" width='1000px'>
+        <img src="/assets/case-studies/musicmap.jpg" alt='A map of the Iberian peninsula with data points scattered on it' width='1000px'>
 </div>
 
 <div>
@@ -206,13 +206,13 @@ Is there a way to make this work less arcane and technical, and more broadly acc
   <div class="multiple">
     <div class="shadow">
       <div class="underlay">
-        <img src="/assets/case-studies/kinkade1.jpg" width='1000px'>
+        <img src="/assets/case-studies/kinkade1.jpg" alt='A terrain map of Mount Fuji in blues and pinks' width='1000px'>
         <span class="label left">Mt. Fuji</span>
       </div>
     </div>
     <div class="overlayshadow">
       <div class="overlay">
-        <img src="/assets/case-studies/kinkade2.jpg" width='1000px'>
+        <img src="/assets/case-studies/kinkade2.jpg" alt='A terrain map of the Grand Canyon in teal and orange' width='1000px'>
         <span class="label right">Grand Canyon</span>
       </div>
     </div>
@@ -272,13 +272,13 @@ Could a web map datasource be used to produce such a versatile, non-Mercator web
   <div class="multiple">
     <div class="shadow">
       <div class="underlay">
-        <img src="/assets/case-studies/albers1.jpg" width='1000px'>
+        <img src="/assets/case-studies/albers1.jpg" alt='A map of North America' width='1000px'>
         <span class="label left">North American Conic Projection</span>
       </div>
     </div>
     <div class="overlayshadow">
       <div class="overlay">
-        <img src="/assets/case-studies/albers2.jpg" width='1000px'>
+        <img src="/assets/case-studies/albers2.jpg" alt='A map of Eurasia' width='1000px'>
         <span class="label right">Eurasian Conic Projection</span>
       </div>
     </div>

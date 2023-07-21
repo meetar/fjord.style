@@ -6,6 +6,7 @@ categories: terrain
 published: true
 excerpt: I have a lot of questions. I blame the fact that I grew up in a fjord.
 image: 1446403033.jpg
+imgalt: A macro photo of a raised relief map
 ---
 
 [![A hand squishing a mountain range's head]({{ site.url }}/assets{{ page.url }}/squish.jpg)](http://www.flickr.com/photos/trs/3476133166/

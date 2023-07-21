@@ -46,7 +46,7 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
 
           <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
           {% if post.image %}<span class="post-img">
-          <a href="{{ post.url | prepend: site.baseurl }}"><img class="headerimg" src="{{ site.url }}/assets{{ post.url }}/{{ post.image }}"></a></span>
+          <a href="{{ post.url | prepend: site.baseurl }}"><img class="headerimg" src="{{ site.url }}/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></a></span>
           {% endif %}
 
         </li></a>

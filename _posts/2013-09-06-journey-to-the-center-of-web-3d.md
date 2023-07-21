@@ -6,6 +6,7 @@ categories: terrain
 published: true
 excerpt: Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with <a href="http://threejs.org/">three.js</a>, a popular web 3D library.
 image: displacement3.png
+imgalt: A 3D rendered heightmap of the British Isles
 ---
 
 *Web 3D is finally taking off, thanks to new code libraries and cooperation from browser makers. Here’s a look at its current state as seen in my experiments with [three.js](http://threejs.org/), a popular web 3D library.*
