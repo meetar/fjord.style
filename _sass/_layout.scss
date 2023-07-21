@@ -25,10 +25,8 @@
     a {
       color: black;
       font-style: italic;
-      text-decoration: underline;
     }
     a:hover {
-      height: unset !important;
     }
   }
 }
@@ -93,19 +91,6 @@
         // letter-spacing: .025em;
         font-weight: 900;
     }
-}
-
-
-.site-title, a:hover {
-    text-decoration: none;
-}
-
-a:hover {
-    color: darkblue;
-}
-
-a:visited {
-    color: #24536c;
 }
 
 .site-nav, .footer-site-nav {
@@ -415,11 +400,6 @@ img {
 footer img {
     display: inline;
 }
-
-footer a {
-    margin: 0;
-}
-
 
 .caption {
     font-size: $small-font-size;

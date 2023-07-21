@@ -18,16 +18,6 @@
       padding-left: $spacing-unit / 2;
   }
 
-  a {
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: rgb(40, 174, 91);
-    &:hover {
-      text-decoration: none;
-      background-color: rgb(172, 240, 198);
-    }
-  }
-
   ul {
     margin: none;
     margin-top: -1.7em;
