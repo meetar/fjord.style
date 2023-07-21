@@ -11,7 +11,7 @@ email: pxrich@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   fjord.style is the web site of visual technologist Peter Richardson.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://fjord.style" # the base hostname & protocol for your site
+url: "https://fjord.style" # the base hostname & protocol for your site
 permalink: /:title
 twitter_username: meetar
 github_username:  meetar
