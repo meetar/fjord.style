@@ -205,9 +205,8 @@
 /**
  * Page content
  */
-.page-content {
-  // border: 1px solid red;
 
+ .page-content {
     padding: 1em 0;
 }
 
@@ -309,8 +308,6 @@ span.post-img {
  */
 
 .post-header {
-  // background-color: red;
-
   text-align: center;
   margin-bottom: $spacing-unit * 1.25;
   // padding-top: $spacing-unit * .15;
@@ -487,17 +484,12 @@ iframe {
 }
 
 .prevwrapper {
-
-    // border: 2px solid blue;
     width: 100%;
-    // align-items: left;
-    // display: flex;
 }
+
 .nextwrapper {
     width: 100%;
-    // border: 2px solid red;
     text-align: right;
-
 }
 
 .aside {
