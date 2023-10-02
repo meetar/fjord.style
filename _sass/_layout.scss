@@ -600,6 +600,7 @@ iframe {
   }
 
   .iframewrapper {
+    position: relative;
     width: 100%;
     // border: 2px solid green;
     display: flex;
@@ -607,7 +608,8 @@ iframe {
   }
   .glcanvas {
     width: 500px;
+    max-width: 80vw;
     height: 500px;
+    max-height: 500px;
     // border: 2px solid blue;
   }
-  

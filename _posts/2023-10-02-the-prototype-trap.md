@@ -143,5 +143,5 @@ This was secretly a story about accessibility. Thanks for reading!
 ---
 
 <div class="iframewrapper">
-<a href="https://github.com/meetar/reverse-parallax-shader"><iframe class="glcanvas" src="https://meetar.github.io/FS-reverse-parallax/"></iframe></a>
+<iframe class="glcanvas" src="https://meetar.github.io/FS-reverse-parallax/"></iframe>
 </div>
