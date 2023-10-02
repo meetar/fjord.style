@@ -1,11 +1,9 @@
 ---
 layout: page
-title:  "The Prototype Trap"
-# subtitle:  "Diving Back In to Web 3D"
-date:   2023-10-02 12:02:02
+title:  The Prototype Trap
 categories: 3d
 published: true
-excerpt: `So: don't use these shortcuts, they're slow. Very wise advice. I chose to do the exact opposite.`
+excerpt: It was fun to make, and is fun to use, but I can't recommend the stack without a long list of reservations. The major downside was that I accidentally recapitulated my career in prototyping.
 image: 'prototype.jpg'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
@@ -14,13 +12,13 @@ I'm tired of reading long articles, so I'm going to write this one like a progre
 
 ---
 
-<img class="gem" src="assets/prototype-trap/crystal9.png" />
+<img class="gem" src="assets/the-prototype-trap/crystal9.png" />
 
 I made a WebGL demo with my 9-year-old called <a href="https://meetar.github.io/gem-collector/">The Gem Collector</a>! It was mostly an excuse to try some things, wrapped in a framing narrative that looks like a pixel-art video game. It was fun to make, and is fun to use, but I can't recommend the stack without a long list of reservations. The major downside was that I accidentally recapitulated my career in prototyping.
 
 ---
 
-<img class="gem" src="assets/prototype-trap/crystal8.png" />
+<img class="gem" src="assets/the-prototype-trap/crystal8.png" />
 Ten years ago <a href="https://fjord.style/journey-to-the-center-of-web-3d">I wrote about the then-current state of Web 3D</a>, ostensibly. What I <em>actually</em> wrote was a breakdown of the process of developing a <a href="http://meetar.github.io/globe-terrain/">globe demo</a> in JavaScript. Ten years later, I wanted to try something similar, using modern methods and tools. I was able to do a bit more in a bit less time, and the result was a fun <a href="https://meetar.github.io/gem-collector/">WebGL toy</a>! and a learning experience with my daughter!
 
 By using available third-party tools, instead of writing it by hand at a lower level, I got a prototype up and running in record time. However, getting it to production took much longer than I anticipated, and I'm not 100% sure the tradeoff was worth it.
@@ -29,7 +27,7 @@ Spoiler: this has been a problem everywhere I've made prototypes, going back to 
 
 ---
 
-<img class="gem" src="assets/prototype-trap/crystal7.png" />
+<img class="gem" src="assets/the-prototype-trap/crystal7.png" />
 Ten years ago I was transitioning from a VFX career and wanted to see whether the burgeoning world of real-time web 3D could offer anything like what I was accustomed to. 
 
 As part of this, I started learning <a href="http://threejs.org">three.js</a>, which had quickly become the most popular way to interact with WebGL. I had an idea for <a href="http://meetar.github.io/globe-terrain/">a representation of the earth</a> I wanted to see, so I coerced three.js to draw it with some of its built-in capabilities and some I had to hack in, using some techniques I knew from my VFX days and some I had to learn from scratch, following hunches and squinting at white papers. It took a few solid weeks, and worked fairly well, and almost everywhere. "Stirrings of order in the chaos" I said.
@@ -45,7 +43,7 @@ Also I wanted to try an idea for a shader I'd first had many years ago, to fake 
 
 ---
 
-<img class="gem" src="assets/prototype-trap/crystal6.png" />
+<img class="gem" src="assets/the-prototype-trap/crystal6.png" />
 By VFX career I mean 15 years in 3DS Max, After Effects, and Maya, rendering everything frame by frame. I think it was the animator David OReilly who convinced me that this approach was mostly unnecessary; so far as I could tell, he did all of his early work in the Maya preview window. No rendering, no anti-aliasing even. Just all real-time GPU output, super-fast feedback loops, very punk rock. It felt like an honest expression of the state of the art at a human scale, instead of a laborious, pains-taking simulation of advanced technology, a slick and shiny layer of big budgets shellacked over the grinding tedium of hundreds of people emailing "okay I updated the asset" over and over to each other until they got laid off or died.
 
 The major upside of the slow way is that when you finish, you have a video. It looks – more-or-less – the same everywhere. But once you rely on a random selection of your viewers' GPUs to draw your pictures, you're stepping into a world of nondeterministic chaos.
@@ -60,7 +58,7 @@ Later, I worked on another WebGL mapping project for another React-based app. I 
 
 ---
 
-<img class="gem" src="assets/prototype-trap/crystal5.png" />
+<img class="gem" src="assets/the-prototype-trap/crystal5.png" />
 
 So when I started contemplating another WebGL project, I did not assume I'd use React. I just wanted to work quickly, and have nice-looking output. I started looking for a modern GUI for my debugging work to replace the old and crotchety dat.gui boilerplate I'd made years ago, and found a nice-looking library called <a href="leva.org">Leva</a>. Unfortunately, its tagline is "React-first components." I like components! But do I like them enough to use React for a 3D project? It felt like hiring Deloitte for a bake sale.
 
@@ -114,7 +112,7 @@ So I did that! And it looked great on my machine! ...But almost nowhere else.
 
 
 ---
-<img class="gem" src="assets/prototype-trap/crystal4.jpg" />
+<img class="gem" src="assets/the-prototype-trap/crystal4.jpg" />
 
 It's true: hundreds of simultaneous texture lookups rendered multiple times per frame is not optimal. I shouldn't have done that! It was a useful prototype, but not an effective production strategy. It rendered at 60fps on fast machines, and 20fps on the next tier down, and anything more than a few years old locked up. I have a Windows gaming laptop which runs Cyberpunk 77 on High, but when it ran the demo the fans immediately redlined and the output looked like a reconstructed Muybridge sequence.
 
@@ -132,7 +130,7 @@ There's another, parallel argument to be made here about Large Language Models a
 
 ---
 
-<img class="gem" src="assets/prototype-trap/crystal3.jpg" />
+<img class="gem" src="assets/the-prototype-trap/crystal3.jpg" />
 
 One last note on this: I've discovered that it's not always obvious when you cross the line from prototype to production. I was making a toy with my kid! But we also wanted to show it to other people. To that end, I'd like to explore some kind of "responsive" 3D framework for site-building, which considers overall browser capability in addition to `@media-query` style switches, and includes the kind of throttling capability I wound up bodging in to my 3D code.
 
