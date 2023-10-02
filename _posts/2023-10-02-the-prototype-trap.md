@@ -3,7 +3,7 @@ layout: page
 title:  The Prototype Trap
 categories: 3d
 published: true
-excerpt: It was fun to make, and is fun to use, but I can't recommend the stack without a long list of reservations. The major downside was that I accidentally recapitulated my career in prototyping.
+excerpt: In fact from now on when somebody asks "How much work would it take to get this to production?" my answer will be "How much of it did we actually write?"
 image: 'prototype.jpg'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
@@ -14,7 +14,7 @@ I'm tired of reading long articles, so I'm going to write this one like a progre
 
 <img class="gem" src="assets/the-prototype-trap/crystal9.png" />
 
-I made a WebGL demo with my 9-year-old called <a href="https://meetar.github.io/gem-collector/">The Gem Collector</a>! It was mostly an excuse to try some things, wrapped in a framing narrative that looks like a pixel-art video game. It was fun to make, and is fun to use, but I can't recommend the stack without a long list of reservations. The major downside was that I accidentally recapitulated my career in prototyping.
+I made a WebGL demo with my 9-year-old called <a href="https://meetar.github.io/gem-collector/">The Gem Collector</a>! It was mostly an excuse to try some new techniques and learn some new libraries, wrapped in a framing narrative that looks like a pixel-art video game. It was fun to make, and is fun to use, but I can't recommend the stack without a long list of reservations. The major downside was that I accidentally recapitulated my career in prototyping.
 
 ---
 
@@ -52,9 +52,9 @@ When I started learning 3D, the real-time capability of consumer-grade machines 
 
 Three.js makes WebGL much easier, but even with all its syntactic sugar, it's comparatively low-level from the point of view of someone used to web frameworks. And if you want any custom shaders, you still have to write shader code. It could be worse, and it was – ten years ago to do anything interesting you had to use actual math. Now, Three.js handles lights and materials automatically in most cases, and interaction and effects are stable and fast. I see a question from the audience. "Does it work with React!?" Yes! ...Well, kind of. And not the way you're hoping. Nothing beyond a simple demo setup "just works." Until you learn all the quirks, you still have to struggle.
 
-Funny story. My first in-depth exposure to React came when I worked alongside a team that made an editor using React for a WebGL map-drawing library I was working on. It looked great and worked well, but it came with a very long tail of weird bugs involving other libraries, in particular a third-party code editor which had a lot of its own internal state and event handlers. It was ultimately probably easier than writing it <em>not</em> with React, but when you use React, all your bugs become React-related. And in any situation with lots of complex UI or animation, state management can be a chore, and React just multiplies that.
+Funny story. My first in-depth exposure to React was an editor for a WebGL map-drawing library I was working on. It looked great and worked well, but it came with a very long tail of weird bugs involving other libraries, in particular a third-party code editor which had a lot of its own internal state and event handlers. It was ultimately probably easier than writing it <em>not</em> with React, but when you use React, all your bugs become React-related. And in any situation with lots of complex UI or animation, state management can be a chore, and React just multiplies that.
 
-Later, I worked on another WebGL mapping project for another React-based app. I had to do a lot of middle-management to connect React to the graphics state, as it had no way to inspect the contents of a Canvas object, and no idea what WebGL was doing. The graphics layer was being managed by the WebGL library I was using, with a relatively small interaction layer exposed, and any connections in or out had to run through a set of controls React could manipulate, so that it thought it was still in charge of state, not to mention the event handlers. For an "unopinionated framework" I've had a whole lot of arguments with React.
+Later, I worked on another WebGL mapping project for another React-based app. I had to do a lot of middle-management to connect React to the graphics state, as it had no way to inspect the contents of a Canvas object, and no idea what WebGL was doing. The graphics layer was being managed by the WebGL library I was using, with a relatively small interaction layer exposed, and any connections in or out had to run through a set of controls React could manipulate, so that it thought it was still in charge of state, not to mention the event handlers. For an "unopinionated framework" React sure seems to get in a lot of arguments.
 
 ---
 
@@ -124,17 +124,19 @@ Real-time GPU work means different things to different GPUs. As I write this I h
 
 So a certain amount of work is necessary to enable a given 3D scene to look its best everywhere, including providing alternatives for machines that don't have the juice to run it, or have JavaScript (very sensibly) disabled, etc. But by and large the 3D ecosystem isn't as interested in providing fallbacks as in pushing that envelope. And third-party libraries have their own assumptions and priorities baked in, and when you use them, they become yours.
 
-The end result in my case was pleasing, but time-consuming. Maybe if I'd skipped the libraries it would have taken twice as long to write the proof of concept, but – who knows? – maybe a fraction of the time debugging, for an end state which more closely resembled my goal. This prototyping trap is something I've been fighting my entire career, and the battle is rejoined every time a new library, framework, or platform claims to solve an old problem in a better way.
+The end result in my case was pleasing, but time-consuming. Maybe if I'd skipped the libraries it would have taken twice as long to write the proof of concept, but – who knows? – maybe a fraction of the time debugging, for an end state which more closely resembled my goal. This is something I've been fighting my entire career, and the battle is rejoined every time a new library, framework, or platform claims to solve an old problem in a better way.
 
-There's another, parallel argument to be made here about Large Language Models and their collective understanding of how to solve code problems. A LLM is effectively an outlier-scrubbing device, and good luck using them to do something new.
+In fact from now on when somebody asks "How much work would it take to get this to production?" my answer will be "How much of it did we actually write?"
+
+There's a parallel argument to be made here about Large Language Models and their collective understanding of how to write code. A LLM is effectively an outlier-scrubbing device, and good luck using them to do something new. But it's also other peoples' work, and unlike a library, you can't view source. Who knows, really, what's buried in there?
 
 ---
 
 <img class="gem" src="assets/the-prototype-trap/crystal3.jpg" />
 
-One last note on this: I've discovered that it's not always obvious when you cross the line from prototype to production. I was making a toy with my kid! But we also wanted to show it to other people. To that end, I'd like to explore some kind of "responsive" 3D framework for site-building, which considers overall browser capability in addition to `@media-query` style switches, and includes the kind of throttling capability I wound up bodging in to my 3D code.
+One last note on this: I've discovered that it's not always obvious when you cross the line from prototype to production. I was making a toy with my kid! But we also wanted to show it to other people, and to my consternation, they're all using different machines. To that end, I'd like to explore some kind of "responsive" 3D framework for site-building, which considers overall browser capability in addition to `@media-query` switches, and includes the kind of throttling capability I wound up bodging in to my 3D code.
 
-There are pieces of this around, including facilities for LoD (level-of-detail) model-swapping and performance monitoring, and some attention has been made to the `<model-viewer>` tag specifically. But as of this writing, most online 3D experiences are "one size fits most" and it'll stay that way until the developers more closely resemble the users.
+There are pieces of this around, including facilities for level-of-detail model-swapping and performance monitoring, and some attention has been made to the `<model-viewer>` tag specifically. But as of this writing, most online 3D experiences are "one size fits most" and it'll stay that way until the developers more closely resemble the users.
 
 This was secretly a story about accessibility. Thanks for reading!
 
