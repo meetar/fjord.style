@@ -8,7 +8,7 @@ image: 'prototype.jpg'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
 
-I'm tired of reading long articles, so I'm going to write this one like a progressive JPG. It might still be long, but maybe it won't feel that way. Anyway, it's about third-party libraries, open-source software, and GPUs. There's a prize at the bottom.
+I'm tired of reading long articles, so I'm going to write this one like a progressive JPEG. It might still be long, but maybe it won't feel that way. Anyway, it's about third-party libraries, open-source software, and GPUs. There's a prize at the bottom.
 
 ---
 
