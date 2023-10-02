@@ -591,4 +591,23 @@ iframe {
       margin: 1em 0 3em;
     }
   }
+  img.gem {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 3em auto;
+    width: 300px;
+    image-rendering: pixelated;
+  }
+
+  .iframewrapper {
+    width: 100%;
+    // border: 2px solid green;
+    display: flex;
+    justify-content: center;
+  }
+  .glcanvas {
+    width: 500px;
+    height: 500px;
+    // border: 2px solid blue;
+  }
   
