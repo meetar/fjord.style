@@ -128,7 +128,7 @@ The end result in my case was pleasing, but time-consuming. Maybe if I'd skipped
 
 In fact from now on when somebody asks "How much work would it take to get this to production?" my answer will be "How much of it did we actually write?"
 
-There's a parallel argument to be made here about Large Language Models and their collective understanding of how to write code. A LLM is effectively an outlier-scrubbing device, and good luck using them to do something new. But it's also other peoples' work, and unlike a library, you can't view source. Who knows, really, what's buried in there?
+There's a parallel argument to be made here about Large Language Models and their collective understanding of how to write code. A LLM is effectively an outlier-scrubbing device, and good luck using them to do something new. But it's also other people's work, and unlike a library, you can't view source. Who knows, really, what's buried in there?
 
 ---
 
