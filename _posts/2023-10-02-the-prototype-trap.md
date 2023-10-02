@@ -90,7 +90,7 @@ At first, I was a bit offended. I mean: half of this is English. Robots taking o
 
 I'm not the first to point out that libraries just hide complexity behind an import, and that outsourced functionality is only as flexible as the API. So I wasn't really saving code, just typing, and paying for it with a reduction in functionality.
 
-This is CS 101 stuff. Did I mention I went to art school? I did start out in Engineering, but they tried to teach me Fortran, and the luminiferous aether was pretty thin on the ground in that class. All this to say that the kind of shader wiring I wanted still can't be done automagically, at least not the way that a graphics dev would ideally do it. To my knowledge.
+This is CS 101 stuff. Did I mention I went to art school? I did start out in Engineering, but they tried to teach me Fortran, and the luminiferous aether was pretty thin on the ground in that class. All this to say that the kind of shader wiring I wanted still can't be done automagically, at least not in the way that I imagine in my private moments.
 
 When I did my globe project, I had to strip some three.js shaders for parts and make new ones from the pieces. One shader had displacement code, another had normal calculations, etc, but none had everything I needed in one place. So that required a bunch of Work, our Sworn Enemy.
 
@@ -120,7 +120,7 @@ I wound up inserting numerous code branches to handle lower-capacity systems, tu
 
 If at this point you suggest Redux or writing my own reducer, you are very smart, but you are missing my point, which is that I was trying to do As Little As Possible. Specifically: I was trying to make these libraries do something they weren't built to do, which I'm accustomed to. When you're prototyping, you generally only have to get it working once. But when coding for production, you have to care about a whole lot of factors beyond your control, simultaneously, and get it working for all of them, and it was painful learning exactly how much these third-party libraries didn't care about those concerns at all.
 
-Real-time GPU work means different things to different GPUs. As I write this I have seven of them on my desk, with another one underneath it, spanning 12 fairly crucial years of technological development – the oldest is inside a MacBook Air from 2011. The detect-gpu library I use classifies it as Tier 0, of type "FALLBACK" – it's not even in the database.
+Real-time GPU work means different things to different GPUs. As I write this I have seven of them on my desk, with another one underneath it, spanning 12 fairly crucial years of technological development – the oldest is inside a MacBook Air from 2011. The detect-gpu library I use classifies it as Tier 0, of type "FALLBACK" – it's not even in the database. And it did eventually draw something, but it required a whole lot of if statements to get there.
 
 So a certain amount of work is necessary to enable a given 3D scene to look its best everywhere, including providing alternatives for machines that don't have the juice to run it, or have JavaScript (very sensibly) disabled, etc. But by and large the 3D ecosystem isn't as interested in providing fallbacks as in pushing that envelope. And third-party libraries have their own assumptions and priorities baked in, and when you use them, they become yours.
 
