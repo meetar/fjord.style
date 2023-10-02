@@ -5,9 +5,9 @@ title:  "The Prototype Trap"
 date:   2023-10-02 12:02:02
 categories: 3d
 published: true
-excerpt: The state of things, from the point of view of a shiny rock.
-image: crystal.png
-imgalt: A 3D computer-generated crystal fomamtion
+excerpt: `So: don't use these shortcuts, they're slow. Very wise advice. I chose to do the exact opposite.`
+image: 'prototype.jpg'
+imgalt: 'A closeup of a 3D rendered crystal'
 ---
 
 I'm tired of reading long articles, so I'm going to write this one like a progressive JPG. It might still be long, but maybe it won't feel that way. Anyway, it's about third-party libraries, open-source software, and GPUs. There's a prize at the bottom.
