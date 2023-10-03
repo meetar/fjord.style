@@ -136,7 +136,7 @@ There's a parallel argument to be made here about Large Language Models and thei
 
 One last note on this: I've discovered that it's not always obvious when you cross the line from prototype to production. I was making a toy with my kid! But we also wanted to show it to other people, and to my consternation, they're all using different machines. To that end, I'd like to explore some kind of "responsive" 3D framework for site-building, which considers overall browser capability in addition to `@media-query` switches, and includes the kind of throttling capability I wound up bodging in to my 3D code.
 
-There are pieces of this around, including facilities for level-of-detail model-swapping and performance monitoring, and some attention has been made to the `<model-viewer>` tag specifically. But as of this writing, most online 3D experiences are "one size fits most" and it'll stay that way until the developers more closely resemble the users.
+There are pieces of this around, including facilities for level-of-detail model-swapping and performance monitoring, and some attention has been made to the `<model-viewer>` tag specifically. But as of this writing, most online 3D experiences are "one size fits most" and they'll stay that way until the developers more closely resemble the users.
 
 This was secretly a story about accessibility. Thanks for reading!
 
