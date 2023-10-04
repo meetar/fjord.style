@@ -36,21 +36,20 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
 <div class="comments">My latest posts:</div>
 
   <ul class="post-cards">
-    {% for post in site.posts limit:4 %}
-      {% if post.hidden == null or post.hidden == false %}
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.aria-label }}"><li class="post-card">
+    {% assign filtered_posts = site.posts | exclude_hidden_posts %}
+    {% for post in filtered_posts limit:4 %}
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.aria-label }}"><div class="border"><li class="post-card">
           <h2>
             {{ post.title }}
           </h2>
           <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
-
-          <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
           {% if post.image %}<span class="post-img">
-          <img class="headerimg" src="{{ site.url }}/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
+          <img class="cardheaderimg" src="/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
           {% endif %}
 
-        </li></a>
-      {% endif %}
+          <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
+
+        </li></div></a>
     {% endfor %}
   </ul>
 
