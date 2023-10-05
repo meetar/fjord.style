@@ -38,6 +38,7 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
   <ul class="post-cards">
     {% assign filtered_posts = site.posts | exclude_hidden_posts %}
     {% for post in filtered_posts limit:4 %}
+    {% unless post.hidden %}
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.aria-label }}"><div class="border"><li class="post-card">
           <h2>
             {{ post.title }}
@@ -50,6 +51,7 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
           <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
 
         </li></div></a>
+        {% endunless }
     {% endfor %}
   </ul>
 
