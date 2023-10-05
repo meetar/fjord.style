@@ -51,7 +51,7 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
           <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
 
         </li></div></a>
-        {% endunless }
+        {% endunless %}
     {% endfor %}
   </ul>
 
