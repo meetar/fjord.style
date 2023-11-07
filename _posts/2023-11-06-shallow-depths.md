@@ -71,30 +71,31 @@ Let's try something new! Mix and match your own adventure:
 
 ---
 
-I made a magic brush that paints inside of things! I made it so I can hide sparkles in crystals. This is very important to my career.
+I made a magic brush that paints inside of things! I made it so I can hide sparkles in crystals.
 
-This is a 3D trick that moves textures around on an object's surface based on the view angle. This makes the texture appear to be at a different distance from the view. A basic version would look something like this:
+This is a 3D trick that moves textures around on an object's surface based on the view angle. This makes the texture appear to be at a different distance from the view.
 
-- simple one-layer view change
-
-This works due to the <mark>parallax effect</mark>, which you've seen if you've ever looked out the window of a moving vehicle, or played a pixel-art video game. You can even fake it in CSS!
+This works due to the <mark>parallax effect</mark>, which makes distant objects appear to move more slowly. It's especially noticeable when looking out of the side windows of a moving vehicle, or while playing a pixel-art video game. You can even fake it in CSS! Move your cursor over the box below:
 
 <div id="scrollContainer" class="container">
   <div id="scrollDiv" class="box"></div>
 </div>
 
-The parallax effect also works during rotation, which can also be simulated in CSS:
+This window appears to reveal a separate, more-distant starry layer. This layer is just a repeating <code>background-image</code> on the moving div, but its position is being moved more slowly than the div, but in <mark>linear proportion</mark> to the div's position. This relationship creates the parallax effect.
+
+This effect can also work during rotation, which can also be simulated in CSS:
 
 <div id="rotateContainer" class="container">
   <div id="rotateDiv" class="box"></div>
 </div>
 
-And if you imagine this window as a face in a 3D mesh, this is the basis for the crystal shader. It's not perfect, but it's good enough for my purposes. Here's a CSS prototype:
+In the example above, the background position is moved relative to <mark>the tangent</mark> of the div's rotation. This approximates the relationship between rotating layers of different distance from the viewer.
+
+If you can imagine this window as a face in a 3D mesh, this is the basis for the crystal shader. Here's a CSS prototype:
 
 <div id="cubeContainer" class="container">
   <div id="cube" class="cubeDiv">
     <div class="face front"></div>
-    <div class="face back"></div>
     <div class="face left"></div>
     <div class="face right"></div>
     <div class="face top"></div>
@@ -113,96 +114,11 @@ This is accomplished by making changes ("perturbations") to the UV coordinates f
 
 The fragment shader references a heightmap to know how far away to look.
 
-
-
 ---
 
 <div class="iframewrapper">
 <iframe class="glcanvas" src="https://meetar.github.io/FS-reverse-parallax/"></iframe>
 </div>
 
-<script>
-let constrain = 5;
-let scrollDiv = document.getElementById("scrollDiv");
-let rotateDiv = document.getElementById("rotateDiv");
+<script src="assets/crystal-shader/demo.js"></script>
 
-function parallaxRotate(x) {
-  let bbox = rotateDiv.getBoundingClientRect();
-  let rotateY = (x - bbox.x - (bbox.width / 2)) / constrain;
-  rotateY = Math.max(rotateY, -75);
-  rotateY = Math.min(rotateY, 75);
-  
-  // 10000px approximates a very long lens
-  rotateDiv.style.transform  = "perspective(10000px) "
-    + "   rotateX("+ -10 +"deg) "
-    + "   rotateY("+ rotateY +"deg) "
-  
-  // prevent the background offset from being calculated if the frame is at its limit
-  if (Math.abs(rotateY) == 75) return;
-    
-  // calculate tangent of the angle in radians
-  const angleInRadians = (rotateY * Math.PI) / 180;
-  const tanAngle = Math.tan(angleInRadians);
-  // offset background position by the tangent times an arbitrary multiplier
-  const bgoffset = -tanAngle * 50;
-
-  // apply new background image position to xoffset only
-  rotateDiv.style.backgroundPosition = bgoffset + 'px 0px';
-}
-
-function parallaxScroll(x) {
-  let bbox = scrollDiv.getBoundingClientRect();
-  scrollDiv.style.left  = `calc(${x}px - ${bbox.width/2}px)`;  
-  scrollDiv.style.backgroundPosition = - x/2 + 'px 0px';
-}
-
-document.getElementById("rotateContainer").addEventListener('mousemove', e => {
-  window.requestAnimationFrame(() => {
-    parallaxRotate(e.clientX);
-  });
-});
-
-document.getElementById("scrollContainer").addEventListener('mousemove', e => {
-  window.requestAnimationFrame(() => {
-    parallaxScroll(e.clientX);
-  });
-});
-
-document.addEventListener('mousemove', e => {
-  window.requestAnimationFrame(() => {
-    updateCubeRotation(e)
-  });
-});
-
-const cube = document.getElementById('cube');
-
-// Update the transform property of the cube and the background position for parallax effect
-function updateCubeRotation(event) {
-  const { clientX, clientY } = event;
-  const { left, top, width, height } = cube.getBoundingClientRect();
-
-  const center = {
-    x: left + width / 2 + 50, // 50 to center the cube in its parent
-    y: top + height / 2,
-  };
-
-  const deltaX = clientX - center.x;
-  const deltaY = clientY - center.y;
-
-  // Adjust these values to control the rotation sensitivity
-  const rotateY = deltaX * 0.1;
-  const rotateX = deltaY * -0.1;
-
-  const transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateX(-50px) translateY(-25px)`; // translate to center the cube
-  cube.style.transform = transform;
-
-  // Get all cube faces and update background position
-  const faces = cube.querySelectorAll('.face');
-  faces.forEach(face => {
-    let bgPosX = -rotateY;
-    let bgPosY = rotateX;
-    face.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
-  });
-}
-
-</script>
