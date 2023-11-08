@@ -21,15 +21,11 @@ Let's try something new! Mix and match your own adventure:
 
 <div class="aside">This post examines a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale, the technique in the abstract, and its implementation in detail.</div>
 
-# Looking Past the Surface
+# Simulating Depth
 
-3D objects are typically defined as surfaces only, but are rendered with solid textures to appear solid. (If you've ever clipped through a wall in a video game, this shameful secret has already been revealed to you.) Textures can add the appearance of detail, and sometimes of layers and transparency, but they are still just a coat of paint on the exterior.
+Most 3D objects rendered by computers are defined as shells. However, the world is made of solids, each with their own inner lives – full of nooks and crannies, cracks and dings, secret layers and imperfections. Light gets in, bounces and bends, and takes many paths on its way back out. I wanted to see more of this.
 
-Advanced rendering techniques like volumetric rendering, sub-surface scattering, and photon tracing can suggest hidden depths, make objects appear as foggy or cloudy volumes, or sometimes as groups of particles, but without a lot of work the objects are still just hollow.
-
-The world is made of solids, each with their own inner lives – full of nooks and crannies, cracks and dings, secret layers and imperfections. Light gets in, bounces and bends, and takes many paths on its way back out. I wanted to see more of this, and I had an idea.
-
-So I made a magic brush that paints inside of things! I made it, specifically, to add sparkles to crystals. Here's a simplified example:
+So I made a magic brush that paints inside of things! I made it, specifically, to add sparkles to crystals. Here's an example:
 
 <div class="iframewrapper">
 <iframe class="glcanvas" src="https://meetar.github.io/FS-reverse-parallax-plain/"></iframe>
@@ -37,9 +33,12 @@ So I made a magic brush that paints inside of things! I made it, specifically, t
 
 This 3D crystal uses shader math to manipulate textures on an object's surface, based on the view angle and a heightmap. This makes certain parts of the texture appear to be closer to or further from the face of the object, suggesting internal structures which would otherwise require a much more detailed mesh or complex shaders to render.
 
+Let's break down the effect, so it's clear what's happening.
+
 # Perspective Shift
 
-This trick is entirely based on the <mark>parallax effect</mark>, which makes distant objects appear to move more slowly. This effect is especially noticeable when looking out of the side windows of a moving vehicle at a distant landscape, or while playing certain retro pixel-art video games. Fundamentally, it's very a simple effect – you can even fake it in CSS! Move your cursor over the box below:
+
+This trick is entirely based on the <mark>parallax effect</mark>, which makes distant objects appear to move more slowly. Fundamentally, it's very a simple effect – you can even fake it in CSS! Move your cursor over the box below:
 
 <div id="scrollContainer" class="container">
   <div id="scrollDiv" class="box"></div>
@@ -103,7 +102,12 @@ But for now, let's continue to look at the parallax mechanism, as implemented in
 
 ---
 
-A parallax shader does something similar to the last example, with brighter values pushed outward, away from the face. 
+Parallax shaders perform a trick similar to the last example, with brighter values pushed outward, away from the face. Generally, a parallax shader assumes a continuous, opaque surface, to add a small amount of subtle detail to an otherwise flat face – bricks and cobblestones are a very common use case.
+
+We're looking for something very slightly different, but many of the same principles used in a generic parallax shader apply.
+
+
+
 
 
 
