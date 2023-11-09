@@ -19,7 +19,7 @@ Let's try something new! Mix and match your own adventure:
 ---
 -->
 
-<div class="aside">This post examines a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale, the technique in the abstract, and its implementation in detail.</div>
+<div class="aside">This post describes a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale and a breakdown of the technique in the abstract.</div>
 
 <br>
 
