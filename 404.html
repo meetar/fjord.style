@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Fjord.style 404
+title: 404 - FJORD.STYLE
 published: true
 permalink: /404.html
 ---
@@ -10,22 +10,23 @@ permalink: /404.html
 <hr>
 <div class="comments">My latest posts:</div>
 
-  <ul class="post-cards">
-    {% for post in site.posts limit:4 %}
-      {% if post.hidden == null or post.hidden == false %}
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.aria-label }}"><li class="post-card">
-          <h2>
-            {{ post.title }}
-          </h2>
-          <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+<ul class="post-cards">
+  {% assign filtered_posts = site.posts | exclude_hidden_posts %}
+  {% for post in filtered_posts limit:4 %}
+  {% unless post.hidden %}
+    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.aria-label }}"><div class="border"><li class="post-card">
+        <h2>
+          {{ post.title }}
+        </h2>
+        <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+        {% if post.image %}<span class="post-img">
+        <img class="cardheaderimg" src="/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
+        {% endif %}
 
-          <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
-          {% if post.image %}<span class="post-img">
-          <img class="headerimg" src="{{ site.url }}/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
-          {% endif %}
+        <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
 
-        </li></a>
-      {% endif %}
-    {% endfor %}
-  </ul>
+      </li></div></a>
+      {% endunless %}
+  {% endfor %}
+</ul>
 
