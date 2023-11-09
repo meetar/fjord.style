@@ -1,5 +1,6 @@
 ---
 layout: portfolio
+style: portfolio
 title: "Case Studies"
 published: true
 hidden: true
