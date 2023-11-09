@@ -93,9 +93,9 @@ We're looking for something slightly different, but most of the same principles 
 
 <div id="cheeseContainerReverse" class="container"></div>
 
-You'll notice that in the previous examples, "closer" layers occlude the "further" layers. Occlusion could be useful in certain cases, but when dealing with sparkly crystals, you normally want to maximize the sparkle levels.
+You'll notice that in the previous examples, "closer" layers occlude "further" layers. Occlusion could be useful in certain cases, but when dealing with sparkly crystals, you want to maximize the sparkle levels, and minimize any apparent occlusion.
 
-To achieve this (and get around the occlusion problem) the crystal shader uses a technique which equates to a "lighten" blending mode in a layer-based image editor like Photoshop. This is done in CSS with `mix-blend-mode: lighten`, and the result is that where pixels overlap, the lightest pixel is shown. (To see anything we'll need to ensure that the background is darker than the foreground.)
+To achieve this the crystal shader uses a technique which equates to a "lighten" blending mode in a layer-based image editor like Photoshop. This is done in CSS with `mix-blend-mode: lighten`, and the result is that where pixels overlap, the lightest pixel is shown. (To see anything we'll need to ensure that the background is darker than the foreground.)
 
 <div id="cheeseContainerLighten" class="container"></div>
 
