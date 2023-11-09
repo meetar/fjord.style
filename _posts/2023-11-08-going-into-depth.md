@@ -4,7 +4,7 @@ title: Going Into Depth
 subtitle: A 3D Trick
 categories: 3d
 published: true
-excerpt: This post examines a variation on parallax mapping that I used for a recent project called <a href="/the-prototype-trap">The Gem Collector</a>, with detailed examinations of the rationale, the technique in the abstract, and its implementation in detail.
+excerpt: This post describes a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale and a breakdown of the technique in the abstract.
 image: 'speckles.gif'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
@@ -30,7 +30,7 @@ So I made a magic brush that paints inside of things! I made it, specifically, t
 
 <div class="iframewrapper">
 <iframe class="glcanvas" src="https://meetar.github.io/FS-reverse-parallax-plain/"></iframe>
-<div class="aside">[<a href="https://github.com/meetar/FS-reverse-parallax-plain/">code</a>]</div>
+<div class="aside">[<a href="https://github.com/meetar/FS-reverse-parallax-plain/">github</a>]</div>
 </div>
 
 This crystal has no internal details, and is not performing any ray-tracing or fancy lightbending math. It's drawn with a shader that covers it with a texture made of a single image, then manipulates the texture based on the view angle. The result is that certain parts of the texture appear to be more distant than the faces they're applied to, suggesting internal structures which would otherwise require a much more detailed mesh to render.
