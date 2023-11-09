@@ -81,13 +81,11 @@ The net effect is something like refraction, as though the object were a solid c
 
 However, to add the illusion of <em>volume</em> to the shape, we have to provide depth cues at various distances. To do this, we can simulate a parallax effect between individual stars.
 
-There are many ways this could be done. I chose a method which uses a single image as both heightmap and texture map. In other words, information from the same bitmap is used for both displacement and color.
-
 Here's a simple example using canvas elements to split the image up into layers of constant brightness, and CSS transformations to simulate the parallax between layers, with one important difference from the crystal's method: brighter pixels appear to be pulled <em>towards</em> the viewer.
 
 <div id="cheeseContainer" class="container"></div>
 
-This is similar to the standard behavior of <em>parallax shaders</em>, a class of shaders used to add the illusion of depth to a surface. Generally, they assume a continuous, opaque surface, and are used to add small amounts of subtle <em>protruding</em> detail to an otherwise flat face – bricks and cobblestones are a very common use case. With these shaders, two bitmaps are generally used: one for color and one as a heightmap.
+This is similar to the standard behavior of <em>parallax shaders</em>, a class of shaders used to add the illusion of depth to a surface. Generally, they assume a continuous, opaque surface, and are used to add small amounts of subtle <em>protruding</em> detail to an otherwise flat face – bricks and cobblestones are a very common use case.
 
 We're looking for something slightly different, but most of the same principles apply. In fact, you could describe the crystal shader as a parallax shader turned inside out:
 
