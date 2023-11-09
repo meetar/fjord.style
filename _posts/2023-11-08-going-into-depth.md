@@ -51,7 +51,7 @@ This box appears to be a window to a separate, more-distant starry layer, which 
 
 <code>div.style.backgroundPositionX = - div.getBoundingClientRect().left/2 + 'px';</code>
 
-The `-` sign shows that the background is being moved in the <em>opposite direction</em> of the div, as otherwise the background would inherit the div's motion. The result is that the opposing motion adds a bit of "drag". The `/2` sets the rate of the background's motion to half the rate of the div itself, which suggests distance. (If it were `/1`, the backwards motion would equal the div's motion, and the background would appear to be motionless.)
+The `-` sign shows that the background is being moved in the <em>opposite direction</em> of the div, as otherwise the background would inherit the div's motion. The result is that the opposing motion adds a bit of "drag". The `/2` sets the rate of the background's motion to half the rate of the div itself, which suggests distance.
 
 This effect also works during rotation, which can also be simulated in CSS. Drag this box to see it in action:
 
