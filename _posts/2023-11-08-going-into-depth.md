@@ -4,7 +4,7 @@ title: Going Into Depth
 subtitle: A 3D Trick
 categories: 3d
 published: true
-excerpt: This post examines a variation on parallax mapping that I used for a recent project called <a href="/the-prototype-trap">The Gem Collector</a>, with detailed examinations of the rationale, the technique in the abstract, and its implementation in detail.
+excerpt: This post describes a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale and a breakdown of the technique in the abstract.
 image: 'speckles.gif'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
@@ -19,7 +19,7 @@ Let's try something new! Mix and match your own adventure:
 ---
 -->
 
-<div class="aside">This post examines a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale, the technique in the abstract, and its implementation in detail.</div>
+<div class="aside">This post describes a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale and a breakdown of the technique in the abstract.</div>
 
 <br>
 
@@ -30,7 +30,7 @@ So I made a magic brush that paints inside of things! I made it, specifically, t
 
 <div class="iframewrapper">
 <iframe class="glcanvas" src="https://meetar.github.io/FS-reverse-parallax-plain/"></iframe>
-<div class="aside">[<a href="https://github.com/meetar/FS-reverse-parallax-plain/">code</a>]</div>
+<div class="aside">[<a href="https://github.com/meetar/FS-reverse-parallax-plain/">github</a>]</div>
 </div>
 
 This crystal has no internal details, and is not performing any ray-tracing or fancy lightbending math. It's drawn with a shader that covers it with a texture made of a single image, then manipulates the texture based on the view angle. The result is that certain parts of the texture appear to be more distant than the faces they're applied to, suggesting internal structures which would otherwise require a much more detailed mesh to render.
@@ -51,7 +51,7 @@ This box appears to be a window to a separate, more-distant starry layer, which 
 
 <code>div.style.backgroundPositionX = - div.getBoundingClientRect().left/2 + 'px';</code>
 
-The `-` sign shows that the background is being moved in the <em>opposite direction</em> of the div, as otherwise the background would inherit the div's motion. The result is that the opposing motion adds a bit of "drag". The `/2` sets the rate of the background's motion to half the rate of the div itself, which suggests distance. (If it were `/1`, the backwards motion would equal the div's motion, and the background would appear to be motionless.)
+The `-` sign shows that the background is being moved in the <em>opposite direction</em> of the div, as otherwise the background would inherit the div's motion. The result is that the opposing motion adds a bit of "drag". The `/2` sets the rate of the background's motion to half the rate of the div itself, which suggests distance.
 
 This effect also works during rotation, which can also be simulated in CSS. Drag this box to see it in action:
 
@@ -81,27 +81,25 @@ The net effect is something like refraction, as though the object were a solid c
 
 However, to add the illusion of <em>volume</em> to the shape, we have to provide depth cues at various distances. To do this, we can simulate a parallax effect between individual stars.
 
-There are many ways this could be done. I chose a method which uses a single image as both heightmap and texture map. In other words, information from the same bitmap is used for both displacement and color.
-
 Here's a simple example using canvas elements to split the image up into layers of constant brightness, and CSS transformations to simulate the parallax between layers, with one important difference from the crystal's method: brighter pixels appear to be pulled <em>towards</em> the viewer.
 
 <div id="cheeseContainer" class="container"></div>
 
-This is similar to the standard behavior of <em>parallax shaders</em>, a class of shaders used to add the illusion of depth to a surface. Generally, they assume a continuous, opaque surface, and are used to add small amounts of subtle <em>protruding</em> detail to an otherwise flat face – bricks and cobblestones are a very common use case. With these shaders, two bitmaps are generally used: one for color and one as a heightmap.
+This is similar to the standard behavior of <em>parallax shaders</em>, a class of shaders used to add the illusion of depth to a surface. Generally, they assume a continuous, opaque surface, and are used to add small amounts of subtle <em>protruding</em> detail to an otherwise flat face – bricks and cobblestones are a very common use case.
 
 We're looking for something slightly different, but most of the same principles apply. In fact, you could describe the crystal shader as a parallax shader turned inside out:
 
 <div id="cheeseContainerReverse" class="container"></div>
 
-You'll notice that in the previous examples, "closer" layers occlude "further" layers. Occlusion could be useful in certain cases, but when dealing with sparkly crystals, you want to maximize the sparkle levels, and minimize any apparent occlusion.
+You'll notice that in the previous examples, "closer" layers occlude "further" layers. This order is simply determined by painting order, which in CSS is determined by `z-index`. Occlusion could be useful in certain cases, but when dealing with sparkly crystals, you want to maximize the sparkle levels, and minimize any apparent occlusion.
 
-To achieve this the crystal shader uses a technique which equates to a "lighten" blending mode in a layer-based image editor like Photoshop. This is done in CSS with `mix-blend-mode: lighten`, and the result is that where pixels overlap, the lightest pixel is shown. (To see anything we'll need to ensure that the background is darker than the foreground.)
+To achieve this the crystal shader uses a technique which equates to a "lighten" blending mode in a layer-based image editor like Photoshop. This is done in CSS with `mix-blend-mode: lighten`, and the result is that where pixels overlap, the lightest pixel is shown. (For the full effect we'll need to ensure that the background is darker than the foreground.)
 
 <div id="cheeseContainerLighten" class="container"></div>
 
 This is the essence of the technique! It's relatively simple to do this on a flat plane, but to do this on an arbitrary 3D object, we'll need something more powerful than CSS, capable of slightly more intense math.
 
-In the next post, we'll walk through the building blocks of the implementation in a shader in the abstract, and then we'll dig into the shader code itself.
+In the next post, we'll walk through the building blocks of the shader implementation, and then we'll dig into the shader code itself.
 
 Until then, enjoy a shiny purple gem. Thanks for reading!
 
