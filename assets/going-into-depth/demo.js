@@ -85,7 +85,7 @@ function updateCubeRotation(clientX, clientY) {
 // 
 
 const image = new Image();
-image.src = 'assets/crystal-shader/speckles2.png';
+image.src = 'assets/going-into-depth/speckles2.png';
 const cheeseContainer = document.getElementById('cheeseContainer');
 const cheeseContainerReverse = document.getElementById('cheeseContainerReverse');
 
