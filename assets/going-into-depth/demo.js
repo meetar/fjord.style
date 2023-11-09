@@ -1,6 +1,8 @@
 let rotationConstraint = 4;
 
+let scrollContainer = document.getElementById("scrollContainer");
 let scrollDiv = document.getElementById("scrollDiv");
+let rotateContainer = document.getElementById("rotateContainer");
 let rotateDiv = document.getElementById("rotateDiv");
 
 //
@@ -8,8 +10,11 @@ let rotateDiv = document.getElementById("rotateDiv");
 //
 
 function parallaxScroll(x) {
-  let bbox = scrollDiv.getBoundingClientRect();
-  scrollDiv.style.left  = `calc(${x}px - ${bbox.width/2}px)`;
+  // get width of box so we can center it on the cursor
+  let boxWidth = scrollDiv.getBoundingClientRect().width;
+  // subtract container left position from clientX
+  x -= scrollContainer.getBoundingClientRect().left;
+  scrollDiv.style.left  = `calc(${x}px - ${boxWidth/2}px)`;
   scrollDiv.style.backgroundPositionX = - x/2 + 'px';
 }
 
@@ -267,11 +272,11 @@ function handleDocumentMove(e) {
 }
 
 // mouse event listeners
-document.getElementById("rotateContainer").addEventListener('mousemove', handleRotate);
-document.getElementById("scrollContainer").addEventListener('mousemove', handleScroll);
+rotateContainer.addEventListener('mousemove', handleRotate);
+scrollContainer.addEventListener('mousemove', handleScroll);
 document.addEventListener('mousemove', handleDocumentMove);
 
 // touch event listeners
-document.getElementById("rotateContainer").addEventListener('touchmove', handleRotate, { passive: false });
-document.getElementById("scrollContainer").addEventListener('touchmove', handleScroll, { passive: false });
+rotateContainer.addEventListener('touchmove', handleRotate, { passive: false });
+scrollContainer.addEventListener('touchmove', handleScroll, { passive: false });
 document.addEventListener('touchmove', handleDocumentMove, { passive: false });
