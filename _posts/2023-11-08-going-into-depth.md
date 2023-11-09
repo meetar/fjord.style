@@ -9,7 +9,7 @@ image: 'speckles.gif'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
 
-<link rel="stylesheet" href="assets/crystal-shader/demo.css">
+<link rel="stylesheet" href="assets/going-into-depth/demo.css">
 
 <!-- 
 Let's try something new! Mix and match your own adventure:
@@ -110,5 +110,5 @@ Until then, enjoy a shiny purple gem. Thanks for reading!
 </div>
 
 
-<script src="assets/crystal-shader/demo.js"></script>
+<script src="assets/going-into-depth/demo.js"></script>
 
