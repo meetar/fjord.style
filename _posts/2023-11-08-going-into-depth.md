@@ -33,7 +33,7 @@ So I made a magic brush that paints inside of things! I made it, specifically, t
 <div class="aside">[<a href="https://github.com/meetar/FS-reverse-parallax-plain/">code</a>]</div>
 </div>
 
-This crystal uses a shader that manipulates textures on an object's surface, based on the view angle and a heightmap. This makes certain parts of the texture appear to be more distant than the faces they're applied to, suggesting internal structures which would otherwise require a much more detailed mesh to render.
+This crystal has no internal details, and is not performing any ray-tracing or fancy lightbending math. It's drawn with a shader that covers it with a texture made of a single image, then manipulates the texture based on the view angle. The result is that certain parts of the texture appear to be more distant than the faces they're applied to, suggesting internal structures which would otherwise require a much more detailed mesh to render.
 
 (For an introduction to shaders, I recommend <a href="http://thebookofshaders.com">The Book of Shaders</a>.)
 
