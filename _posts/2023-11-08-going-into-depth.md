@@ -99,7 +99,7 @@ To achieve this the crystal shader uses a technique which equates to a "lighten"
 
 This is the essence of the technique! It's relatively simple to do this on a flat plane, but to do this on an arbitrary 3D object, we'll need something more powerful than CSS, capable of slightly more intense math.
 
-In the next post, we'll walk through the building blocks of the implementation in a shader in the abstract, and then we'll dig into the shader code itself.
+In the next post, we'll walk through the building blocks of the shader implementation, and then we'll dig into the shader code itself.
 
 Until then, enjoy a shiny purple gem. Thanks for reading!
 
