@@ -1,0 +1,20 @@
+{
+  "name": "fjord.style",
+  "version": "1.0.0",
+  "description": "Internet web site source code for [http://fjord.style](http://fjord.style).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bundle exec jekyll serve --livereload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meetar/fjord.style.git"
+  },
+  "author": "pxrich@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meetar/fjord.style/issues"
+  },
+  "homepage": "https://github.com/meetar/fjord.style#readme"
+}
