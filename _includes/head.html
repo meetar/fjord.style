@@ -18,7 +18,7 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.url | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,4 +29,24 @@
   <!-- <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 
+   <!-- HTML Meta Tags -->
+   <title>FJORD.STYLE</title>
+   <meta name="description" content="fjord.style is the web site of visual technologist Peter Richardson.">
+
+   <!-- Facebook Meta Tags -->
+   <meta property="og:url" content="http://fjord.style">
+   <meta property="og:type" content="website">
+   <meta property="og:title" content="FJORD.STYLE">
+   <meta property="og:description" content="fjord.style is the web site of visual technologist Peter Richardson.">
+   <meta property="og:image" content="https://fjord.style/assets/the-prototype-trap/prototype.jpg">
+
+   <!-- Twitter Meta Tags -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta property="twitter:domain" content="fjord.style">
+   <meta property="twitter:url" content="http://fjord.style">
+   <meta name="twitter:title" content="FJORD.STYLE">
+   <meta name="twitter:description" content="fjord.style is the web site of visual technologist Peter Richardson.">
+   <meta name="twitter:image" content="https://fjord.style/assets/the-prototype-trap/prototype.jpg">
+
+   <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 </head>
