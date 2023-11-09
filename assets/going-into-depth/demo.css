@@ -4,7 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  margin-bottom: 2em;
+  transform: translateZ(-10px);
 }
+
 .box {
   border: 3px solid #6c6;
   border-radius: 5px;
@@ -45,11 +49,6 @@
 .right  { transform: rotateY(90deg) translateZ(50px); }
 .top    { transform: rotateX(90deg) translateZ(50px); }
 .bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-
-.container {
-  margin-bottom: 2em;
-}
 
 
 #diagram-container {

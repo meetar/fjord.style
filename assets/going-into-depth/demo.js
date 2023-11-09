@@ -168,7 +168,7 @@ function cloneCanvas(canvas) {
 
 // range of motion modulation, from least motion to most motion (furthest to nearest for parallax effect)
 const startFactor = .1;
-const endFactor = .2;
+const endFactor = .25;
 
 function updateCheese(clientX, clientY, selector) {
   const containerDiv = document.getElementById(selector);
@@ -225,7 +225,7 @@ function handleRotate(e) {
 let touchStartedInsideDiv = false;
 
 // set flag if the touch starts inside the allowed divs
-document.querySelectorAll('#cubeContainer, #cheeseContainer').forEach(div => {
+document.querySelectorAll('#cubeContainer, #cheeseContainer, #cheeseContainerReverse, #cheeseContainerLighten').forEach(div => {
     div.addEventListener('touchstart', function() {
       touchStartedInsideDiv = true;
   });
