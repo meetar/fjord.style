@@ -1,0 +1,113 @@
+.container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  border: 3px solid #6c6;
+  border-radius: 5px;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-image: url('../../img/speckles.png');
+  background-size: 130%;
+  pointer-events: none;
+}
+
+#cubeContainer {
+  /* border: 2px solid gold; */
+  height: 150px;
+  perspective: 1000px;
+}
+
+.cubeDiv {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateX(-50px) translateY(-50px); /* center manually for first draw */
+}
+
+.face {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #6c6 url('../../img/speckles.png') center center;
+  background-size: 130%;
+  /* border: 3px solid #6c6; */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+
+.container {
+  margin-bottom: 2em;
+}
+
+
+#diagram-container {
+  position: relative;
+  perspective: 10000px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: rgba(196, 196, 196, .9);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-weight: bold; */
+  font-size: 18px;
+}
+
+.card:nth-child(even) {
+  background-color: rgba(204, 147, 241, 0.9);
+}
+
+.iframewrapper {
+  margin: 0;
+}
+
+.infobox {
+  display: flex;
+  /* padding-left: 2em; */
+  outline: 1px solid grey;
+  /* border-left: 36px solid rgb(128, 236, 128); */
+  position: relative;
+  span {
+    border: 2px solid blue;
+    padding: 1em;
+  }
+}
+.infoboxLabel {
+  content: "?"; /* Text you want to display as the label */
+  font-style: normal;
+  font-size: 2em;
+  height: calc(100% - 8px);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  color: black;
+  width: 2em;
+  top: 50%; /* Adjust as needed to vertically center the label */
+  left: -20px; /* Adjust the left position to place it within the border-left area */
+  transform: translateY(-50%); /* Vertically center the label */
+  background-color: rgb(128, 236, 128); /* Match the border color for the label background */
+  padding: 4px; /* Add some padding for better visibility */
+  border: 1px solid grey;
+}

@@ -1,0 +1,129 @@
+.container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  border: 3px solid #6c6;
+  border-radius: 5px;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-image: url('../../img/speckles.png');
+  background-size: 130%;
+  pointer-events: none;
+}
+
+#cubeContainer {
+  /* border: 2px solid gold; */
+  height: 150px;
+  perspective: 1000px;
+}
+
+.cubeDiv {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateX(-50px) translateY(-50px); /* center manually for first draw */
+}
+
+.face {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #6c6 url('../../img/speckles.png') center center;
+  background-size: 130%;
+  /* border: 3px solid #6c6; */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+
+.container {
+  margin-bottom: 2em;
+}
+
+
+#diagram-container {
+  position: relative;
+  perspective: 10000px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: rgba(196, 196, 196, .9);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-weight: bold; */
+  font-size: 18px;
+}
+
+.card:nth-child(even) {
+  background-color: rgba(204, 147, 241, 0.9);
+}
+
+.iframewrapper {
+  margin: 0;
+}
+
+.infobox {
+  display: flex;
+  margin: 2em;
+  outline: 1px solid grey;
+}
+.infoboxLabel {
+  font-style: normal;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  width: 1em;
+  background-color: rgb(128, 236, 128); /* Match the border color for the label background */
+  padding: 4px; /* Add some padding for better visibility */
+  /* border: 1px solid grey; */
+}
+.infoboxContent {
+  padding: .75em;
+}
+
+#cheeseContainer, #cheeseContainerReverse, #cheeseContainerLighten {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+}
+
+#cheeseContainerLighten  {
+  background-color: black;
+}
+#cheeseContainerLighten > .cheeseSlice {
+  mix-blend-mode: lighten;
+}
+
+.cheeseSlice {
+  --z-offset: 0; /* Define a CSS variable for Z-axis offset */
+  --rotation: 0deg; /* Define a CSS variable for rotation angle */
+  position: absolute;
+  left: calc(50% - 50px);
+  transform: translateZ(var(--z-offset, 0)) rotateX(var(--rotation, 0deg));
+  margin-bottom: 10px; /* Add margin for spacing between canvases */
+  pointer-events: none;
+}
+

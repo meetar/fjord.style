@@ -2,6 +2,8 @@
 // Case Studies
 // 
 
+.portfolio {
+
 .case-study-wrapper {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -278,21 +280,4 @@ img:not(.social) {
   }
 }
 
-// mark, a.active, .site-header > .links > a:hover {
-mark, a.active, a:hover:not(.site-title, .post-link) {
-  margin: 0 -0.4em;
-  padding: 0 0.4em;
-  border-radius: 0.8em 0.3em;
-  background: transparent;
-  background-image: linear-gradient(
-    95deg,
-    rgba(140, 255, 94, 0.0) 1%,
-    rgba(140, 255, 94, 0.5) 3%,
-    rgba(140, 255, 94, 0.3) 6%,
-    rgba(140, 255, 94, 0.3),
-    rgba(66, 255, 85, 0.3) 60%,
-    rgba(90, 255, 170, 0.3)
-  );
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
 }
