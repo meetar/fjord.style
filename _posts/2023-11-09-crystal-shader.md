@@ -3,25 +3,70 @@ layout: page
 title: Crystal Shader
 subtitle: A 3D Trick
 categories: 3d
-published: false
-excerpt: This post examines a variation on parallax mapping that I used for a recent project called <a href="/the-prototype-trap">The Gem Collector</a>, with detailed examinations of the rationale, the technique in the abstract, and its implementation in detail.
+published: true
+excerpt: Part II.
 image: 'prototype.jpg'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
 
-Let's continue to look at the parallax mechanism, as implemented in the crystal shader in WebGL.
+<aside>This is a continuation of <a href="/going-into-depth">the previous post</a>, examining the mechanism of a parallax shader in WebGL.</aside>
+<br>
 
 ### The Problem of Occlusion
 
-(If you're not familiar with shaders: when you see "fragment" you can think "pixel". There are cases when the two don't equate, but we don't get into that below.)
+Firstly, if you're not familiar with shaders, a typical shader setup requires a "vertex shader" which handles geometry and layout, and a "fragment shader" which determines what color things should be. And in general, when you see "fragment" you can think "pixel". There are cases when the two don't equate, but we won't get into that below.
 
-Making a texture appear to be on a different plane from the surface of an object is as simple as applying an offset to its position, similar to the CSS examples above. You can do this in the "fragment shader" part of a shader by adjusting the texture's UV coordinates by some factor, based on the view angle. (This kind of real-time UV manipulation is called "perturbation" which suggests that it bothers them, but they don't mind.)
+As we saw in the last post, making a texture appear to be on a different plane from the surface of an object is as simple as applying an offset to its position, which varies somehow with the position or rotation of the surface. You can do this in a "fragment shader" by adjusting the texture's UV coordinates by some factor based on the view angle. (This kind of real-time UV manipulation is called "perturbation" which suggests that it bothers them, but they don't mind.)
+
+Perturbing UVs is easy enough, but how do you know which direction to perturb? Sadly, this requires math.
+
+In a CSS demo, moving a background-image in a div, a lot of this math is handled for you, because the view angle is constant and the transformations are always relative to their parent. But in a shader, none of this is taken for granted.
+
+relationship between object space, view space, and tangent space
+
+To get the math right, you have to get your conceptual spaces right. In this case, there are three we need to consider: view space, world space, and tangent space. Don't freak out! The concepts are simple, but the names are weird. Check it out:
+
+Which way is up, according to the view? Easy:
+
+Now, which way is up, according to the 3D space? This is slightly trickier, because of perspective. In the center of the view, it matches the view space:
+
+But off to one side, it's tilted relative to the view:
+
+Okay, so much for perspective. Now: which way is up, relative to the surface of the object?
+
+This is probably the trickiest conceptual leap to make in the whole shader. Any way could be up, and it often is! In truth, it's arbitrary. Generally, this kind of orientation is the realm of "UV mapping" and is often set by artists when deciding how textures should be applied to an object.
+
+For some objects, the decision seems fairly easy:
+
+square
+
+But for others, it's a matter of interpretation:
+
+complex shape
+
+In an ideal world we could ignore the decisions of mere artists, and use the orientation of the object in the world to determine which was was up. However, this particular shader relies on textures to function, so it must play by the rules of texturing.
+
+# Finding the Perpendicular
+
+Let's look at some simple cases to understand the parameters of this problem.
+
+In this case, which way is "in"?
+
+"In" is the opposite of the surface normal. The surface normal is a geometric and mathematical term for "out". (It's from the Latin "normalis" which means "perpendicular.")
+
+So in general, we want to make pixels appear to have been moved "in."
+
+# Pixel Myopia
 
 Adjusting the UVs at different rates based on their brightness seems like it should be a relatively minor adjustment: you simply add a factor into the calculation based on the sampled texture value at that point, right? However, there's a wrinkle in this plan, which has to do with the way a fragment shader works, which is one pixel at a time, in order. An OpenGL fragment shader can't write to arbitrary pixel locations! So if you only have write access to the current pixel, and you want to replace its color with the color of another pixel, how do you know what color it should be?
 
 The general idea is this: if you know which direction you want to push a pixel, that means for a given output pixel you know which direction <em>the source pixel is coming from</em>.
 
+So all you need to do is find the pixel which should be in the current location.
 
+But there's another wrinkle! (This is a very wrinkly problem.) The pixel which <em>should</em> be in the current location could come from... lots of places! All we know is the direction it should come from. But there might be lots of pixels in that direction. Which one is it?
+
+# Multiple Choice
 
 The real challenge here has to do with occlusion, which is something a standard parallax shader treats relatively differently – if your heightmap pixel is bright, then you pull things outward and ignore everything which might be behind it. In this way the surface remains solid.
 
