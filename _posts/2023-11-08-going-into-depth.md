@@ -1,23 +1,14 @@
 ---
 layout: page
 title: Going Into Depth
-subtitle: A 3D Trick
 categories: 3d
 published: true
-excerpt: This post describes a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale and a breakdown of the technique in the abstract.
+excerpt: This post describes a variation on parallax mapping that I used for a recent project, with detailed examinations of the rationale and a breakdown of the technique in the abstract.
 image: 'speckles.gif'
 imgalt: 'A closeup of a 3D rendered crystal'
 ---
 
 <link rel="stylesheet" href="assets/going-into-depth/demo.css">
-
-<!-- 
-Let's try something new! Mix and match your own adventure:
-
-<button>Child</button> <button>Artist</button> <button>Coder</button> <button>Specialist</button>
-
----
--->
 
 <div class="aside">This post describes a variation on parallax mapping that I used for <a href="/the-prototype-trap">a recent project</a>, with detailed examinations of the rationale and a breakdown of the technique in the abstract.</div>
 
