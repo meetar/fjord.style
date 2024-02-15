@@ -38,7 +38,7 @@ It didn't do everything I wanted, but it did it fairly quickly, and I understood
 
 Partially, I think this is down to the expectations of developers. I didn't try to re-implement an old project (although that would be interesting, hm). I wanted to try something new and shiny. I understand that in this, I am not alone. And it had been awhile since I had worked in WebGL directly – I've drifted away from the world of graphics development, and I wanted to see what the kids are using these days, and what one aspect of the future might look like.
 
-Also I wanted to try an idea for a shader I'd first had many years ago, to fake internal imperfections by perturbing texture lookup coordinates. I'll explain this in detail eventually, and link to it here when I do. (No link yet.)
+Also I wanted to try an idea for a shader I'd first had many years ago, to fake internal imperfections by perturbing texture lookup coordinates. I'll explain this in detail eventually, and link to it here when I do. (Here's the explanation: [Part I](/going-into-depth) – [Part II](/parallax-shift).)
 
 
 ---
