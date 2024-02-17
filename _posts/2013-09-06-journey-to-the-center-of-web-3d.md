@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title:  "Journey to the Center of Web&nbsp;3D"
 date:   2013-09-06 12:02:02
 categories: terrain

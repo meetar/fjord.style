@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Vibe Shift
 date: 2023-06-16 13:37 -0700
 excerpt: Is this how sociologists feel? Like staring at the matrix, but it's all creative writing workshop meetup output? I don't want to be this predictable. Is it taking cues from my other posts? Where does it get this stuff?

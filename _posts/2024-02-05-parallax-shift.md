@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Parallax Shift
 categories: 3d
 published: true

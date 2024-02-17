@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Escape from Mercator
 excerpt: Mercator projections are well-known for their distortion at high latitudes – this is because they place the north and south poles at positive and negative infinity, which means a Mercator map of the whole world would be infinitely tall.
 image: albers.jpg

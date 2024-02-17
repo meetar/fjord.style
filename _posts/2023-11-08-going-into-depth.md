@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Going Into Depth
 categories: 3d
 published: true

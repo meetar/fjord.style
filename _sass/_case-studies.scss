@@ -80,6 +80,9 @@
   // background-color: rgb(206, 236, 215);
   // background: linear-gradient(90deg, rgb(201, 245, 214) 20%, rgb(199, 231, 224) 100%);
   background: linear-gradient(105deg, rgb(208, 235, 229) 0%, rgb(201, 239, 212) 100%);
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(105deg, rgb(62, 77, 74) 0%, rgb(60, 83, 66) 100%);
+  }
   padding: 3px 0vw 3px 23px;
   padding-left: 10px;
   margin-left: -10px;
@@ -125,7 +128,7 @@
 
 .emphasis {
   font-size: 1em;
-  font-family: "IBM Plex Sans";
+  font-family: 'IBM Plex Sans', Helvetica, sans-serif;
   font-style: italic;
   font-weight: 200;
 
@@ -223,7 +226,7 @@ img:not(.social) {
       }
       }
     .label {
-      font-family: 'IBM Plex Sans';
+      font-family: 'IBM Plex Sans', Helvetica, sans-serif;
       text-transform: uppercase;
       font-size: 14px;
       position: absolute;

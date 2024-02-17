@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Mapping Mountains
 category: blog
 excerpt: "To view mountains from above is to journey through time itself: over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of elevation data!"

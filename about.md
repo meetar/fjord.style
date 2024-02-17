@@ -1,66 +1,58 @@
 ---
 layout: page
-title: About
-permalink: /about/
+# title: About
 ---
-<link rel="preconnect" href="https://meetar.github.io/">
-<div id="globecontainer"><a target="_blank" href="https://github.com/meetar/FSglobe-terrain"><img id="globegif" src="/assets/FSglobe-terrain.gif"></a>
-<iframe id="FSglobe" src="https://meetar.github.io/FSglobe-terrain/" width="100%" height="550px"></iframe>
-</div>
 
+<!-- <img class="headshot" alt="Photo of designer Peter Richardson" src="/assets/headshot.jpg"> -->
+Hi, I'm Peter.
 
-I grew up in a tiny town in Alaska famous for disasters, where extremities of scale, weather, and character felt not so much normal as inscrutable, as though there was no angle from which they would ever make any sense.
+For many years, I worked as an animator, technical director, and designer on commercial, industrial, and artistic projects for animation, video game, and advertising studios.
+
+Since then, I've applied that experience as a visual technologist and product designer, leading interface research, design, and prototyping for security and GIS companies. 
+
+I'm currently open to new opportunities – <a href="#reachme">contact me</a>, view my <a href="">CV</a>, or check out some <a href="">case studies</a> if you'd like to learn more.
+
+<div class="comments">Why "fjord.style"?</div>
+
+I grew up in a tiny coastal town in Alaska famous for disasters, where extremities of scale, weather, and character felt not so much normal as inscrutable, as though there was no angle from which they would ever make any sense. 
 
 So: I've been interested in describing hard-to-describe things for a long time.
 
-I've worked as animator, technical director, and designer on a wide variety of commercial, industrial, and artistic projects. My most strongly-held opinions concern very brief events and very fast feedback loops.
+The town itself was situated on the side of a fjord – a bay scooped out by glacial activity – where it had been relocated from the <em>end</em> of the fjord, building by surviving building, after the <a href="https://en.wikipedia.org/wiki/1964_Alaska_earthquake">1964 Good Friday earthquake</a> and attendant tsunami took out the port and destroyed much of the town.
 
-"Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with bright accents, and lists of things which turn out to be metaphors.
+Adaptation, exploration, learning from mistakes, and living in the face of loss.
 
-Currently, I mediate between designers and engineers from the edge of the woods on the Oregon coast.
+The scale and scope of life on and near the sea feels to me like a deep reflection of what it means to be alive on Earth. In particular, I'm impressed by the design and practices of maritime industry and services, especially the US Coast Guard and organizations like it around the world.
 
-You can reach me here:<br>
-<a href="https://github.com/meetar/">https://github.com/meetar/</a><br>
-<a href="https://mastodon.xyz/@meetar">https://mastodon.xyz/@meetar</a><br>
-<a target="_top" href="mailto:pxrich@gmail.com">pxrich@gmail.com</a>
+The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and maritime health and safety inspires me to make everyday things clearer, safer, stronger, more resilient, and more accessible to help us all cope with the extremities of experience in unstable circumstances.
 
-<script>
-	let iframe;
-var width = window.innerWidth
-|| document.documentElement.clientWidth
-|| document.body.clientWidth;
-if (width > 700) {
-	// wait for page to load
-	window.onload = function() {
+"Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with <mark>bright accents</mark>, and lists of things which turn out to be metaphors.
+
+<hr>
+
+<div class="comments">My latest posts:</div>
+
+  <ul class="post-cards">
+    {% assign filtered_posts = site.posts | exclude_hidden_posts %}
+    {% for post in filtered_posts limit:4 %}
+    {% unless post.hidden %}
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.aria-label }}"><div class="border"><li class="post-card">
+          <h2>
+            {{ post.title }}
+          </h2>
+          <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+          {% if post.image %}<span class="post-img">
+          <img class="cardheaderimg" src="/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
+          {% endif %}
+
+          <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
+
+        </li></div></a>
+        {% endunless %}
+    {% endfor %}
+  </ul>
+
+<hr>
 
 
-		// set iframe src
-		iframe = document.getElementById("FSglobe");
-		if (iframe) {
-			iframe.style.height="550px"
-			iframe.src = "https://meetar.github.io/FSglobe-terrain/"
-			// iframe.src = "http://localhost:8080"
-		}
-	}
-
-	window.addEventListener("message", function(event) {
-	// if (event.origin === "http://localhost:8080") {
-		// Handle the message from the iframe
-		console.log('received:', event.data);
-		console.log('success?:', event.data.FSsuccess);
-
-		if (event.data.FSsuccess) {
-			console.log("Received yes message from iframe:", event.data);
-		}
-		if (!event.data.FSsuccess) {
-			console.log("Received no message from iframe:", event.data);
-			let globegif = document.getElementById("globegif");
-			console.log(globegif);
-			iframe.style.display = "none";
-			globegif.style.display = "block";
-		}
-	// }
-});
-
-}
-</script>
+<div class="comments" id="reachme">How to reach me:</div>

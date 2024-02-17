@@ -1,8 +1,11 @@
 <header class="site-header">
-    <h1><a class="site-title" href="{{ site.baseurl }}/"><span class="fjord">FJORD.</span><span class="style">STYLE</span></a></h1>
+    <a class="site-title" href="{{ site.baseurl }}/">
+        FJORD.STYLE
+    </a>
     <div class="links">
         <a {% if page.url == "/" %}class="active"{% endif %} href="/">Home</a> ~
         <a {% if page.url == "/posts" %}class="active"{% endif %} href="/posts">Posts</a> ~
-        <a {% if page.url == "/case-studies" %}class="active"{% endif %} href="/case-studies">Case Studies</a>
+        <!-- <a {% if page.url == "/case-studies" %}class="active"{% endif %} href="/case-studies">Case Studies</a> -->
+        <a {% if page.url == "/about" %}class="active"{% endif %} href="/about">About</a>
     </div>
 </header>

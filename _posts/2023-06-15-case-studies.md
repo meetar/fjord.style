@@ -20,7 +20,7 @@ Here are some examples to illustrate that work, as well as the <mark>guiding pri
 
 
 
-<div class="case-study">
+<div class="case-study" id="pathfinder">
 <div class="comments">~ Is there a way to break it down? ~</div>
   <div class="title-wrapper">
     <span class="case-study-tag">Case Study:</span><span class="title">Network Pathfinder</span>
@@ -132,11 +132,11 @@ Technology used:
 <!-- <a class="external" href="http://meetar.github.io/globe-terrain/">Live demo:</a> -->
 
 
-<div class="case-study">
+<div class="case-study" id="musicmap">
 <div class="comments">~ Can we find similarities with dissimilar things? ~</div>
 
 
-  <div class="title-wrapper" id="musicmap">
+  <div class="title-wrapper">
     <span class="case-study-tag">Case Study:</span><span class="title">Music Map</span>
   </div>
   <div class="subtitle-wrapper">
@@ -180,10 +180,10 @@ Technology used:
 
 
 
-<div class="case-study">
+<div class="case-study" id="spheremaps">
 <div class="comments">~ Can we speed up the feedback loop? ~</div>
 
-  <div class="title-wrapper" id="spheremaps">
+  <div class="title-wrapper">
     <span class="case-study-tag">Case Study:</span><span class="title">Spheremap Painter</span>
   </div>
   <div class="subtitle-wrapper">
@@ -245,11 +245,11 @@ Technology used:
 
 
 
-<div class="case-study">
+<div class="case-study" id="projection">
 
 <div class="comments">~ What if we start at the goal and work backwards? ~</div>
 
-  <div class="title-wrapper" id="projection">
+  <div class="title-wrapper">
     <span class="case-study-tag">Case Study:</span><span class="title">Conic Projection</span>
   </div>
   <div class="subtitle-wrapper">

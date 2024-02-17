@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Terrain Generalization
 category: blog
 excerpt: Generalization blending is a way to solve two problems at once – terrain data contains small details which aren't necessary for understanding the shape and location of important features, but basic simplification methods such as blurring are applied everywhere indiscriminately.

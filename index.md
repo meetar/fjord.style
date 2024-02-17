@@ -1,39 +1,248 @@
 ---
-layout: default
-# title: About
+layout: index
 ---
 
-<div class="comments intro">This is the web page of designer Peter Richardson.</div>
+<style>
+  .subtitle {
+    flex-basis: 100%;
+    font-size: 8px;
+    -webkit-text-stroke: 1px;
+  }
+  body {
+    justify-content: center;
+  }
+</style>
 
-<img class="headshot" alt="Photo of designer Peter Richardson" src="/assets/headshot.jpg">
-Hi, I'm Peter.
+<div class="index-intro">
+Visual technology, digital cartography, prototypes, R&D, and miscellaneous hackery from designer Peter Richardson.
+<br><br>
+<mark>Currently</mark>: Freelance. <mark>Formerly</mark>: Okta, Esri, Snap, Mapzen, and dozens of animation and advertising studios for hundreds of clients including Microsoft, Disney/Pixar, Sony, Rockstar Games, Hershey, Frito-Lay, LEGO, Comedy Central, and Sesame Street.
+</div>
 
-For many years, I worked as an animator, technical director, and designer on commercial, industrial, and artistic projects for animation, video game, and advertising studios.
+<div class="grid">
 
-Since then, I've applied that experience as a product designer and design technologist, leading interface research, design, and prototyping for security and GIS companies. 
+<a href="https://meetar.github.io/reverse-parallax-shader/">
+<div>
+Crystal Shader
+<img src="assets/the-prototype-trap/prototype.jpg">
+</div>
+</a>
 
-"Fjord style" is an appreciation of layers, weatherproofing, clearly-marked routes, non-skid surfaces, dark neutrals with <mark>bright accents</mark>, and lists of things which turn out to be metaphors.
+<!--
+<a href="">
+<div>
+  Audubon Bird Explorer
+  <img src="img/audubonMBE.png">
+</div>
+</a>
+-->
 
+<a href="case-studies#pathfinder">
+<div>
+Graph Pathfinder
+<img src="assets/case-studies/screenshot2.png">
+</div>
+</a>
 
-I'm currently open to new opportunities – <a href="#reachme">contact me</a>, view my <a href="">CV</a>, or check out some <a href="">case studies</a> if you'd like to learn more.
+<a href="case-studies#musicmap">
+<div>
+Music Map
+<img src="assets/case-studies/musicmap.jpg">
+</div>
+</a>
 
-<div class="comments">Why "fjord.style"?</div>
+<!--
+<a href="">
+<div>
+Bendix Sapphire
+<img src="img/bendix.jpg">
+</div>
+</a>
+-->
 
-I grew up in a tiny coastal town in Alaska famous for disasters, where extremities of scale, weather, and character felt not so much normal as inscrutable, as though there was no angle from which they would ever make any sense. 
+<a href="http://meetar.github.io/gem-collector">
+<div>
+Gem Collector
+<img src="img/gemcollector.png">
+</div>
+</a>
 
-So: I've been interested in describing hard-to-describe things for a long time.
+<a href="/fake-rock/">
+<div>
+Fake Rock
+<img src="img/rock.jpg">
+</div>
+</a>
 
-The town itself was situated on the side of a fjord – a bay scooped out by glacial activity – where it had been relocated from the <em>end</em> of the fjord, building by surviving building, after the <a href="https://en.wikipedia.org/wiki/1964_Alaska_earthquake">1964 Good Friday earthquake</a> and attendant tsunami took out the port and destroyed much of the town.
+<a href="/plotter/">
+<div>
+Plotter Prints
+<img src="img/plotter.jpg">
+</div>
+</a>
 
-Adaptation, exploration, learning from mistakes, and living in the face of loss.
+<a href="http://tangrams.github.io/heightmapper">
+<div>
+Heightmapper
+<img src="img/heightmapper.png">
+</div>
+</a>
 
-The scale and scope of life on and near the sea feels to me like a deep reflection of what it means to be alive on Earth. In particular, I'm impressed by the design and practices of maritime industry and services, especially the US Coast Guard and organizations like it around the world.
+<a href="https://tangrams.github.io/terrain-demos/?url=styles/green-stdev.yaml#10/57.0719/-126.2290">
+<div>
+Standard Deviation Map
+<img src="img/stddev.png">
+</div>
+</a>
 
-The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and maritime health and safety inspires me to make everyday things clearer, safer, stronger, more resilient, and more accessible to help us all cope with the extremities of experience in unstable circumstances.
+<a href="https://tangrams.github.io/terrain-demos/?url=styles/green-selectiveblur.yaml#10/57.0719/-126.2290">
+<div>
+Adaptive Generalization
+<img src="img/generalization.png">
+</div>
+</a>
+
+<a href="http://meetar.github.io/elevator">
+<div>
+Elevator
+<img src="img/elevator.png">
+</div>
+</a>
+
+<a href="https://tangrams.github.io/carousel/?daynight#15/40.7076/-74.0094">
+<div>
+Day/Night Map
+<img src="img/daynight.png">
+</div>
+</a>
+
+<a href="https://tangrams.github.io/kinkade/">
+<div>
+Kinkade Terrain Painter
+<img src="img/kinkade.png">
+</div>
+</a>
+
+<a href="https://meetar.github.io/siggraph-maps/?palms.yaml/#15">
+<div>
+Palms Map
+<img src="img/palms.png">
+</div>
+</a>
+
+<a href="https://meetar.github.io/siggraph-maps/?galaxy.yaml/#15">
+<div>
+Galaxy Map
+<img src="img/galaxy.png">
+</div>
+</a>
+
+<a href="https://meetar.github.io/siggraph-maps/?1988.yaml/#15">
+<div>
+1988 Map
+<img src="img/1988.png">
+</div>
+</a>
+
+<a href="https://meetar.github.io/albers/">
+<div>
+Albers Projection
+<img src="assets/escape-from-mercator/albers.jpg">
+</div>
+</a>
+
+<a href="https://meetar.github.io/bendy-map/">
+<div>
+Bendy Map
+<img src="img/bendymap.jpg">
+</div>
+</a>
+
+<a href="https://tangrams.github.io/explorer/#14.0/40.7238/-73.9881/kind/major_road">
+<div>
+OSM Explorer
+<img src="img/explorer.png">
+</div>
+</a>
+
+<a href="/makerbot-mountains/">
+<div>
+Makerbot Mountains
+<img src="img/diablo.jpg">
+</div>
+</a>
+
+<a href="https://meetar.github.io/globe-terrain/">
+<div>
+Global Terrain
+<img src="img/globeterrain.png">
+</div>
+</a>
+
+<a href="https://github.com/meetar/littlebits-r2d2-controls">
+<div>
+Littlebits R2D2
+<img src="img/r2.png">
+</div>
+</a>
+
+<a href="https://github.com/meetar/dotmap">
+<div>
+Dotmap
+<span class="subtitle">(Contributor)</span>
+<img src="img/dotmap.png">
+</div>
+</a>
+
+<a href="https://mapzen.com/products/tangram/">
+<div>
+Tangram
+<span class="subtitle">(Contributor)</span>
+<img src="img/tangram.png">
+</div>
+</a>
+
+<a href="https://github.com/meetar/manhattan-project">
+<div>
+Manhattan Project
+<img src="img/manhattan.png">
+</div>
+</a>
+
+<a href="/formline/">
+<div>
+Formline
+<img src="img/formline/vlcsnap-2024-02-16-15h48m55s063.png">
+</div>
+</a>
+
+<a href="/spacebunnies/">
+<div>
+Space Bunnies
+<img src="img/spacebunnies.png">
+</div>
+</a>
+
+<a href="/matrix/">
+<div>
+Matrix: Revolutions
+<img src="img/matrix.png">
+</div>
+</a>
+
+<a href="https://vimeo.com/manage/videos/79354708">
+<div>
+VDZ Year
+<img src="img/vdz.png">
+</div>
+</a>
+
+</div>
+
 
 <hr>
 
-<div class="comments">My latest posts:</div>
+<div class="comments">Latest posts:</div>
 
   <ul class="post-cards">
     {% assign filtered_posts = site.posts | exclude_hidden_posts %}
@@ -45,7 +254,8 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
           </h2>
           <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
           {% if post.image %}<span class="post-img">
-          <img class="cardheaderimg" src="/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
+      
+      <img class="cardheaderimg" src="/assets{{ post.url }}/{{ post.image }}" alt="{{ post.imgalt }}"></span>
           {% endif %}
 
           <span class="post-excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
@@ -56,10 +266,4 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
   </ul>
 
 <hr>
-
-
-<div class="comments" id="reachme">How to reach me:</div>
-<a target="_top" href="mailto:pxrich@gmail.com">pxrich@gmail.com</a><br>
-<a href="https://github.com/meetar/">https://github.com/meetar/</a><br>
-<a href="https://mastodon.xyz/@meetar">https://mastodon.xyz/@meetar</a><br>
 
