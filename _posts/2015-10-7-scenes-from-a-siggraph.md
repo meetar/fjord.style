@@ -2,7 +2,7 @@
 layout: post
 title: Scenes From a Siggraph
 excerpt: It&#39;s 82 degrees outside, all the palm trees are imported, and the auditorium seats a thousand. I try to relax.
-image: ../../img/palms.png
+image: ../../img/palms.jpg
 imgalt: A map of Los Angeles
 published: true
 ---
