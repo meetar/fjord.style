@@ -68,14 +68,14 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 </div>
 </a>
 
-<a href="/fake-rock/">
+<a href="/fake-rock">
 <div>
 <span class="title">Fake Rock</span>
 <img src="img/rock.jpg">
 </div>
 </a>
 
-<a href="/plotter/">
+<a href="/plotter">
 <div>
 <span class="title">Plotter Prints</span>
 <img src="img/plotter.jpg">
@@ -231,21 +231,21 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 </div>
 </a> -->
 
-<a href="/formline/">
+<a href="/formline">
 <div>
 <span class="title">Formline</span>
 <img src="img/formline.jpg">
 </div>
 </a>
 
-<a href="/spacebunnies/">
+<a href="/spacebunnies">
 <div>
 <span class="title">Space Bunnies</span>
 <img src="img/spacebunnies.jpg">
 </div>
 </a>
 
-<a href="/matrix/">
+<a href="/matrix">
 <div>
 <span class="title">Matrix: Revolutions</span>
 <img src="img/matrix.jpg">
