@@ -53,7 +53,9 @@ ul, ol, dl, figure,
  * Images
  */
 img {
-    // max-width: 100%;
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
     left: -12.5%;
     vertical-align: middle;
 }
@@ -103,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: $link-color;
     @media (prefers-color-scheme: dark) {
-        color: $brand-color
+        color: rgb(81, 162, 255)
     }
 
     // text-decoration: none;
@@ -151,6 +153,16 @@ code {
     border-radius: 3px;
     background-color: #eef;
     white-space: pre-wrap;
+}
+
+code, div.highlight, pre.highlight {
+    @media (prefers-color-scheme: dark) {
+        border-radius: 10px;
+        border: none;
+        background: #444445 !important;
+        background-color: #444445 !important;
+        border: none;
+    }
 }
 
 code {

@@ -38,7 +38,7 @@ border-bottom: 2px solid #eee;
       color: black;
       font-style: italic;
       @media (prefers-color-scheme: dark) {
-        color: #ccc
+        color: #ddd
       }
 
     }
@@ -142,7 +142,7 @@ border-bottom: 2px solid #eee;
     margin: auto;
     border-top: 2px solid $grey-color-light;
     padding: $spacing-unit 0;
-    color: $grey-color;
+    // color: $grey-color;
     font-size: .9em;
 }
 
@@ -155,6 +155,12 @@ border-bottom: 2px solid #eee;
 .social-media-list {
     list-style: none;
     margin-left: 0;
+}
+
+.social  {
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.8) invert(1);
+  }
 }
 
 .footer-col-wrapper {
@@ -470,25 +476,46 @@ iframe {
     border: 0px;
 }
 
-    // green highlighter effect
-    mark, a.active, a:hover:not(.site-title, .post-link) {
-        color: unset;
-        margin: 0 -0.4em;
-        padding: 0 0.4em;
-        border-radius: 0.8em 0.3em;
-        background: transparent;
-        background-image: linear-gradient(
-          95deg,
-          rgba(140, 255, 94, 0.0) 1%,
-          rgba(140, 255, 94, 0.2) 3%,
-          rgba(140, 255, 94, 0.3) 6%,
-          rgba(140, 255, 94, 0.3),
-          rgba(66, 255, 85, 0.3) 60%,
-          rgba(90, 255, 170, 0.3)
-        );
-        -webkit-box-decoration-break: clone;
-        box-decoration-break: clone;
-      }
+a {
+  text-decoration: none;
+}
+// a.active, a:hover:not(.site-title, .post-link) {
+a.active, a:hover:not(.site-title, .post-link, .grid > a) {
+  text-decoration: underline;
+}
+
+// green highlighter effect
+// mark, a.active, a:hover:not(.site-title, .post-link) {
+mark, a.active {
+  text-decoration: none;
+  margin: 0 -0.2em;
+  padding: 0 0.2em;
+  background: transparent;
+  // background-color: yellow;
+  // border-radius: 0.8em 0.4em;
+  background-image: linear-gradient(
+    95deg,
+    rgba(140, 255, 94, 0.0) 1%,
+    rgba(107, 253, 49, 0.3) 3%,
+    rgba(103, 255, 43, 0.353) 95%,
+    rgba(90, 255, 170, 0.0)
+  );
+  @media (prefers-color-scheme: dark) {
+    // background-color: rgba(0, 255, 30, 0.521);
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(
+      95deg,
+      rgba(140, 255, 94, 0.0) 1%,
+      rgba(107, 253, 49, 0.461) 3%,
+      rgba(103, 255, 43, 0.353) 95%,
+      rgba(90, 255, 170, 0.0)
+    );
+    // color: #ccf;
+  }
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
       
       
 @include media-query($on-palm) {
@@ -665,6 +692,12 @@ iframe {
     margin-bottom: 2em;
     max-width: 500px;
   }
+  .index-intro-sub {
+    text-align: center;
+    margin: 3vh auto;
+    margin-bottom: 2em;
+    max-width: 700px;
+  }
   img.gem {
     border: none !important;
     box-shadow: none !important;
@@ -716,6 +749,7 @@ iframe {
     // border: 1px solid black;
     font-family: 'Rubik', Helvetica, sans-serif;
     font-weight: 300;
+    // letter-spacing: .1cap;
     text-transform: uppercase;
     justify-self: center;
     margin: 0px 2vw;
@@ -723,7 +757,7 @@ iframe {
     // width: 100%;
     max-width: 100%;
     display: grid;
-    grid-gap: .5vh;
+    grid-gap: 1vh;
     grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
     justify-content: center;
 }
@@ -732,11 +766,12 @@ iframe {
     display: flex;
     position: relative;
     top: 0;
-    padding: 10px;
-    height: 15vh;
-    max-height: 150px;
+    // padding: 10px;
+    height: 29vh;
+    max-height: 175px;
     text-align: center;
     align-content: center;
+    // align-content: flex-end;
     justify-content: center;
     text-shadow: -2px -1px .5px #000, 2px -1px .5px #000, -2px 1px .5px #000, 2px 1px .5px #000,
                  -1px -2px .5px #000, 1px -2px .5px #000, -1px 2px .5px #000, 1px 2px .5px #000,
@@ -756,20 +791,18 @@ iframe {
         filter: brightness(100%) saturate(100%);
     }
     &:not(hover) > img {
-      // border: 2px solid green;
-      //   scale: 1.03;
-      //   cursor: pointer;
-      //   z-index: 2;
-      //   transition: scale, .05s ease-out;
       filter: brightness(85%) saturate(80%);
-      // filter: brightness(50%) saturate(70%);
     }
-    // opacity: 0;  
-    // animation: fadeIn .5s ease-out forwards;
+
+    .title {
+      // background-color: rgba(0, 0, 0, 0.3);
+      // width: 90%;
+      // height: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
-  // .title {
-    //   // position: relative;
-    // }
     
     .grid a {
       text-decoration: none;

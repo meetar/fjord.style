@@ -3,43 +3,8 @@
 ---
 @charset "utf-8";
 
-@font-face {
-    font-family: 'EireneSans';
-    src: url('../fonts/Eirene-Sans/EireneSans-Bold.otf'),
-        url('../fonts/Eirene-Sans/EireneSans-BoldItalic.otf'),
-        url('../fonts/Eirene-Sans/EireneSans-Italic.otf'),
-        url('../fonts/Eirene-Sans/EireneSans-Regular.otf'),
-}
-
-@font-face {
-    font-family: 'kollektif';
-    src: url('../fonts/kollektif/Kollektif.ttf'),
-    url('../fonts/kollektif/Kollektif-Bold.ttf'),
-        url('../fonts/kollektif/Kollektif-BoldItalic.ttf'),
-        url('../fonts/kollektif/Kollektif-Italic.ttf'),
-    }
-
-@font-face {
-    font-family: 'frutiger';
-    src: url('../fonts/frutiger.ttf'),
-}
-
-@font-face {
-    font-family: 'junction';
-    src: url('../fonts/Junction-regular.otf'),
-}
-
-
 $base-font-family: "IBM Plex Sans", Helvetica, sans-serif;
-// $base-font-family: "frutiger", Helvetica, sans-serif;
-// $base-font-family: "junction", Helvetica, sans-serif;
-// $base-font-family: "EireneSans", Helvetica, sans-serif;
-// $base-font-family: "kollektif", Helvetica, sans-serif;
-// $base-font-family: "Noto Sans", Helvetica, sans-serif;
-// $base-font-family: "Source Sans", Helvetica, sans-serif;
 $title-font-family: 'Montserrat', Helvetica, sans-serif;
-// $title-font-family: 'EireneSans', Helvetica, sans-serif;
-// $title-font-family: 'Noto Sans', Helvetica, sans-serif;
 
 $base-font-size:   16px;
 $base-font-weight: 400;
