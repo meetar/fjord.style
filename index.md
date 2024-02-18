@@ -194,7 +194,7 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 </div>
 </a>
 
-<a href="/makerbot-mountains/">
+<a href="/makerbot-mountains">
 <div>
 <span class="title">Makerbot Mountains</span>
 <img src="img/diablo.jpg">
