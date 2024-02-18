@@ -51,8 +51,3 @@ The work of search and rescue, lighthouse-keeping, wayfinding and signaling, and
         {% endunless %}
     {% endfor %}
   </ul>
-
-<hr>
-
-
-<div class="comments" id="reachme">How to reach me:</div>
