@@ -231,6 +231,20 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 </div>
 </a> -->
 
+<a href="/pancakes">
+<div>
+<span class="title">Biz Markie</span>
+<img src="img/pancakes.jpg">
+</div>
+</a>
+
+<a href="/fritolay">
+<div>
+<span class="title">Frito-Lay</span>
+<img src="img/loveandsockets.jpg">
+</div>
+</a>
+
 <a href="/formline">
 <div>
 <span class="title">Formline</span>
