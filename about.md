@@ -10,7 +10,7 @@ For many years, I worked as an animator, technical director, and designer on com
 
 Since then, I've applied that experience as a visual technologist and product designer, leading interface research, design, and prototyping for security and GIS companies. 
 
-I'm currently open to new opportunities – <a href="#reachme">contact me</a>, view my <a href="">CV</a>, or check out some <a href="">case studies</a> if you'd like to learn more.
+I'm currently open to new opportunities – <a href="#reachme">contact me</a>, view my <a href="./Peter-Richardson-CV.pdf">CV</a>, or check out some <a href="./case-studies">case studies</a> if you'd like to learn more.
 
 <div class="comments">Why "fjord.style"?</div>
 
