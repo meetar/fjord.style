@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  The Prototype Trap
+title: The Prototype Trap
 categories: 3d
 published: true
-excerpt: In fact from now on when somebody asks "How much work would it take to get this to production?" my answer will be "How much of it did we actually write?"
-image: 'prototype.jpg'
-imgalt: 'A closeup of a 3D rendered crystal'
+excerpt: In fact from now on when somebody asks “How much work would it take to get this to production?” my answer will be “How much of it did we actually write?”
+image: "prototype.jpg"
+imgalt: "A closeup of a 3D rendered crystal"
 ---
 
 I'm tired of reading long articles, so I'm going to write this one like a progressive JPEG. It might still be long, but maybe it won't feel that way. Anyway, it's about third-party libraries, open-source software, and GPUs. There's a prize at the bottom.
@@ -28,7 +28,7 @@ Spoiler: this has been a problem everywhere I've made prototypes, going back to 
 ---
 
 <img class="gem" src="/assets/the-prototype-trap/crystal7.png" />
-Ten years ago I was transitioning from a VFX career and wanted to see whether the burgeoning world of real-time web 3D could offer anything like what I was accustomed to. 
+Ten years ago I was transitioning from a VFX career and wanted to see whether the burgeoning world of real-time web 3D could offer anything like what I was accustomed to.
 
 As part of this, I started learning <a href="http://threejs.org">three.js</a>, which had quickly become the most popular way to interact with WebGL. I had an idea for <a href="http://meetar.github.io/globe-terrain/">a representation of the earth</a> I wanted to see, so I coerced three.js to draw it with some of its built-in capabilities and some I had to hack in, using some techniques I knew from my VFX days and some I had to learn from scratch, following hunches and squinting at white papers. It took a few solid weeks, and worked fairly well, and almost everywhere. "Stirrings of order in the chaos" I said.
 
@@ -39,7 +39,6 @@ It didn't do everything I wanted, but it did it fairly quickly, and I understood
 Partially, I think this is down to the expectations of developers. I didn't try to re-implement an old project (although that would be interesting, hm). I wanted to try something new and shiny. I understand that in this, I am not alone. And it had been awhile since I had worked in WebGL directly – I've drifted away from the world of graphics development, and I wanted to see what the kids are using these days, and what one aspect of the future might look like.
 
 Also I wanted to try an idea for a shader I'd first had many years ago, to fake internal imperfections by perturbing texture lookup coordinates. I'll explain this in detail eventually, and link to it here when I do. (Here's the explanation: [Part I](/going-into-depth) – [Part II](/parallax-shift).)
-
 
 ---
 
@@ -98,7 +97,7 @@ What you'd want, ideally, is some kind of composable, plug-based system with inp
 
 > This project needs maintainers and a good rewrite from scratch. Lamina does a lot of hacky processing to achieve its API goals. As time has gone by I have started to doubt if it’s worth it. These hacks make it unreliable, unpredictable and slow. Not to mentaion, quite convoluted to maintain and debug. There might be better APIs or implimentations for this kind of library but I currently do not have the bandwidth to dedicate to finding them. Perhaps in the future.
 
-Relatable. I truly, deeply sympathize. Additionally: 
+Relatable. I truly, deeply sympathize. Additionally:
 
 > Lamina is built on top of three-custom-shader-material (CSM) and any effects that are achieved by lamina can be done with CSM in a predictable and performant manner albeit at a lower level.
 
@@ -110,8 +109,8 @@ One additional wrinkle is that the three.js physical materials function by rende
 
 So I did that! And it looked great on my machine! ...But almost nowhere else.
 
-
 ---
+
 <img class="gem" src="/assets/the-prototype-trap/crystal4.jpg" />
 
 It's true: hundreds of simultaneous texture lookups rendered multiple times per frame is not optimal. I shouldn't have done that! It was a useful prototype, but not an effective production strategy. It rendered at 60fps on fast machines, and 20fps on the next tier down, and anything more than a few years old locked up. I have a Windows gaming laptop which runs Cyberpunk 77 on High, but when it ran the demo the fans immediately redlined and the output looked like a reconstructed Muybridge sequence.
