@@ -3,8 +3,8 @@ layout: post
 title: Vibe Shift
 date: 2023-06-16 13:37 -0700
 excerpt: Is this how sociologists feel? Like staring at the matrix, but it's all creative writing workshop meetup output? I don't want to be this predictable. Is it taking cues from my other posts? Where does it get this stuff?
-image: 'Screenshot%202023-06-16%20at%202.29.05%20PM.png'
-imgalt: 'A screenshot of github copilot in action'
+image: http://fjord.style/assets/vibe-shift/Screenshot%202023-06-16%20at%202.29.05%20PM.png
+imgalt: "A screenshot of github copilot in action"
 aria-label: Read the post Vibe Shift
 published: true
 ---
