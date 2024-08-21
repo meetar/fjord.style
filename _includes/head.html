@@ -14,6 +14,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 
+   <!-- Facebook Meta Tags -->
+   <meta property="og:url" content="{{ page.url | absolute_url }}">
+   <meta property="og:type" content="article">
+   <meta property="og:title" content="{{ page.title }}">
+   <meta property="og:description" content="{{ page.excerpt }}">
+   <meta property="og:image" content="{{ page.image }}">
+   <meta property="og:site_name" content="{{ site.title }}">
+
+   <!-- Twitter Meta Tags -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta property="twitter:domain" content="fjord.style">
+   <meta name="twitter:title" content="{{ page.title }}">
+   <meta name="twitter:description" content="{{ page.excerpt }}">
+   <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+   <meta property="twitter:url" content="{{ page.url | absolute_url }}>
+
+   <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
@@ -35,21 +52,4 @@
    <title>FJORD.STYLE</title>
    <meta name="description" content="maps and whatnot from Peter Richardson">
 
-   <!-- Facebook Meta Tags -->
-   <meta property="og:url" content="{{ page.url | absolute_url }}">
-   <meta property="og:type" content="article">
-   <meta property="og:title" content="{{ page.title }}">
-   <meta property="og:description" content="{{ page.excerpt }}">
-   <meta property="og:image" content="{{ page.image }}">
-   <meta property="og:site_name" content="{{ site.title }}">
-   
-   <!-- Twitter Meta Tags -->
-   <meta name="twitter:card" content="summary_large_image">
-   <meta property="twitter:domain" content="fjord.style">
-   <meta name="twitter:title" content="{{ page.title }}">
-   <meta name="twitter:description" content="{{ page.excerpt }}">
-   <meta name="twitter:image" content="{{ page.image | absolute_url }}">
-   <meta property="twitter:url" content="{{ page.url | absolute_url }}>
-
-   <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 </head>
