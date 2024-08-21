@@ -36,19 +36,20 @@
    <meta name="description" content="maps and whatnot from Peter Richardson">
 
    <!-- Facebook Meta Tags -->
-   <meta property="og:url" content="http://fjord.style">
-   <meta property="og:type" content="website">
-   <meta property="og:title" content="FJORD.STYLE">
-   <meta property="og:description" content="maps and whatnot from Peter Richardson">
-   <meta property="og:image" content="https://fjord.style/assets/the-prototype-trap/prototype.jpg">
-
+   <meta property="og:url" content="{{ page.url | absolute_url }}">
+   <meta property="og:type" content="article">
+   <meta property="og:title" content="{{ page.title }}">
+   <meta property="og:description" content="{{ page.excerpt }}">
+   <meta property="og:image" content="{{ page.image }}">
+   <meta property="og:site_name" content="{{ site.title }}">
+   
    <!-- Twitter Meta Tags -->
    <meta name="twitter:card" content="summary_large_image">
    <meta property="twitter:domain" content="fjord.style">
-   <meta property="twitter:url" content="http://fjord.style">
-   <meta name="twitter:title" content="FJORD.STYLE">
-   <meta name="twitter:description" content="maps and whatnot from Peter Richardson">
-   <meta name="twitter:image" content="https://fjord.style/assets/the-prototype-trap/prototype.jpg">
+   <meta name="twitter:title" content="{{ page.title }}">
+   <meta name="twitter:description" content="{{ page.excerpt }}">
+   <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+   <meta property="twitter:url" content="{{ page.url | absolute_url }}>
 
    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 </head>
