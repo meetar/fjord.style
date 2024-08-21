@@ -4,8 +4,8 @@ title: Going Into Depth
 categories: 3d
 published: true
 excerpt: This post describes a variation on parallax mapping that I used for a recent project, with detailed examinations of the rationale and a breakdown of the technique in the abstract.
-image: "http://fjord.style/assets/going-into-depth/speckles.gif"
-imgalt: "A closeup of a 3D rendered crystal"
+image: 'speckles.gif'
+imgalt: 'A closeup of a 3D rendered crystal'
 ---
 
 <link rel="stylesheet" href="assets/going-into-depth/demo.css">

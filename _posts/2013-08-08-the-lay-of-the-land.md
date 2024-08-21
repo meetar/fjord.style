@@ -5,7 +5,7 @@ date: 2013-08-08 12:02:02
 categories: terrain
 published: true
 excerpt: I have a lot of questions. I blame the fact that I grew up in a fjord.
-image: http://fjord.style/assets/the-lay-of-the-land/1446403033.jpg
+image: 1446403033.jpg
 imgalt: A macro photo of a raised relief map
 ---
 

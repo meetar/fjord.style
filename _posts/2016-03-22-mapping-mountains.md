@@ -4,7 +4,7 @@ title: Mapping Mountains
 category: blog
 excerpt: "To view mountains from above is to journey through time itself: over ancient shorelines, the trails of glaciers, the marks of countless seasons, and the front lines of perpetual tectonic struggle. Fly with me now, on a tour through the world of elevation data!"
 authors: [meetar]
-image: http://fjord.style/assets/mapping-mountains/raisedreliefUS.jpg
+image: raisedreliefUS.jpg
 imgalt: A macro photo of a raised relief map of the California coast
 tag: [tangram, data, demo, terrain, elevation]
 aria-label: Read the post Mapping Mountains

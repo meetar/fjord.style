@@ -4,8 +4,8 @@ title: Parallax Shift
 categories: 3d
 published: true
 excerpt: This is a continuation of Going Into Depth, examining the construction of a custom parallax shader in WebGL, doing something I've wanted to try forever. There will be math, but also pictures, and isn't that the best case scenario?
-image: "http://fjord.style/assets/parallax-shift/parallaxshift.jpg"
-imgalt: "A closeup of a 3D rendered crystal"
+image: 'parallaxshift.jpg'
+imgalt: 'A closeup of a 3D rendered crystal'
 ---
 
 <aside>This is a continuation of <a href="/going-into-depth">Going Into Depth</a>, examining the construction of a custom parallax shader in WebGL, doing something I've wanted to try forever. There will be math, but also pictures, and isn't that the best case scenario?</aside><br>

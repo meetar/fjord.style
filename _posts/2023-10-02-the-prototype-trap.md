@@ -4,7 +4,7 @@ title: The Prototype Trap
 categories: 3d
 published: true
 excerpt: In fact from now on when somebody asks “How much work would it take to get this to production?” my answer will be “How much of it did we actually write?”
-image: "http://fjord.style/assets/the-prototype-trap/prototype.jpg"
+image: "prototype.jpg"
 imgalt: "A closeup of a 3D rendered crystal"
 ---
 

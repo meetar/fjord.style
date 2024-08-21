@@ -5,8 +5,8 @@ date:   2014-03-11 12:02:02
 categories: terrain
 published: true
 excerpt: This representation isn’t “to scale” in the Cartesian sense, though maybe it’s to scale <i>emotionally</i>. I’m adjusting levels until they’re within the range of human feeling. It’s a theme-park, <cite>Le Petit Prince</cite>, Mario Galaxy kind of feeling, a cartoon.
-image: http://fjord.style/assets/going-into-detail/going.jpg
-imgalt: A rendered 3D terrain map from North Africa to the Himalayas
+image: going.jpg
+imgalt: A rendered 3D terrain map from North Africa to the Himalayas 
 ---
 <link rel="stylesheet" type="text/css" href="css/globe.css">
 
