@@ -74,7 +74,7 @@ I've been looking at a lot of things on my phone. It's not the same.
 
 In his book <u>Terre des hommes</u> Saint-Exupéry states that "The airplane has unveiled for us the true face of the earth." Satellites get all the credit lately, but I have never felt so suffused with an intimate, all-encompassing knowledge of my surroundings as at 4000 feet in a Cessna. Typically, you must climb a mountain to get this view, but once you have, the parallax afforded by motion is unavailable, and what you see is a painting, a flat panorama in a battleground museum. Small aircraft transform large-scale factors into something graspable.
 
-Saint-Exupéry goes on: "For centuries, highways had been deceiving us" by distracting us with walking-speed detours and local minutia. "...We have from the beginning of time embellished the picture of our prison. We have elected to believe that our planet was merciful and fruitful." He wrote this in 1939.
+Saint-Exupéry goes on: "For centuries, highways had been deceiving us" by distracting us with walking-speed detours and local minutiae. "...We have from the beginning of time embellished the picture of our prison. We have elected to believe that our planet was merciful and fruitful." He wrote this in 1939.
 
 He then writes of how geologic time is revealed at altitude: "And then, only, from the height of our rectilinear trajectories, do we discover the essential foundation, the fundament of rock and sand and salt in which here and there and from time to time life like a little moss in the crevices of ruins has risked its precarious existence."
 
