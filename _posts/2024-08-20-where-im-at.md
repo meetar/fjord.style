@@ -4,7 +4,7 @@ title: Where I'm At
 categories:
 published: true
 excerpt: Once, Saint-Exupéry “circled the airport for an hour after returning, so that he could finish reading a novel.” I deeply empathize.
-image: "http://fjord.style/assets/where-im-at/wrangell.jpg"
+image: "wrangell.jpg"
 imgalt: "Wrangell-St. Elias National Park from a small aircraft"
 ---
 
