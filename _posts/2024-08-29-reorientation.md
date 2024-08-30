@@ -30,7 +30,7 @@ Last weekend I saw a lot of old friends and met some new ones, all of which was 
 
 It feels like the best reason to get online anymore is to somehow increase the odds that I'll be able to meet someone offline, which is where most of the good stuff happens anyway. We need to be able to find each other.
 
-I've worked as part of a team on public-facing projects, but for a few years I've mostly been working alone, in private, and nobody ever sees any of it. I don't think that's healthy for me. It was kind of romantic when I wasn't exclusively online, in a kind of _Pattern Recognition_ kind of way, but even Parkaboy shows up eventually.
+I've worked as part of a team on public-facing projects, but for a few years I've mostly been working alone, in private, and nobody ever sees any of it. I don't think that's healthy for me. It was kind of romantic when I wasn't exclusively online, in a kind of _Pattern Recognition_ sort of way, but even Parkaboy shows up eventually.
 
 I realize this is not universally applicable or even available, and I write from a place of privilege, but I'm trying to push against a future of entirely digitally-mediated relationships. By posting on my website. Baby steps.
 
