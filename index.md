@@ -38,13 +38,6 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 </a>
 -->
 
-<a href="case-studies#pathfinder">
-<div>
-<span class="title">Graph Pathfinder</span>
-<img src="img/screenshot2.jpg">
-</div>
-</a>
-
 <a href="case-studies#musicmap">
 <div>
 <span class="title">Music Map</span>

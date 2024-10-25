@@ -845,3 +845,13 @@ mark, a.active {
         color: #ccc
     }
   }
+
+  @media (max-width:600px) {
+    .index-intro {
+      margin: 3vh 4vw;
+    }
+    .index-intro-sub {
+      margin: 3vh 4vw;
+      max-width: 700px;
+    }  
+  }
