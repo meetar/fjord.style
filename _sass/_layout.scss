@@ -690,11 +690,13 @@ mark, a.active {
     text-align: center;
     margin: 3vh auto;
     margin-bottom: 2em;
+    padding: 0 3vw;
     max-width: 500px;
   }
   .index-intro-sub {
     text-align: center;
     margin: 3vh auto;
+    padding: 0 3vw;
     margin-bottom: 2em;
     max-width: 700px;
   }
@@ -844,14 +846,4 @@ mark, a.active {
         background-color: #333;
         color: #ccc
     }
-  }
-
-  @media (max-width:800) {
-    .index-intro {
-      margin: 3vh 4vw;
-    }
-    .index-intro-sub {
-      margin: 3vh 4vw;
-      max-width: 700px;
-    }  
   }
