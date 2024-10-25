@@ -252,13 +252,6 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 </div>
 </a>
 
-<a href="/spacebunnies">
-<div>
-<span class="title">Space Bunnies</span>
-<img src="img/spacebunnies.jpg">
-</div>
-</a>
-
 <a href="/matrix">
 <div>
 <span class="title">Matrix: Revolutions</span>
