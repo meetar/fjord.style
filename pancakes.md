@@ -19,4 +19,4 @@ published: true
 
 "Pancakes and Syrup" featuring Biz Markie 2014 – directed by Ben & Julia for Hornet. Animating Biz Markie eating pancakes was the peak of my animation career. The song is still stuck in my head.
 
-<iframe width="100%" src="https://www.youtube.com/embed/KnrtJBcDSgk?si=c4JPmace6jvFcKee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" src="https://www.youtube.com/embed/Ob-DfIN2l_M?si=wTebiiOy8i39JMM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
