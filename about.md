@@ -8,9 +8,7 @@ Hi, I'm Peter.
 
 For many years, I worked as an animator, technical director, and designer on commercial, industrial, and artistic projects for animation, video game, and advertising studios.
 
-Since then, I've applied that experience as a visual technologist and product designer, leading interface research, design, and prototyping for security and GIS companies. 
-
-I'm currently open to new opportunities – <a href="#reachme">contact me</a>, view my <a href="./Peter-Richardson-CV.pdf">CV</a>, or check out some <a href="./case-studies">case studies</a> if you'd like to learn more.
+Since then, I've applied that experience as a visual technologist and product designer, leading interface research, design, and prototyping efforts for companies that want to use pixels to show things to people. 
 
 <div class="comments">Why "fjord.style"?</div>
 
