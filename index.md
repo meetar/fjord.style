@@ -17,7 +17,7 @@ layout: index
 Visual technology, digital cartography, prototypes, R&D, and miscellaneous hackery from designer Peter Richardson.
 </div>
 <div class="index-intro-sub">
-<mark>Currently</mark>: Freelance. <mark>Formerly</mark>: Okta, Esri, Snap, Mapzen, and dozens of animation and advertising studios for hundreds of clients including Microsoft, Disney/Pixar, Sony, Rockstar Games, Hershey, Frito-Lay, LEGO, Comedy Central, and Sesame Street.
+<mark>Currently</mark>: National Audubon Society. <mark>Formerly</mark>: Okta, Esri, Snap, Mapzen, and dozens of animation and advertising studios for hundreds of clients including Microsoft, Disney/Pixar, Sony, Rockstar Games, Hershey, Frito-Lay, LEGO, Comedy Central, and Sesame Street.
 </div>
 
 <div class="grid">
