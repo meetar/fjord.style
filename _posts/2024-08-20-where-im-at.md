@@ -52,7 +52,7 @@ They're not easy problems. The scale of our networks is beyond anything we can e
 
 I don't yet know how or whether this is solvable, but I've been very slowly scratching an itch which starts like this:
 
-Certain altitudes in small aircraft feel as though they reduce the problem of global and regional context to an approachable scale, but those are also the scales which are hardest to absorb. The views of a city from its tallest towers are notoriously vertiginous. Those are the scales with the most namable visible objects. I think that's fascinating. (And I've written about [similar things](https://fjord.style/the-lay-of-the-land) before, [at length](https://fjord.style/going-into-detail).)
+Certain altitudes in small aircraft feel as though they reduce the problem of global and regional context to an approachable scale, but those are also the scales which are hardest to absorb. The views of a city from its tallest towers are notoriously vertiginous. Those are the scales with the most nameable visible objects. I think that's fascinating. (And I've written about [similar things](https://fjord.style/the-lay-of-the-land) before, [at length](https://fjord.style/going-into-detail).)
 
 ![image](/assets/where-im-at/roden.jpg)
 <span class='aside'>Roden Crater, [credit Dale Nations via the Arizona Geological Survey](https://flickr.com/photos/azgs/23354175575)</span>
