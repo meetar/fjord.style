@@ -18,7 +18,7 @@ A friend who'd gone off to college called to tell me about a new "M-U-D". I conn
 
 Soon afterward, I found myself in something related to MUDs called a MOO, which was essentially a chat room disguised as a collaborative text adventure game, this one set in the creator's house. A year later, after spending many hours there, I wound up navigating in meatspace to a hotel suite in some corner of Seattle, where I was greeted by a roomful of total strangers yelling my username.
 
-Still later I met someone else in another text-based web forum, and we emailed for a year without exchanging much in the way of Personal Identifiable Data at all. Then, while on a roadtrip, it transpired I was passing near enough to their city to detour. I met them in human form, and now we've been together for half of our lives.
+Still later I met someone else in another text-based web forum, and we emailed for a year without exchanging much in the way of Personally Identifiable Information at all. Then, while on a roadtrip, it transpired I was passing near enough to their city to detour. I met them in human form, and now we've been together for half of our lives.
 
 ---
 
