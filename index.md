@@ -22,6 +22,13 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 
 <div class="grid">
 
+<a href="https://meetar.github.io/scotoma/">
+<div>
+<span class="title">Scintillating Scotoma</span>
+<img src="img/scotoma.jpg">
+</div>
+</a>
+
 <a href="https://meetar.github.io/reverse-parallax-shader/">
 <div>
 <span class="title">Crystal Shader</span>
