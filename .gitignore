@@ -4,3 +4,5 @@ _site
 /drafts
 .DS_Store
 .vscode/
+vendor/bundle/
+.bundle/
