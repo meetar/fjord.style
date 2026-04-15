@@ -36,21 +36,22 @@ Visual technology, digital cartography, prototypes, R&D, and miscellaneous hacke
 </div>
 </a>
 
-<!--
-<a href="">
+
+<a href="https://explorer.audubon.org">
 <div>
-<span class="title">  Audubon Bird Explorer</span>
-  <img src="img/audubonMBE.jpg">
+<span class="title">Bird Migration Explorer</span>
+<span class="subtitle">(Contributor)</span>
+  <img src="img/audubon-mbe.jpg">
 </div>
 </a>
--->
 
-<a href="case-studies#musicmap">
+
+<!-- <a href="case-studies#musicmap">
 <div>
 <span class="title">Music Map</span>
 <img src="assets/case-studies/musicmap.jpg">
 </div>
-</a>
+</a> -->
 
 <!--
 <a href="">
