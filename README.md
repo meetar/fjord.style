@@ -7,26 +7,32 @@ Internet web site source code for [http://fjord.style](http://fjord.style).
 If you have a Jekyll site and want to build and test it locally before deployment, follow these steps:
 
 ## Prerequisites
-- Make sure you have Jekyll installed on your computer. You can check if Jekyll is installed by running the following command in your terminal or command prompt:
-   ```
-   jekyll -v
+- Make sure Ruby is installed on your computer:
+   ```sh
+   ruby -v
    ```
 
-   If Jekyll is not installed, you can install it using RubyGems by running:
+- Then make sure Bundler is installed. If not, install it in your user gem directory:
+   ```sh
+   gem install --user-install bundler
    ```
-   gem install jekyll bundler
-   ```
+
+  This site does not require a global Jekyll install. `bundle install` installs the Jekyll version specified by the `Gemfile`.
 
 ## Running the Jekyll Site Locally
-1. Navigate to the root directory of your Jekyll site using the terminal or command prompt.
-
-2. Run the following command to install the necessary dependencies specified in the `Gemfile`:
+1. Navigate to the root directory of this site:
+   ```sh
+   cd fjord.style
    ```
+
+2. Configure Bundler to install gems inside the project, then install the dependencies specified in the `Gemfile`:
+   ```sh
+   bundle config set path vendor/bundle
    bundle install
    ```
 
-3. Once the dependencies are installed, you can build and serve your Jekyll site by running the following command:
-   ```
+3. Once the dependencies are installed, build and serve the site:
+   ```sh
    bundle exec jekyll serve
    ```
 
