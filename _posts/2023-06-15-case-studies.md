@@ -299,4 +299,4 @@ Technology used:
 
 <a class="external" href="http://meetar.github.io/albers/">Live demo:</a>
 
-<script src="/assets/case-studies/case-studies.js">
+<script src="/assets/case-studies/case-studies.js"></script>
